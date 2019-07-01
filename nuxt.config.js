@@ -8,7 +8,7 @@ function getSlugs(post, _) {
 }
 
 module.exports = {
-  mode: "universal",
+  mode: "spa",
   head: {
     title: "Iván Albizu | Maquetador Web",
     titleTemplate: "%s - Iván Albizu | Maquetador Web",
