@@ -124,7 +124,8 @@ module.exports = {
         }
         return position;
       }
-    }
+    },
+    base: '/website/'
   },
   generate: {
     routes: function() {
@@ -132,13 +133,3 @@ module.exports = {
     }
   }
 };
-// only add `router.base = '/website/'` if `DEPLOY_ENV` is `GH_PAGES`
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/website/'
-  }
-} : {}
-
-export default {
-  ...routerBase
-}
