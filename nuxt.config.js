@@ -135,7 +135,7 @@ module.exports = {
 // only add `router.base = '/website/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/website/'
+    base: '/'
   }
 } : {}
 
