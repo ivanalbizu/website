@@ -1,6 +1,6 @@
 ---
 title: 'Uso de startActivityForResult'
-date: Thu, 23 Oct 2014 16:21:47 +0000
+ctime: Thu, 23 Oct 2014 16:21:47
 published: true
 tags: Android,Java
 ---

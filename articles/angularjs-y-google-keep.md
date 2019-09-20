@@ -1,6 +1,6 @@
 ---
 title: 'AngularJS y Google Keep'
-date: Sun, 15 Nov 2015 17:01:12 +0000
+ctime: Sun, 15 Nov 2015 17:01:12
 published: true
 tags: AngularJS,JavaScript
 ---
@@ -31,7 +31,7 @@ angular.module('gkeepApp')
         url_one, {}, {
           get: {method: 'GET', cache: false, isArray: false},
           save: {method: 'POST', cache: false, isArray: false},
-          update: {method: 'PUT', cache: false, isArray: false},
+          upctime: {method: 'PUT', cache: false, isArray: false},
           delete: {method: 'DELETE', cache: false, isArray: false},
           get_all: {method: 'GET', url: url_all, cache: false, isArray: true},
         }

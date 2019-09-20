@@ -1,6 +1,6 @@
 ---
 title: 'Animaciones CSS3 - transform: translate (x, y)   vs   left(x) top(y)'
-date: Sun, 17 Nov 2013 22:16:22 +0000
+ctime: Sun, 17 Nov 2013 22:16:22
 published: true
 tags: Css3,Pildoritas
 ---

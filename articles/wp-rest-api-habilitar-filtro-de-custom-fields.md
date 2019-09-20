@@ -1,6 +1,6 @@
 ---
 title: 'Wp Rest Api: habilitar filtro de Custom Fields'
-date: Sun, 02 Oct 2016 16:04:38 +0000
+ctime: Sun, 02 Oct 2016 16:04:38
 published: true
 tags: AngularJS,Php,Pildoritas,Wordpress
 ---

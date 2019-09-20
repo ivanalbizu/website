@@ -1,6 +1,6 @@
 ---
 title: 'Angular consumiendo de WordPress Rest Api – Custom post types'
-date: Mon, 09 May 2016 20:07:31 +0000
+ctime: Mon, 09 May 2016 20:07:31
 published: true
 tags: AngularJS,JavaScript,Php,Wordpress
 ---

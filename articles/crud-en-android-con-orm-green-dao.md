@@ -1,6 +1,6 @@
 ---
 title: 'Crud en Android con ORM Green Dao'
-date: Wed, 19 Nov 2014 21:59:59 +0000
+ctime: Wed, 19 Nov 2014 21:59:59
 published: true
 tags: Android,Java
 ---

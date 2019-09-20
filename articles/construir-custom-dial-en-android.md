@@ -1,6 +1,6 @@
 ---
 title: 'Construir custom dial en Android'
-date: Sun, 19 Oct 2014 15:36:18 +0000
+ctime: Sun, 19 Oct 2014 15:36:18
 published: true
 tags: Android,Java
 ---

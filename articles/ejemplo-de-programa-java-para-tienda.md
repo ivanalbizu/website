@@ -1,6 +1,6 @@
 ---
 title: 'Ejemplo de programa Java para tienda'
-date: Sun, 14 Sep 2014 14:15:54 +0000
+ctime: Sun, 14 Sep 2014 14:15:54
 published: true
 tags: Java
 ---

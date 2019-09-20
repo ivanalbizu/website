@@ -1,6 +1,6 @@
 ---
 title: 'Programa Java gestionar ascensor'
-date: Tue, 11 Feb 2014 12:02:12 +0000
+ctime: Tue, 11 Feb 2014 12:02:12
 published: true
 tags: Java
 ---

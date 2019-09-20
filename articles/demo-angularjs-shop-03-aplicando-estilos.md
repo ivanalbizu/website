@@ -1,6 +1,6 @@
 ---
 title: 'Demo AngularJS shop – 03 Aplicando estilos'
-date: Mon, 18 Aug 2014 07:32:15 +0000
+ctime: Mon, 18 Aug 2014 07:32:15
 published: true
 tags: AngularJS,Css3,JavaScript
 ---

@@ -1,5 +1,5 @@
 <template>
-  <section class="bio has-background-gradient">
+  <section class="bio">
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-10-tablet">

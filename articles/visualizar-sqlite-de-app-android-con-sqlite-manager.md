@@ -1,6 +1,6 @@
 ---
 title: 'Visualizar SQLite de app Android con SQLite manager'
-date: Wed, 14 Jan 2015 15:34:59 +0000
+ctime: Wed, 14 Jan 2015 15:34:59
 published: true
 tags: Android,Eclipse,Pildoritas
 ---

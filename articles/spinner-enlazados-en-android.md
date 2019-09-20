@@ -1,6 +1,6 @@
 ---
 title: 'Spinner enlazados en Android'
-date: Fri, 31 Oct 2014 16:09:58 +0000
+ctime: Fri, 31 Oct 2014 16:09:58
 published: true
 tags: Android,Java
 ---

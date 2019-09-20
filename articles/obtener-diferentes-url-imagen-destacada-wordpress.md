@@ -1,6 +1,6 @@
 ---
 title: 'Obtener diferentes url de imagen destacada de Wordpress'
-date: Thu, 09 Jun 2016 19:46:35 +0000
+ctime: Thu, 09 Jun 2016 19:46:35
 published: true
 tags: Php,Pildoritas,Wordpress
 ---

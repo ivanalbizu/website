@@ -1,6 +1,6 @@
 ---
 title: 'Demo AngularJS shop - 02 Configurando menú principal'
-date: Fri, 08 Aug 2014 20:55:43 +0000
+ctime: Fri, 08 Aug 2014 20:55:43
 published: true
 tags: AngularJS,Css3,JavaScript
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'Ejemplo de colecciones en Java'
-date: Sun, 23 Mar 2014 19:16:26 +0000
+ctime: Sun, 23 Mar 2014 19:16:26
 published: true
 tags: Java
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'Ecuación de segundo grado en Java'
-date: Mon, 07 Apr 2014 07:11:45 +0000
+ctime: Mon, 07 Apr 2014 07:11:45
 published: true
 tags: Java,Pildoritas
 ---

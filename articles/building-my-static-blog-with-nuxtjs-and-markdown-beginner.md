@@ -163,8 +163,8 @@ With this data filled up, we can populate some elements:
         <div class="blog column is-10-tablet">
           <div class="title">{{ attributes.title }}</div>
           <div class="subtitle">
-            Published on {{attributes.ctime}}
-            by {{ attributes.author }}
+            Publicado{{attributes.ctime}}
+            por {{ attributes.author }}
           </div>
           <div v-html="content" class="blog-content content"></div>
         </div>

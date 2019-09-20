@@ -1,6 +1,6 @@
 ---
 title: 'Firebase + Google'
-date: Fri, 07 Nov 2014 21:28:10 +0000
+ctime: Fri, 07 Nov 2014 21:28:10
 published: true
 tags: Android,AngularJS,Pildoritas
 ---

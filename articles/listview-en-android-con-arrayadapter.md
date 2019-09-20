@@ -1,6 +1,6 @@
 ---
 title: 'ListView en Android con ArrayAdapter'
-date: Sun, 02 Nov 2014 15:14:15 +0000
+ctime: Sun, 02 Nov 2014 15:14:15
 published: true
 tags: Android,Java
 ---

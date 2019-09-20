@@ -1,6 +1,6 @@
 ---
 title: 'Parsear XML usando Java Stax Cursor'
-date: Sat, 15 Nov 2014 10:23:28 +0000
+ctime: Sat, 15 Nov 2014 10:23:28
 published: true
 tags: Java
 ---

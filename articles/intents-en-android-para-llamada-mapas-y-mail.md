@@ -1,6 +1,6 @@
 ---
 title: 'Intents en Android para llamada, mapas y mail'
-date: Tue, 28 Oct 2014 20:41:04 +0000
+ctime: Tue, 28 Oct 2014 20:41:04
 published: true
 tags: Android,Java
 ---

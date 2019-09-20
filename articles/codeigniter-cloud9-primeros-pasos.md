@@ -1,6 +1,6 @@
 ---
 title: 'Codeigniter + Cloud9. Primeros pasos'
-date: Tue, 17 Feb 2015 22:13:10 +0000
+ctime: Tue, 17 Feb 2015 22:13:10
 published: true
 tags: Codeigniter,Php,Pildoritas
 ---

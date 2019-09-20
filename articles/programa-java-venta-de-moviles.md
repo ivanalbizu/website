@@ -1,6 +1,6 @@
 ---
 title: 'Programa java venta de móviles'
-date: Sun, 02 Mar 2014 22:24:10 +0000
+ctime: Sun, 02 Mar 2014 22:24:10
 published: true
 tags: Java
 ---

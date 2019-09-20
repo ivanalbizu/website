@@ -1,23 +1,10 @@
 <template>
-  <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <div class="navbar-item">
-        <div class="title nirebu-title has-background-gradient">
-          <nuxt-link to="/">&: ivan.albizu</nuxt-link>
-        </div>
-      </div>
-      <div class="navbar-burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar__title">
+      <nuxt-link to="/">&: ivan.albizu</nuxt-link>
     </div>
-      <div class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <nuxt-link class="button is-primary" to="/blog/">Blog</nuxt-link>
-        </div>
-      </div>
+    <div class="navbar__menu">
+      <nuxt-link class="button" to="/blog/">Blog</nuxt-link>
     </div>
   </nav>
 </template>

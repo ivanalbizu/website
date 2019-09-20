@@ -1,6 +1,6 @@
 ---
 title: 'AngularJS consumiendo de servicio Django'
-date: Mon, 09 Nov 2015 11:29:53 +0000
+ctime: Mon, 09 Nov 2015 11:29:53
 published: true
 tags: AngularJS,JavaScript
 ---
@@ -18,7 +18,7 @@ En la "Factory" BookServices (similar para autores) se definen los métodos GET,
       'http://127.0.0.1:8000/books/:id', {}, {
         get: {method: 'GET', cache: false, isArray: false},
         save: {method: 'POST', cache: false, isArray: false},
-        update: {method: 'PUT', cache: false, isArray: false},
+        upctime: {method: 'PUT', cache: false, isArray: false},
         delete: {method: 'DELETE', cache: false, isArray: false}
       });
   }\])

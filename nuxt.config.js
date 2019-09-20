@@ -8,10 +8,10 @@ function getSlugs(post, _) {
 }
 
 module.exports = {
-  mode: "spa",
+  mode: "universal",
   head: {
     title: "Iván Albizu | Maquetador Web",
-    titleTemplate: "%s - Iván Albizu | Maquetador Web",
+    titleTemplate: "%s - Maquetador Web",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -19,24 +19,24 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "Hi, I'm Nicolò, a Linux system administrator focusing on email deliverability, system standardisation, deployment automation and containerisation."
+          "Bienvenido a mis sitio web, podrás ver publicaciones de mi Blog con las tecnologías que más me divierten."
       },
       {
         hid: "keywords",
         name: "keywords",
         content:
-          "vuejs, nuxt, javascript, sysadmin, frontend, ansible, mongodb, docker"
+          "vuejs, nuxt, javascript, maquetador, frontend"
       },
       { name: "robots", hid: "robots" , content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@nirebu" }
+      { name: "twitter:site", content: "@ivan_albizu" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     bodyAttrs: {
-      class: "has-navbar-fixed-top"
+      class: ""
     },
     htmlAttrs: {
-      lang: "en-GB"
+      lang: "es-ES"
     }
   },
   loading: { color: "#fff" },
@@ -44,7 +44,7 @@ module.exports = {
     host: "0.0.0.0",
     port: 3000
   },
-  css: ["assets/main.scss", "assets/fonts/capriola.css"],
+  css: ["assets/main.scss"],
   plugins: [],
   modules: [
     "@nuxtjs/style-resources",
@@ -53,19 +53,8 @@ module.exports = {
     [
       "@nuxtjs/sitemap",
       {
-        hostname: 'https://nirebu.com',
+        hostname: 'https://ivanalbizu.eu',
         gzip: true,
-      }
-    ],
-    [
-      "nuxt-fontawesome",
-      {
-        imports: [
-          {
-            set: "@fortawesome/free-brands-svg-icons",
-            icons: ["fab"]
-          }
-        ]
       }
     ]
   ],
@@ -135,7 +124,7 @@ module.exports = {
 // only add `router.base = '/website/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
-    base: '/'
+    base: '/website/'
   }
 } : {}
 

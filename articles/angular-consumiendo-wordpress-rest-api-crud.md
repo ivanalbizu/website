@@ -1,6 +1,6 @@
 ---
 title: 'Angular consumiendo de WordPress Rest Api – Crud'
-date: Fri, 06 May 2016 15:39:14 +0000
+ctime: Fri, 06 May 2016 15:39:14
 published: true
 tags: AngularJS,JavaScript,Wordpress
 ---

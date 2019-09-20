@@ -1,6 +1,6 @@
 ---
 title: 'Visualizar SQLite de app Android con Eclipse'
-date: Tue, 13 Jan 2015 16:57:28 +0000
+ctime: Tue, 13 Jan 2015 16:57:28
 published: true
 tags: Android,Eclipse
 ---

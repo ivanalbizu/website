@@ -1,6 +1,6 @@
 ---
 title: 'Tabs en Android'
-date: Sun, 14 Dec 2014 10:35:52 +0000
+ctime: Sun, 14 Dec 2014 10:35:52
 published: true
 tags: Android,Java
 ---

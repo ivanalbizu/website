@@ -1,6 +1,6 @@
 ---
 title: 'Formulario web centrado'
-date: Mon, 03 Mar 2014 22:18:41 +0000
+ctime: Mon, 03 Mar 2014 22:18:41
 published: true
 tags: Css3,Pildoritas
 ---

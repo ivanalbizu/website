@@ -1,6 +1,6 @@
 ---
 title: 'Angular consumiendo de WordPress Rest Api – Trabajando con usuarios'
-date: Sun, 08 May 2016 12:32:51 +0000
+ctime: Sun, 08 May 2016 12:32:51
 published: true
 tags: AngularJS,JavaScript,Wordpress
 ---

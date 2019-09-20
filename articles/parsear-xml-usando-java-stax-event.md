@@ -1,6 +1,6 @@
 ---
 title: 'Parsear XML usando Java Stax Event'
-date: Wed, 19 Nov 2014 17:17:33 +0000
+ctime: Wed, 19 Nov 2014 17:17:33
 published: true
 tags: Java
 ---

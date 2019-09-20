@@ -1,6 +1,6 @@
 ---
 title: 'GridView con librería Picasso ViewHolder'
-date: Sat, 27 Dec 2014 18:09:17 +0000
+ctime: Sat, 27 Dec 2014 18:09:17
 published: true
 tags: Android,Java
 ---

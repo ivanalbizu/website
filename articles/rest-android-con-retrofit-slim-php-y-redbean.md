@@ -1,6 +1,6 @@
 ---
 title: 'Rest Android con Retrofit, Slim php y RedBean'
-date: Sun, 19 Apr 2015 21:10:57 +0000
+ctime: Sun, 19 Apr 2015 21:10:57
 published: true
 tags: Android,Java, Php
 ---

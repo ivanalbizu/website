@@ -1,6 +1,6 @@
 ---
 title: 'Angular consumiendo de WordPress Rest Api – Endpoints'
-date: Tue, 10 May 2016 18:02:38 +0000
+ctime: Tue, 10 May 2016 18:02:38
 published: true
 tags: AngularJS,JavaScript,Wordpress
 ---

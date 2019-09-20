@@ -1,6 +1,6 @@
 ---
 title: 'Programa Java gestionar alumnos'
-date: Tue, 25 Feb 2014 21:07:50 +0000
+ctime: Tue, 25 Feb 2014 21:07:50
 published: true
 tags: Java
 ---

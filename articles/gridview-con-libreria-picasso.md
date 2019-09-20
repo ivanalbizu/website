@@ -1,6 +1,6 @@
 ---
 title: 'GridView con librería Picasso I'
-date: Mon, 15 Dec 2014 15:40:06 +0000
+ctime: Mon, 15 Dec 2014 15:40:06
 published: true
 tags: Android,Java
 ---

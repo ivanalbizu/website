@@ -1,6 +1,6 @@
 ---
 title: 'Maquetación página con Haml y Sass'
-date: Thu, 31 Jul 2014 10:51:51 +0000
+ctime: Thu, 31 Jul 2014 10:51:51
 published: true
 tags: Css3,Sass
 ---

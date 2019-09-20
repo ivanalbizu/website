@@ -1,6 +1,6 @@
 ---
 title: 'Dos campos Select relacionados en AngularJS'
-date: Mon, 10 Oct 2016 09:58:28 +0000
+ctime: Mon, 10 Oct 2016 09:58:28
 published: true
 tags: AngularJS,JavaScript,Pildoritas
 ---

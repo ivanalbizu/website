@@ -1,6 +1,6 @@
 ---
 title: 'Demo AngularJS shop - 04 Directivas'
-date: Tue, 19 Aug 2014 21:04:19 +0000
+ctime: Tue, 19 Aug 2014 21:04:19
 published: true
 tags: AngularJS,JavaScript
 ---

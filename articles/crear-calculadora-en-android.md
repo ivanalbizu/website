@@ -1,6 +1,6 @@
 ---
 title: 'Crear calculadora en Android'
-date: Sun, 26 Oct 2014 15:33:41 +0000
+ctime: Sun, 26 Oct 2014 15:33:41
 published: true
 tags: Android,Java
 ---

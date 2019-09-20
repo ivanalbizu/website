@@ -1,6 +1,6 @@
 ---
 title: 'AngularJS Wordpress Theme'
-date: Wed, 26 Oct 2016 21:09:21 +0000
+ctime: Wed, 26 Oct 2016 21:09:21
 published: true
 tags: AngularJS,JavaScript,Php,Sass,Wordpress
 ---

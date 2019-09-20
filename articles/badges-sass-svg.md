@@ -1,6 +1,6 @@
 ---
 title: 'Badges con SASS y SVG'
-date: Tue, 11 Oct 2016 15:11:19 +0000
+ctime: Tue, 11 Oct 2016 15:11:19
 published: true
 tags: Pildoritas,Sass
 ---

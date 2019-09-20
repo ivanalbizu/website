@@ -1,9 +1,9 @@
 ---
 title: Angular consumiendo de AEMET
 published: true
-description: Angular consumiendo datos de la AEMET en formato Xml. Los datos que proporciona la AEMET
+description: Angular consumiendo datos de la AEMET en formato Xml.
 tags: AngularJS,JavaScript,Php
-ctime: Wed, 07 Dec 2016 15:46:05 +0000
+ctime: Wed, 07 Dec 2016
 cover_image: angular-consumiendo-aemet.jpg
 ---
 

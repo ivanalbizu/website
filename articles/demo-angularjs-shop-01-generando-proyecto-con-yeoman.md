@@ -1,6 +1,6 @@
 ---
 title: 'Demo AngularJS shop - 01 Generando proyecto con Yeoman'
-date: Thu, 07 Aug 2014 14:04:43 +0000
+ctime: Thu, 07 Aug 2014 14:04:43
 published: true
 tags: AngularJS,Css3,JavaScript
 ---

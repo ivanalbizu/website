@@ -1,6 +1,6 @@
 ---
 title: 'Instalación de GIT en Windows'
-date: Tue, 29 Oct 2013 20:58:00 +0000
+ctime: Tue, 29 Oct 2013 20:58:00
 published: true
 tags: Pildoritas
 ---

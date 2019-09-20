@@ -1,6 +1,6 @@
 ---
 title: 'Animación con css3 - Avión en movimiento'
-date: Fri, 21 Feb 2014 09:47:56 +0000
+ctime: Fri, 21 Feb 2014 09:47:56
 published: true
 tags: Css3,JavaScript
 ---

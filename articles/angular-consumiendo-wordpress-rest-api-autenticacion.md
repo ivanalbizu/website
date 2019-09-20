@@ -1,7 +1,7 @@
 ---
 title: 'Angular consumiendo de Wordpress Rest Api - Autenticación'
-date: Thu, 05 May 2016 13:48:16 +0000
 published: true
+ctime: Thu, 05 May 2016 13:48:16
 tags: AngularJS,JavaScript,Php,Wordpress
 ---
 

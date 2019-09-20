@@ -1,6 +1,6 @@
 ---
 title: 'Codio y Wordpress'
-date: Thu, 21 Aug 2014 14:22:36 +0000
+ctime: Thu, 21 Aug 2014 14:22:36
 published: true
 tags: Pildoritas,Wordpress
 ---

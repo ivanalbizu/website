@@ -1,6 +1,6 @@
 ---
 title: 'Menú contextual en Android'
-date: Fri, 28 Nov 2014 20:28:58 +0000
+ctime: Fri, 28 Nov 2014 20:28:58
 published: true
 tags: Android,Java
 ---

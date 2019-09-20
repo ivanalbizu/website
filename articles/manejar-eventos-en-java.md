@@ -1,6 +1,6 @@
 ---
 title: 'Manejar eventos en Java'
-date: Sat, 03 May 2014 15:39:00 +0000
+ctime: Sat, 03 May 2014 15:39:00
 published: true
 tags: Java,Pildoritas
 ---
