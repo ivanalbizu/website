@@ -1,8 +1,9 @@
 ---
-title: 'Menú contextual en Android'
-ctime: Fri, 28 Nov 2014 20:28:58
+title: Menú contextual en Android
 published: true
+description: Creación de menú contextual para App Android
 tags: Android,Java
+ctime: Fri, 28 Nov 2014 20:28:58
 ---
 
 El menú opciones en Android y con Eclipse se puede crear directamente al generar un Activity usando la plantilla "Blank Activity". En esta publicación he querido construirlo paso a paso, creando todas las líneas de código. Se trabajará sobre dos archivos:

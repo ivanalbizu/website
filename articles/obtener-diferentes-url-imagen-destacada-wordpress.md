@@ -1,8 +1,9 @@
 ---
-title: 'Obtener diferentes url de imagen destacada de Wordpress'
-ctime: Thu, 09 Jun 2016 19:46:35
+title: Obtener diferentes url de imagen destacada de Wordpress
 published: true
+description: Creación de función Php en Wordpress para obtener diferentes Urls de imagen destacada
 tags: Php,Pildoritas,Wordpress
+ctime: Thu, 09 Jun 2016 19:46:35
 ---
 
 En esta entrada explicaré como obtener diferentes url de imagen destacada de Wordpress. Al añadir  una imagen destacada a una entrada de Wordpress podemos acceder a la misma mediante la función [the_post_thumbnail ( string|array $size = 'post-thumbnail', string|array $attr = '' )](https://developer.wordpress.org/reference/functions/the_post_thumbnail/) en la que se pueden especificar atributos y tamaño de imagen a obtener. En un proyecto de Ionic que estoy realizando me interesaba crear una función en Wordpress que me devolviera diferentes tamaños de imagen para cada tipo de entrada.

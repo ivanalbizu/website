@@ -1,8 +1,9 @@
 ---
-title: 'Tabs en Android'
-ctime: Sun, 14 Dec 2014 10:35:52
+title: Tabs en Android
 published: true
+description: Sistemas de Tabs en Android usando TabHost, TabWidget LinearLayout
 tags: Android,Java
+ctime: Sun, 14 Dec 2014 10:35:52
 ---
 
 Crear Tabs en Android es sencillo. Necesitaremos el archivo XML.

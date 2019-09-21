@@ -1,8 +1,9 @@
 ---
-title: 'ListView en Android con ArrayAdapter'
-ctime: Sun, 02 Nov 2014 15:14:15
+title: ListView en Android con ArrayAdapter
 published: true
+description: Pintado de listas con ListView en Android mediante ArrayAdapter
 tags: Android,Java
+ctime: Sun, 02 Nov 2014 15:14:15
 ---
 
 **ListView** en Android con **ArrayAdapter** usando una clase modelo y su adaptador para definir cada ítem de la lista. Los archivos de este programa van a ser:

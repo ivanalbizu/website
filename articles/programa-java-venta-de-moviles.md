@@ -1,8 +1,9 @@
 ---
-title: 'Programa java venta de móviles'
-ctime: Sun, 02 Mar 2014 22:24:10
+title: Programa java venta de móviles
 published: true
+description: Programa java que simula la gestión de ventas de teléfonos, permitiendo mostrar atributos como marca, precio y pago
 tags: Java
+ctime: Sun, 02 Mar 2014 22:24:10
 ---
 
 Programa java venta de móviles desarrollado en el curso formativo de aplicaciones para móviles. El programa consta de tres clases: Principal.java, Movil.java y GestionMovil.java. La clase **Principal.java** gestiona el conjunto de la aplicación java. Dicha clase tiene como atributos precio, caja, marca, repetir programa y la opción seleccionada por el usuario.

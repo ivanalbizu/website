@@ -1,8 +1,9 @@
 ---
-title: 'Visualizar SQLite de app Android con Eclipse'
-ctime: Tue, 13 Jan 2015 16:57:28
+title: Visualizar SQLite de app Android con Eclipse
 published: true
+description: Visualizar base de datos SQLite en aplicación Android desde IDE Eclipse
 tags: Android,Eclipse
+ctime: Tue, 13 Jan 2015 16:57:28
 ---
 
 Mediante un plugin Jar y unos sencillos pasos se puede visualizar una base de datos SQLite Pasos:

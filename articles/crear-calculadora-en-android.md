@@ -1,5 +1,5 @@
 ---
-title: 'Crear calculadora en Android'
+title: Crear calculadora en Android
 description: Aplicación Android en la que se construye una calculadora
 published: true
 tags: Android,Java
