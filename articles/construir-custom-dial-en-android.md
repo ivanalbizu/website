@@ -1,8 +1,9 @@
 ---
-title: 'Construir custom dial en Android'
-ctime: Sun, 19 Oct 2014 15:36:18
+title: Construir custom dial en Android
 published: true
+description: Proyecto Android para realizar un custom dial
 tags: Android,Java
+ctime: Sun, 19 Oct 2014 15:36:18
 ---
 
 Construir custom dial en Android con pocas líneas de código. Crearé un proyecto Android en el que sólo añada esta funcionalidad. El proyecto contendrá sólo un archivo java llamado MainActivity.java y un archivo xml asociado llamado activity_main.xml encargado de contener el aspecto gráfico. Empezando por el aspecto visual, el archivo activity_main.xml contendrá:

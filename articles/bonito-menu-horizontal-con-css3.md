@@ -1,8 +1,9 @@
 ---
-title: 'Bonito menú horizontal con Css3'
-ctime: Thu, 13 Feb 2014 18:58:52
+title: Bonito menú horizontal con Css3
+description: Menú horizontal con css3
 published: true
 tags: Css3
+ctime: Thu, 13 Feb 2014 18:58:52
 ---
 
 Menú horizontal construido con CSS3. Con pocas líneas de código se consigue este menú. Lo he adaptado para que se vea bien en la entrada de mi blog. Si se quiere se puede adaptar perfectamente para una web de ancho corriente (980px). Cambiando el ancho de contenedor de 700px a 980px y añadiendo dos ítem más de menú, la apariencia del **menú con Css3** queda muy bonita. Tiene una pequeña animación a situar el ratón sobre uno de los elementos del menú. Se trata de  cambiar el color y la dimensión e del ítem en cuestión. Para este último punto, la opción que me ha parecido más fácil de implementar ha sido aumentar (del selector "a") el **line-height 4px** y un **margin-top  -2px** para conseguir la apariencia de centrado en vertical. Aquí se puede ver el código fuente del archivo _css_.

@@ -1,8 +1,9 @@
 ---
-title: 'Demo AngularJS shop - 04 Directivas'
-ctime: Tue, 19 Aug 2014 21:04:19
+title: Demo AngularJS shop - 04 Directivas
 published: true
+description: Primera parte de aplicación Angular 1 para construir listado de productos. Aplicando Directivas
 tags: AngularJS,JavaScript
+ctime: Tue, 19 Aug 2014 21:04:19
 ---
 
 En esta ocasión para el proyecto demo sobre **AngularJS** trabajaré sobre el catálogo de productos. Los productos tendrán características como nombre, precio, descripción, en venta, stock e imágenes. Para empezar, abrimos el archivo _scripts/controllers/product.js_ y antes de la declaración del controlador añadimos el array de productos:

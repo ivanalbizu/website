@@ -1,8 +1,9 @@
 ---
-title: 'Demo AngularJS shop – 03 Aplicando estilos'
-ctime: Mon, 18 Aug 2014 07:32:15
+title: Demo AngularJS shop – 03 Aplicando estilos
 published: true
+description: Primera parte de aplicación Angular 1 para construir listado de productos. Aplicando estilos css
 tags: AngularJS,Css3,JavaScript
+ctime: Mon, 18 Aug 2014 07:32:15
 ---
 
 En esta entrada explicaré los principales estilos aplicados (alguno puede que lo aplique a posteriori sobre la marcha). Para no hacer muy extensa esta entrada (y el vídeo correspondiente) no explicaré todo, sobre todo de CSS, ya que viendo el código y sus comentarios sobran.

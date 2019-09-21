@@ -1,8 +1,9 @@
 ---
-title: 'Firebase + Google'
-ctime: Fri, 07 Nov 2014 21:28:10
+title: Firebase + Google
 published: true
+description: Google entra a 'formar parte de Firebase' en 2014. Principales características de la versión gratuita de Firebase
 tags: Android,AngularJS,Pildoritas
+ctime: Fri, 07 Nov 2014 21:28:10
 ---
 
 Firebase anunció hace unos días (21 Octubre 2.014) en su blog que Google entraba a "formar parte" en Firebase. Lo que poco que he experimentado con Firebase fue para probar AngularJS y trabajar con la información guardada en Firebase. La información más importante a destacar es:

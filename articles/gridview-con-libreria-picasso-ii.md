@@ -1,8 +1,9 @@
 ---
-title: 'GridView con librería Picasso II'
-ctime: Wed, 17 Dec 2014 18:17:18
+title: GridView con librería Picasso II
 published: true
+description: Segunda publicación sobre la construcción de GridView de Android usando la librería Picasso
 tags: Android,Java
+ctime: Wed, 17 Dec 2014 18:17:18
 ---
 
 Continuando con mi publicación anterior sobre [GridView con librería Picasso I](http://ivanalbizu.eu/gridview-con-libreria-picasso/ "GridView con librería Picasso"), voy a implementar:

@@ -1,8 +1,9 @@
 ---
-title: 'GridView con librería Picasso ViewHolder'
-ctime: Sat, 27 Dec 2014 18:09:17
+title: GridView con librería Picasso ViewHolder
 published: true
+description: Construcción de GridView de Android usando la viewHolder
 tags: Android,Java
+ctime: Sat, 27 Dec 2014 18:09:17
 ---
 
 En esta entrada voy a realizar una variante del primer post sobre [librería Picasso.](http://ivanalbizu.eu/gridview-con-libreria-picasso/ "Artículo uso librería Picasso") En este caso mostraré una información adicional. Se trata de ubicar un TextView que muestre cual es el dominio extraído de la URL de la imagen. Voy a crear para ello nuevos archivos:

@@ -1,8 +1,9 @@
 ---
-title: 'Angular consumiendo de WordPress Rest Api – Crud'
-ctime: Fri, 06 May 2016 15:39:14
+title: Angular consumiendo de WordPress Rest Api – Crud
 published: true
+description: Angular consumiendo de WordPress Rest Api – Crud
 tags: AngularJS,JavaScript,Wordpress
+ctime: Fri, 06 May 2016 15:39:14
 ---
 
 Siguiendo con la entrada anterior en la que configuraba la [Rest Api con Wordpress y Autenticación JWT con AngularJS](http://ivanalbizu.eu/angular-consumiendo-wordpress-rest-api-autenticacion/), voy a continuar ampliando el proyecto. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Visitando la [documentación del Plugin Wp Rest Api](http://v2.wp-api.org/)  podemos ver todo lo que se puede hacer, en concreto vamos a realizar:

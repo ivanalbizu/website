@@ -1,8 +1,9 @@
 ---
-title: 'Ecuación de segundo grado en Java'
-ctime: Mon, 07 Apr 2014 07:11:45
+title: Ecuación de segundo grado en Java
 published: true
+description: Ecuación de segundo grado construida en Java
 tags: Java,Pildoritas
+ctime: Mon, 07 Apr 2014 07:11:45
 ---
 
 En la clase **CEcuacion2Grado.java** se realizan las operaciones necesarias para resolver una ecuación de segundo y lanzar las excepciones principales. La clase contiene dos métodos que serán los que devuelvan los resultados: **public double calcularUnSigno(double a, double b, double c) {...}** y **public double calcularOtroSigno(double a, double b, double c) {...}**. El primer método devuelve un resultado tras realizar la operación a este fragmento de la ecuación: -b-... y el segundo método tras realizar: -b+... Ambos métodos reciben tres parámetros dobles introducidos por el usuario y ambas lanzan una excepción que es definida en este programa. También se crean dos métodos más para lanzar la excepción que pudieran surgir en el programa. El método **public double calcularDiscriminante(double a, double b, double c) {...}** sirve para saber si el discriminante (operación realizada dentro de la raíz cuadrada) es negativo, y el método **public double comprobarDivisible(double a) {...}** se usa para saber si en la resolución de la ecuación a introducido un valor igual a 0 como divisor.

@@ -1,8 +1,9 @@
 ---
-title: 'Animaciones CSS3 - transform: translate (x, y)   vs   left(x) top(y)'
-ctime: Sun, 17 Nov 2013 22:16:22
+title: 'Animaciones CSS3 - transform: translate (x, y) VS left(x) top(y)'
+description: Animación css3 usando transform translate y comparado a posicionamiento con left y top
 published: true
 tags: Css3,Pildoritas
+ctime: Sun, 17 Nov 2013 22:16:22
 ---
 
 Es cierto que hacer una animación variando por ejemplo atributos en vertical (top) y en horizontal (left) es una práctica común, pero puede mejorar la animación usando otro método. Si usamos _"transform: translate (x, y)_". Usando translate hay que dar las unidades entre paréntesis del desplazamiento en horizontal primero y vertical segundo. Aunque mejor será verlo en un ejemplo:

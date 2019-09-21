@@ -1,11 +1,12 @@
 ---
-title: 'Formulario web centrado'
-ctime: Mon, 03 Mar 2014 22:18:41
+title: Formulario web centrado
+description: Formulario html centrado en la página
 published: true
 tags: Css3,Pildoritas
+ctime: Mon, 03 Mar 2014 22:18:41
 ---
 
-Formulario web centrado en la página web noes complicado. El método aquí explicado puede usarse para cualquier elemento, es válido para un formulario web como para cualquier otro elemento o caja. Para conseguir el centrado he posicionado el contenedor de manera absolute y definido sus atributos left, right, top y bottom a 0 para que ocupe todo el ancho y alto de la pantalla y dando márgenes autos en las cuatro direcciones. A dicho contenedor se le da width y height en porcentajes y para que no quede o muy pequeño o grande se le da mínimos y máximos a los width y height. Adicionalmente, para darle un poco más de juego al formulario web he insertado imágenes de background a cada uno de los campos input. El código **css**:
+Formulario web centrado en la página web no es complicado. El método aquí explicado puede usarse para cualquier elemento, es válido para un formulario web como para cualquier otro elemento o caja. Para conseguir el centrado he posicionado el contenedor de manera absolute y definido sus atributos left, right, top y bottom a 0 para que ocupe todo el ancho y alto de la pantalla y dando márgenes autos en las cuatro direcciones. A dicho contenedor se le da width y height en porcentajes y para que no quede o muy pequeño o grande se le da mínimos y máximos a los width y height. Adicionalmente, para darle un poco más de juego al formulario web he insertado imágenes de background a cada uno de los campos input. El código **css**:
 
 ```
 *{

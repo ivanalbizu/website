@@ -1,11 +1,12 @@
 ---
-title: 'Animación con css3 - Avión en movimiento'
-ctime: Fri, 21 Feb 2014 09:47:56
+title: Animación con css3 - Avión en movimiento
 published: true
+description: Animación con css3 para crear efecto de movimiento
 tags: Css3,JavaScript
+ctime: Fri, 21 Feb 2014 09:47:56
 ---
 
-**Animación con css3** para crear movimiento de un avión y de su fondo. Se crean controles, mediante unas simple **funciones javascript**, que permitan aumentar o disminuir la velocidad, parar y reanudar la animación css3. Para esta animación he necesitado:
+**Animación con css3** para crear movimiento de un avión y de su fondo. Se crean controles, mediante simples **funciones javascript**, que permitan aumentar o disminuir la velocidad, parar y reanudar la animación css3. Para esta animación he necesitado:
 
 *   Una **imagen de fondo** simétrica .
 *   **Imagen de un avión**.
