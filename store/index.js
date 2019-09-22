@@ -9,21 +9,12 @@ export const mutations = {
 };
 
 export const actions = {
-  /*
-    nuxtServerInit will run everytime the app is launched or navigated
-    directly from the browser (not when using the <nuxt-link> component)
-
-    This function will read the articles folder and commit to the store
-    the attributes (maybe it will also store the article contents)
-    so we can render the blog page in the right order and also
-    navigate back to it
-  */
   async nuxtServerInit ({ commit }) {
     const fm = require('front-matter');
     const moment = require('moment');
-    var files = await require.context('~/articles/', false, /\.md$/);
-    var posts = files.keys().map( key => {
-      var res = files(key);
+    let files = await require.context('~/articles/', false, /\.md$/);
+    let posts = files.keys().map( key => {
+      let res = files(key);
       res.slug = key.slice(2, -3);
       return res;
     }).map(post => {
@@ -31,9 +22,7 @@ export const actions = {
       attributes.slug = post.slug;
       attributes.ctime = moment(attributes.ctime).format("DD/MM/YYYY")
       return attributes;
-    }).sort( (a,b) => {
-      return a.ctime < b.ctime;
-    })
+    }).sort((page1, page2) => page2.ctime - page1.ctime)
     await commit('set',posts);
   }
 };

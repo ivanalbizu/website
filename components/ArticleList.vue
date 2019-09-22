@@ -5,17 +5,13 @@
     </header>
     <article v-for="(post,key) in bloglist" :key="key" class="blog">
       <nuxt-link :to="`/blog/${post.slug}`" class="post-title">{{ post.title }}</nuxt-link>
-      <div v-if="post.cover_image" class="">
-        <nuxt-link :to="`/blog/${post.slug}`">
-          <figure class="image">
-            <img
-              :src="require(`~/assets/images/articles/${post.cover_image}`)"
-              :alt="post.cover_image_cp"
-              loading="lazy"
-            >
-          </figure>
-        </nuxt-link>
-      </div>
+      <figure v-if="post.cover_image" class="blog__img">
+        <img
+          :src="require(`~/assets/images/articles/${post.cover_image}`)"
+          :alt="post.cover_image_cp"
+          loading="lazy"
+        >
+      </figure>
       <p class="blog__excerpt">{{ post.description }}</p>
       <div class="blog__details">
         <time class="time">{{ post.ctime }}</time>
@@ -52,6 +48,9 @@ export default {
 <style lang="scss">
 .blog {
   margin-bottom: 3rem;
+  &__img {
+    margin-bottom: 1.5rem;
+  }
   &__excerpt {
     margin-bottom: 1rem;
   }

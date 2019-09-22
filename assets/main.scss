@@ -3,11 +3,12 @@
 
 $primary: #db0a5b;
 $link: $primary;
-$link-hover:#940DFF;
+$link-hover: #940DFF;
 
 :root {
   font-size: 62.5%;
   body {
+    font-family: Helvetica, sans-serif;
     font-size: 1.6rem;
     margin: .625rem;
     line-height: 1.4em;
@@ -15,12 +16,11 @@ $link-hover:#940DFF;
     color: #111;
   }
 }
-body {
-  font-family: Helvetica, sans-serif;
-}
 img {
   max-width: 100%;
 }
+p { margin-bottom: 1rem; }
+pre { margin-bottom: 2rem; }
 a {
   color: $primary;
   transition: color .15s ease-out;
