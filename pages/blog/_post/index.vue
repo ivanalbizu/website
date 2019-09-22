@@ -1,7 +1,7 @@
 <template>
-  <section :key="$route.params.post" class="section">
+  <section :key="$route.params.post" class="content">
     <header>
-      <h1>{{ attributes.title }}</h1>
+      <h1 class="page-title">{{ attributes.title }}</h1>
       <blockquote>{{ attributes.description }}</blockquote>
       <p class="">
         Publicado <time>{{require('moment')(attributes.ctime).format("DD/MM/YYYY")}}</time>
@@ -14,7 +14,7 @@
       <div v-html="content"></div>
     </article>
     <footer class="">
-      <nuxt-link to="/blog/" class="">&larr; Back to blog</nuxt-link>
+      <nuxt-link to="/blog/" class="">&larr; Volver al blog</nuxt-link>
     </footer>
   </section>
 </template>
@@ -50,24 +50,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.blog {
-  padding: 1em;
-}
+<style lang="scss">
 
-.blog header {
-  margin-bottom: 1em;
-}
-
-.blog .subtitle {
-  font-size: 1rem;
-}
-
-.blog-content >>> h1 {
-  font-size: 1.5rem;
-}
-
-blockquote {
-  margin-bottom: 1em;
-}
 </style>

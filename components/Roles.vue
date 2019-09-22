@@ -1,5 +1,5 @@
 <template>
-  <section class="section roles">
+  <section class="content roles">
     <div class="container is-narrow">
       <div class="box">
         <div class="content has-text-centered">

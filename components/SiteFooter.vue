@@ -1,19 +1,15 @@
 <template>
   <footer class="footer">
-    <div class="columns is-centered">
-      <div class="column is-one-fifth">
-        <div class="columns fa-lg has-text-centered is-narrow">
-          <div class="column" v-for="(social,key) in socials" :key="key">
-            <a :href="social.link" target="_blank" :aria-label="social.label" rel="noopener">
-              {{social.label}}
-            </a>
-          </div>
-        </div>
+    <div class="footer__social">
+      <div v-for="(social,key) in socials" :key="key">
+        <a :href="social.link" target="_blank" :aria-label="social.label" rel="noopener">
+          {{social.label}}
+        </a>
       </div>
     </div>
-    <div class="content has-text-centered">
+    <div class="footer__copy">
       <p>Iván Albizu</p>
-      <p><a href="https://vuejs.org/">Vuejs</a> + <a href="https://nuxtjs.org/">Nuxtjs</a></p>
+      <a href="https://vuejs.org/" target="_blank">Vuejs</a> + <a href="https://nuxtjs.org/" target="_blank">Nuxtjs</a>
     </div>
   </footer>
 </template>
@@ -33,3 +29,21 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  &__social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    & > div {
+      padding: 0 1rem;
+    }
+  }
+}
+</style>

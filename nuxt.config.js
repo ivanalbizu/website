@@ -58,8 +58,13 @@ module.exports = {
       }
     ]
   ],
+  styleResources: {
+    scss: [
+      'assets/main.scss'
+    ]
+  },
   googleAnalytics: {
-    id: "UA-133940660-1"
+    id: ""
   },
   build: {
     extend(config, { isDev, isClient }) {

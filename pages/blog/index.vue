@@ -13,7 +13,5 @@ export default {
 </script>
 
 <style>
-.preview-image {
-  width: 12vw;
-}
+
 </style>

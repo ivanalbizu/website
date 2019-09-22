@@ -1,13 +1,54 @@
-$primary: #6500E5;
+@import 'reset';
+@import "../node_modules/highlight.js/styles/darcula.css";
+
+$primary: #db0a5b;
 $link: $primary;
 $link-hover:#940DFF;
 
+:root {
+  font-size: 62.5%;
+  body {
+    font-size: 1.6rem;
+    margin: .625rem;
+    line-height: 1.4em;
+    letter-spacing: .015rem;
+    color: #111;
+  }
+}
 body {
   font-family: Helvetica, sans-serif;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: #000;
 }
 img {
   max-width: 100%;
+}
+a {
+  color: $primary;
+  transition: color .15s ease-out;
+  &:hover,
+  &:focus {
+    color: $link-hover;
+    transition: color .2s ease-out;
+  }
+}
+
+.main {
+  margin: auto;
+  @media(min-width: 60rem) {
+    max-width: 110rem;
+  }
+}
+.content {
+  margin: 0 auto 4rem;
+}
+//
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+.post-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  display: inline-block;
 }

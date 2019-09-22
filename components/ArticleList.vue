@@ -1,32 +1,29 @@
 <template>
-  <section class="section">
+  <section class="content">
     <header class="">
-      <h1>Últimas publicaciones</h1>
+      <h1 class="page-title">Últimas publicaciones</h1>
     </header>
-    <article v-for="(post,key) in bloglist" :key="key" class="columns is-centered">
-      <div v-if="post.cover_image" class="column is-3-desktop">
+    <article v-for="(post,key) in bloglist" :key="key" class="blog">
+      <nuxt-link :to="`/blog/${post.slug}`" class="post-title">{{ post.title }}</nuxt-link>
+      <div v-if="post.cover_image" class="">
         <nuxt-link :to="`/blog/${post.slug}`">
           <figure class="image">
             <img
-              :src="require(`~/assets/images/articles/${post.cover_image}?size=640`)"
+              :src="require(`~/assets/images/articles/${post.cover_image}`)"
               :alt="post.cover_image_cp"
               loading="lazy"
             >
           </figure>
         </nuxt-link>
       </div>
-      <div class="">
-        <p class="">
-          <nuxt-link :to="`/blog/${post.slug}`">{{ post.title }}</nuxt-link>
-        </p>
-        <p class="">{{ post.description }}</p>
-        <div class="">
-          <p class="">Publicado {{ post.ctime }}</p>
-          <p class="">
-            <nuxt-link :to="`/blog/${post.slug}`">Leer m&aacute;s &rarr;</nuxt-link>
-          </p>
-        </div>
+      <p class="blog__excerpt">{{ post.description }}</p>
+      <div class="blog__details">
+        <time class="time">{{ post.ctime }}</time>
+        <div class="tags">{{ post.tags }}</div>
       </div>
+      <p class="">
+        <nuxt-link :to="`/blog/${post.slug}`">Leer m&aacute;s &rarr;</nuxt-link>
+      </p>
     </article>
   </section>
 </template>
@@ -52,4 +49,23 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.blog {
+  margin-bottom: 3rem;
+  &__excerpt {
+    margin-bottom: 1rem;
+  }
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.time,
+.tags {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: .5rem;
+}
+
+</style>
