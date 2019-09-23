@@ -1,5 +1,5 @@
 <template>
-    <time>{{require('moment')(time).format('Do MMM YYYY')}}</time>
+    <time>{{require('moment')(time).format('DD MMM YYYY')}}</time>
 </template>
 
 <script>
