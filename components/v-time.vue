@@ -1,12 +1,12 @@
 <template>
-    <time>{{require('moment')(time).format('DD MMM YYYY')}}</time>
+  <time>{{require('moment')(time).format('DD/MMM/YYYY')}}</time>
 </template>
 
 <script>
 export default {
-    props: {
-        time: Date
-    }
+  props: {
+    time: Date
+  }
 }
 </script>
 

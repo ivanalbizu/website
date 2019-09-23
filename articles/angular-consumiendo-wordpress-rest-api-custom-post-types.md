@@ -3,7 +3,7 @@ title: Angular consumiendo de WordPress Rest Api – Custom post types
 published: true
 description: Angular 1 consumiendo de WordPress Rest Api – Custom post types
 tags: AngularJS,JavaScript,Php,Wordpress
-ctime: Mon, 09 May 2016 20:07:31
+ctime: Mon, 09 May 2016 20:07:31 +0000
 ---
 
 En esta cuarta entrada sobre AngularJS y Wordpress Rest Api voy a crear una entrada personalizada de Wordpress y añadir nuevo tipo de campo. Esta nueva entrada y sus nuevos campos serán consultados desde AngularJS. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Buena parte del código del cliente AngularJS será muy similar a una entrada anterior, en la que consumía las entradas de la [Rest Api de Wordpress con AngularJS](http://ivanalbizu.eu/angular-consumiendo-wordpress-rest-api-crud/), por tanto, no voy a repetir el código y sólo añadiré aquellas cosas que lo hagan diferente.

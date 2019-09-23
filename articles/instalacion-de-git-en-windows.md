@@ -3,7 +3,7 @@ title: Instalación de GIT en Windows
 description: Paso a paso para la instalación de control de versiones GIT en equipo Windows
 published: true
 tags: Pildoritas
-ctime: Tue, 29 Oct 2013 20:58:00
+ctime: Tue, 29 Oct 2013 20:58:00 +0000
 ---
 
 En esta entrada se va a llevar a cabo la instalación de GIT. Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. [(Wikipedia)](http://es.wikipedia.org/wiki/Git "Fuente Wikipedia")

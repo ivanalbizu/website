@@ -3,7 +3,7 @@ title: AngularJS y Google Keep
 published: true
 description: AngularJS 1 y Google Keep consumiendo de Api construida con Python  Django
 tags: AngularJS,JavaScript
-ctime: Sun, 15 Nov 2015 17:01:12
+ctime: Sun, 15 Nov 2015 17:01:12 +0000
 ---
 
 No pretendo implementar todas las funcionalidades con AngularJS que tiene Google Keep, sólo alguna de ellas. Al final de la entrada hay enlace al código en GitHub y vídeo. Se podrán crear nuevas tareas, eliminarlas, editar su título y su contenido, cambiar los colores de fondo y filtrarlas. Una tarea estará compuesta por:

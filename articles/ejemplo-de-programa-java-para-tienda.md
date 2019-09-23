@@ -3,7 +3,7 @@ title: Ejemplo de programa Java para tienda
 published: true
 description: Programa construido en Java que simula una tienda. Permite mostrar los productos, cantidad, precio, disponibilidad. Cantidad de productos añadidos, precio unitario y total
 tags: Java
-ctime: Sun, 14 Sep 2014 14:15:54
+ctime: Sun, 14 Sep 2014 14:15:54 +0000
 ---
 
 Ejemplo de programa Java para tienda de venta de juegos, música y películas. Al final del post añado vínculo para descargar el programa y probarlo y un vídeo explicando el código. El programa está compuesto de seis clases: Test.java, Gestion.java, Producto.java, Cine.java, Musica.java y Videojuego.java. La clase producto define propiedades comunes de los tipos Cine, Música y Videjuego, y cada una de estas define sus propios atributos. La clase Gestión, como su nombre indica, gestiona la tienda y la clase Test ejecuta el programa. Como se ha comentado, la clase principal que ejecuta el programa es la **Test**. El código es el siguiente:

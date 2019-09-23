@@ -3,7 +3,7 @@ title: Angular consumiendo de Wordpress Rest Api - Autenticación
 published: true
 description: Angular 1 consumiendo de Wordpress Rest Api - Autenticación
 tags: AngularJS,JavaScript,Php,Wordpress
-ctime: Thu, 05 May 2016 13:48:16
+ctime: Thu, 05 May 2016 13:48:16 +0000
 ---
 
 En esta entrada voy a trabajar con **AngularJS y Wordpress**. Wordpress lo voy a usar para generar la **Rest Api y AngularJS** para leer los datos de WordPress. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Usaré dos plugins, uno [WordPress REST API (Version 2)](https://es.wordpress.org/plugins/rest-api/)  genera la Api y otro [JWT Authentication for WP REST API](https://es.wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) genera el sistema de Autenticación mediante JSON WEB TOKEN (JWT).

@@ -3,7 +3,7 @@ title: Dos campos Select relacionados en AngularJS
 published: true
 description: Construir Selects en el que uno de los Selects carga su contenido en función del option seleccionado en el Select anterior
 tags: AngularJS,JavaScript,Pildoritas
-ctime: Mon, 10 Oct 2016 09:58:28
+ctime: Mon, 10 Oct 2016 09:58:28 +0000
 ---
 
 He construido sistema de filtros con etiquetas &lt;select&gt;. Uno de ellos será el filtro inferior y el otro el filtro superior. Ambos estarán relacionados entre sí para que no se pisen los valores, y así el valor tomado por el filtro inferior sea uno de los límites del filtro superior, y viceversa. Para darle valores a los &lt;select&gt; he construido un filtro que recibe tres parámetros. Los dos primeros parámetros, "min" y "max", son los límites inferiores y superiores. El tercer parámetro, "step", será la separación entre cada uno de los valores, que caso de no especificarse este valor tomará el valor 30000.

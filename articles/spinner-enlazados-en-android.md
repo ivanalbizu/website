@@ -3,7 +3,7 @@ title: Spinner enlazados en Android
 published: true
 description: Construcción de Spinners en Android cargados desde datos en formato XML y segundo Spinner en función de los seleccionado en el primero
 tags: Android,Java
-ctime: Fri, 31 Oct 2014 16:09:58
+ctime: Fri, 31 Oct 2014 16:09:58 +0000
 ---
 
 Spinner enlazados en Android, en el que un segundo Spinner carga sus contenidos en función del ítem seleccionado del primer Spinner. Los pasos que he seguido para conseguirlo han sido:

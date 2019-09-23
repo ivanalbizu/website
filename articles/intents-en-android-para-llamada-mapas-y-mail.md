@@ -3,7 +3,7 @@ title: Intents en Android para llamada, mapas y mail
 published: true
 description: Uso de Intents en Android para comunicar información con ejemplos de lanzado de llamadas, mapas y mail
 tags: Android,Java
-ctime: Tue, 28 Oct 2014 20:41:04
+ctime: Tue, 28 Oct 2014 20:41:04 +0000
 ---
 
 Intents en Android para hacer llamada, buscar en mapa google y enviar mail. Los pasos para hacer este proyecto son:

@@ -3,7 +3,7 @@ title: Visualizar SQLite de app Android con SQLite manager
 published: true
 description: Visualizar base de datos SQLite en aplicación Android con plugin para Firefox llamado SQLite manager
 tags: Android,Eclipse,Pildoritas
-ctime: Wed, 14 Jan 2015 15:34:59
+ctime: Wed, 14 Jan 2015 15:34:59 +0000
 ---
 
 En mi anterior entrada publiqué los pasos para poder [ver una base de datos SQLite](http://ivanalbizu.eu/visualizar-sqlite-de-app-android-con-eclipse/ "Ver estructura de base de datos SQLite en Eclipse") generada en un proyecto Android usando para ello un plugin en Eclipse. Otra manera de verla, y además poder realizar operaciones sobre la base de datos (tipo CRUD), es usando un plugin para Firefox llamada SQLite Manager. Los pasos para llevarlo a cabo.

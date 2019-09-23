@@ -3,7 +3,7 @@ title: GridView con librería Picasso I
 published: true
 description: Primera publicación sobre la construcción de GridView de Android usando la librería Picasso
 tags: Android,Java
-ctime: Mon, 15 Dec 2014 15:40:06
+ctime: Mon, 15 Dec 2014 15:40:06 +0000
 ---
 
 Gridview con libreria Picasso Android. En esta entrada voy a hacer un sencillo ejemplo de GridvView. Para ello necesitamos descargarnos el [Jar de la librería Picasso](http://square.github.io/picasso/ "Web para descargar librería Picasso") Se trabajará sobre cuatro archivos:

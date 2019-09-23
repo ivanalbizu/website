@@ -3,7 +3,7 @@ title: Angular consumiendo de WordPress Rest Api – Trabajando con usuarios
 published: true
 description: Angular consumiendo de WordPress Rest Api – Trabajando con usuarios
 tags: AngularJS,JavaScript,Wordpress
-ctime: Sun, 08 May 2016 12:32:51
+ctime: Sun, 08 May 2016 12:32:51 +0000
 ---
 
 En esta entrada es continuación de dos entradas anteriores sobre Wordpress y Angular, [Autenticación con JWT](http://ivanalbizu.eu/angular-consumiendo-wordpress-rest-api-autenticacion/) y [CRUD con entradas de Wordpress](http://ivanalbizu.eu/angular-consumiendo-wordpress-rest-api-crud/). En esta ocasión sólo voy a obtener el usuario actualmente autenticado y permitir edición de algunos campos de su perfil. Podría mejorarse el tratamiento de las páginas que puede ver un usuario, como por ejemplo no mostrar toda la navegación ni mostrar la página de login si ya está Autenticado. No me extenderé mucho ya que muchas cosas son comunes y repetitivas en mis anteriores publicaciones. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Vamos a realizar:

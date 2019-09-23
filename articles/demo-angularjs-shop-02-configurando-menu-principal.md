@@ -3,7 +3,7 @@ title: Demo AngularJS shop - 02 Configurando menú principal
 published: true
 description: Primera parte de aplicación Angular 1 para construir listado de productos. Configuración de menú principal
 tags: AngularJS,Css3,JavaScript
-ctime: Fri, 08 Aug 2014 20:55:43
+ctime: Fri, 08 Aug 2014 20:55:43 +0000
 ---
 
 En esta entrada sobre AngularJS continuaré mi anterior artículo [generando proyecto AngularJS con Yeoman](http://ivanalbizu.eu/demo-angularjs-shop-01-generando-proyecto-con-yeoman/ "Abre en ventana nueva el artículo: Generando proyecto con yeoman"), en el que trabajaré sobre el menú de la aplicación. Limpiamos el código generado como demo al crear proyecto AngularJS usando Yeoman. Para ello, en el archivo index.html eliminamos el vínculo "About" del menú, y la etiqueta script que carga el controlador about.js. Eliminamos el archivo del controlador scripts/controllers/about.js. Y la vista views/about.html. Añadimos controladores y vistas para product y contact, para ello, en consola:

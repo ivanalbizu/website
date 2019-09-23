@@ -3,7 +3,7 @@ title: Angular consumiendo de WordPress Rest Api – Endpoints
 published: true
 description: Angular 1 consumiendo de WordPress Rest Api – Endpoints
 tags: AngularJS,JavaScript,Wordpress
-ctime: Tue, 10 May 2016 18:02:38
+ctime: Tue, 10 May 2016 18:02:38 +0000
 ---
 
 Sigo hablando en esta entrada sobre Rest Api Wordpress consumida desde AngularJS. Va a ser más breve que los anteriores. Algunas peticiones a la Rest Api puden añadir información extra, tales como paginaciones y filtros. En otras ocasiones necesitamos pasar más parámetros a la URL de la petición para poder hacer GET, POST... (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Aprovechando que en otra entrada hablé sobre [obtener y editar usuarios de Wordpress con la Rest Api](http://ivanalbizu.eu/angular-consumiendo-wordpress-rest-api-trabajando-usuarios/), aprovecho para ampliar un poco el post anterior. Visitando la sección de Users de la documentación de Rest Api podemos ver que algunos campos no son editables y otros necesitan para verse o editarse añadir información extra. Se añade al final de la URL el contexto: _embed_, _view_ o _edit_. [![Schema Wordpress Rest Api](storage/wp-content/uploads/2016/05/schema-rest-api.jpg)](http://ivanalbizu.eu/wp-content/uploads/2016/05/schema-rest-api.jpg) Por ejemplo, para obtener y editar el campo 'first_name' de un usuario tenemos que usar la siguiente URL: url: URL_API.BASE_URL + '/wp/v2/users/' + user_id +'?context=edit' El código de la factoría que nos devuelve el usuario será:

@@ -3,7 +3,7 @@ title: Foundation Zurb 5 ya está disponible
 published: true
 description: Se publica la quinta versión de Foundation Zurb. Resumen de las novedades de la nueva versión
 tags: Pildoritas,Zurb
-ctime: Fri, 22 Nov 2013 20:37:53
+ctime: Fri, 22 Nov 2013 20:37:53 +0000
 ---
 
 Ya está disponible la nueva versión de **Foundation Zurb 5**

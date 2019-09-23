@@ -3,7 +3,7 @@ title: Menú apple con css
 published: true
 description: Recreación de Html y Css del menú usado por Apple
 tags: Css3,Sass
-ctime: Sat, 15 Feb 2014 22:17:54
+ctime: Sat, 15 Feb 2014 22:17:54 +0000
 ---
 
 **Menú apple con css**, construido usando **Sass**. En este artículo quería compartir como he reproducido el menú de navegación de la web de Apple, sin usar imágenes, sólo con degradados de css3 y jugando con los bordes para crear los diferentes botones. Se obtiene también las sombras y los bordes redondeados. El aspecto que no he tratado de reproducir ha sido el último botón, el de la búsqueda. Para realizar el menú he usado **SASS** para ahorrar un poco de tiempo, y para que cada cambio en colores o degradados suponga cambiar menos información en la hoja de estilos, ya que con sass se pueden usar variables, funciones y otras muchas cosas. Aquí se puede ver la hoja de estilos **.scss**

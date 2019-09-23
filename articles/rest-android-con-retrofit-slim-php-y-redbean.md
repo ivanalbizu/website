@@ -3,7 +3,7 @@ title: Rest Android con Retrofit, Slim php y RedBean
 published: true
 description: Rest Api construida con SlimPhp y ReadBean, consumida desde Android mediante Retrofit
 tags: Android,Java, Php
-ctime: Sun, 19 Apr 2015 21:10:57
+ctime: Sun, 19 Apr 2015 21:10:57 +0000
 ---
 
 Rest Api con Retrofit, Slim php y RedBean. En esta ocasión voy a montar una aplicación Android que consume de base de datos MySQL usando Slim php y RedBean php. Las peticiones de la aplicación Android a la base de datos serán controladas con Retrofit.

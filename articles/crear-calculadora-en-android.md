@@ -3,7 +3,7 @@ title: Crear calculadora en Android
 description: Aplicación Android en la que se construye una calculadora
 published: true
 tags: Android,Java
-ctime: Sun, 26 Oct 2014 15:33:41
+ctime: Sun, 26 Oct 2014 15:33:41 +0000
 ---
 
 Crear calculadora en Android con funciones básicas de suma, resta, multiplicación y división. En el MainActivity.java se define en su comienzo las variables necesarias. Para poder trabajar mejor con las operaciones lo he dividido en "operando1", "operando2", "operacion", "resultado" y botón "borrar". El botón de "limpiar" no lo he declarado en el MainActivity.java, sólo he creado un método que será usado en el XML. Sus referencias de la vista XML son rescatadas con el método findViewById(R.id.nombreCorrespondiente).

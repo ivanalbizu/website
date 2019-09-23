@@ -3,7 +3,7 @@ title: AngularJS Wordpress Theme
 published: true
 description: Wordpress Theme para AngularJS 1, con Wp Rest Api y Advanced Custom Fields (ACF)
 tags: AngularJS,JavaScript,Php,Sass,Wordpress
-ctime: Wed, 26 Oct 2016 21:09:21
+ctime: Wed, 26 Oct 2016 21:09:21 +0000
 ---
 
 Angular Wordpress Theme. Plantilla **Wordpress** construida con **AngularJS**, Wp Rest Api, ACF El código se encuentra en mi [GitHub](https://github.com/ivanalbizu/Angular-Wordpress-Theme/blob/master/README.md) Los pasos son los siguientes.

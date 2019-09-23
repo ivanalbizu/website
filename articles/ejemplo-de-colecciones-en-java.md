@@ -3,7 +3,7 @@ title: Ejemplo de colecciones en Java
 published: true
 description: Uso de colecciones en Java. Se permite mostrar todas las colecciones, añadir, editar y eliminar. Ordenación de colecciones por alguno de sus atributos
 tags: Java
-ctime: Sun, 23 Mar 2014 19:16:26
+ctime: Sun, 23 Mar 2014 19:16:26 +0000
 ---
 
 En este artículo quiero poner un ejemplo del **uso de colecciones en Java**. El ejemplo es sencillo. Se trata de modelar una empresa en la que se guardan datos de sus trabajadores. Sus datos personales, el departamento en el que trabajan, su puesto de trabajo y su salario. Las opciones habilitadas al programa son:

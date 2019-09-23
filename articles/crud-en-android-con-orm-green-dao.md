@@ -3,7 +3,7 @@ title: Crud en Android con ORM Green Dao
 description: Realizar operaciones CRUD (create, read, update, delete) para Android usando ORM Green Dao
 published: true
 tags: Android,Java
-ctime: Wed, 19 Nov 2014 21:59:59
+ctime: Wed, 19 Nov 2014 21:59:59 +0000
 ---
 
 En este proyecto realizaré un sistema Crud en Android con el ORM de Green Dao. Para crear el proyecto he adaptado a mis necesidades el DaoExampleGenerator que se puede encontrar en [GitHub de Green Dao](https://github.com/greenrobot/greenDAO "GitHub de Green Dao").

@@ -3,7 +3,7 @@ title: Programa Java gestionar ascensor
 published: true
 description: Programa Java que simula el comportamiento de un ascensor para controlar las paradas, movimientos subida, bajada y número de personas
 tags: Java
-ctime: Tue, 11 Feb 2014 12:02:12
+ctime: Tue, 11 Feb 2014 12:02:12 +0000
 ---
 
 El siguiente programa java intenta modelar el funcionamiento básico de un ascensor. Para ello se crean dos clases, Principal.java y Ascensor.java. La clase _Ascensor.java_ tiene como **atributos** el "pisco actual", la "planta máxima" y la "planta mínima", así como la cantidad máxima de personas. _Ascensor.java_ tiene el **constructor** vacío y un constructor que recibe un entero de piso actual. Se generan los **gets** y **sets** del atributo "piso actual". Se crean dos **métodos** booleanos de comprobación. Para validar que l número de personas no sea mayor a la permitida y que la planta a la que se desea ir no sea el mismo en el que se está. Se crean dos métodos void para subir y bajar plantas. Y métodos void para mostrar "cerrando" o "abriendo" puertas cuando proceda. Se crea un método principal void denominado "ir", que será el que gestione los desplazamientos y los mensajes. Si se cumple el número máximo de personas, que se encuentra en una planta diferente a la que se desea ir y que la planta elegida esté dentro del rango, en ese caso se produce el movimiento y a cada movimiento se muestra el mensaje "subiendo" o "bajando" según proceda.

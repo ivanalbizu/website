@@ -3,7 +3,7 @@ title: AngularJS consumiendo de servicio Django
 published: true
 description: AngularJS consumiendo de servicio Django
 tags: AngularJS,JavaScript
-ctime: Mon, 09 Nov 2015 11:29:53
+ctime: Mon, 09 Nov 2015 11:29:53 +0000
 ---
 
 En esta ocasión publico entrada sobre Angular como cliente y Django como servicio REST. Contendrá dos modelos, libro y autores. Los campos de libro son título, editorial, género y su autor. Los campos de autor serán nombre y apellidos. Las peticiones son enviadas desde angular usando **$resource** hacía **Django rest framework**.

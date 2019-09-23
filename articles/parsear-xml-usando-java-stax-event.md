@@ -3,7 +3,7 @@ title: Parsear XML usando Java Stax Event
 published: true
 description: Parsear documento con información meteorológica en formato XML con Java usando Stax Event
 tags: Java
-ctime: Wed, 19 Nov 2014 17:17:33
+ctime: Wed, 19 Nov 2014 17:17:33 +0000
 ---
 
 En mi último post realicé un [parseo de XML usando Java Stax Cursor](http://ivanalbizu.eu/parsear-xml-usando-java-stax-cursor/ "Enlace a entrada: parseo de XML usando Java Stax Cursor"), en esta ocasión voy a realizar el mismo ejemplo pero usando Java Stax Event. Sabiendo bien cómo está estructurado el XML, marcamos los pasos para obtener la temperatura máxima y la fecha del día en cuestión son;

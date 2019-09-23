@@ -3,7 +3,7 @@ title: Codeigniter + Cloud9. Primeros pasos
 description: Instalar Codeigniter con IDE web Cloud9
 published: true
 tags: Codeigniter,Php,Pildoritas
-ctime: Tue, 17 Feb 2015 22:13:10
+ctime: Tue, 17 Feb 2015 22:13:10 +0000
 ---
 
 En esta primera publicación comenzaré con la descarga de Codeigniter y la preparación del IDE web Cloud9 para poder empezar a trabajar. Para ello necesito descargar la última versión estable de Codeigniter. Creación de un Workspace en Cloud9 e instalación de phpmyadmin en Clou9. Los pasos seguidos son los siguientes:

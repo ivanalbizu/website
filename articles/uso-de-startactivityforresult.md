@@ -3,7 +3,7 @@ title: Uso de startActivityForResult
 published: true
 description: Uso de startActivityForResult para enviar información entre Activities en Android
 tags: Android,Java
-ctime: Thu, 23 Oct 2014 16:21:47
+ctime: Thu, 23 Oct 2014 16:21:47 +0000
 ---
 
 En esta entrada voy a crear, mediante un ejemplo, un interfaz Android en la que se use startActivityForResult(). El método **startActivityForResult()** se emplea para lanzar una actividad y que ésta nos devuelva una información que será usada en la actividad "origen".

@@ -3,7 +3,7 @@ title: Badges con SASS y SVG
 description: Mixing Sass para crear Badges que puedan ser modificadas y adaptadas mediante parámetros
 published: true
 tags: Pildoritas,Sass
-ctime: Tue, 11 Oct 2016 15:11:19
+ctime: Tue, 11 Oct 2016 15:11:19 +0000
 ---
 
 He construido badges con **sass y svg**. Mediante mixins de sass he creado el fondo del badge, en el que se puede personalizar el ancho, el color y el margen superior pasando los parámetros. El primer parámetro es el ancho en px (sin indicar la unidad), el siguiente el color y el último el margen al elemento superior (sin indicar la unidad).

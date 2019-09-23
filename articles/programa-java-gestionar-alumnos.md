@@ -3,7 +3,7 @@ title: Programa Java gestionar alumnos
 published: true
 description: Programa Java para realizar operaciones CRUD. Crear, mostrar, actualizar y borrar elementos de lista de alumnos
 tags: Java
-ctime: Tue, 25 Feb 2014 21:07:50
+ctime: Tue, 25 Feb 2014 21:07:50 +0000
 ---
 
 El programa java sirve para gestionar el registro de alumnos de una clase. Las funciones habilitadas al programa son:

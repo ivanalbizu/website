@@ -64,7 +64,7 @@ module.exports = {
     ]
   },
   googleAnalytics: {
-    id: ""
+    id: "UA-35135673-1"
   },
   build: {
     extend(config, { isDev, isClient }) {

@@ -3,7 +3,7 @@ title: Parsear XML usando Java Stax Cursor
 published: true
 description: Parsear documento con información meteorológica en formato XML con Java usando Stax Cursor
 tags: Java
-ctime: Sat, 15 Nov 2014 10:23:28
+ctime: Sat, 15 Nov 2014 10:23:28 +0000
 ---
 
 En esta entrada voy a realizar un sencillo ejemplo para parsear un archivo XML usando Java Stax. El archivo a parsear contiene información meteorológica de la ciudad de Sevilla. Voy a obtener los días en los que la temperatura máxima fuese mayor a una temperatura "X". El procedimiento para llevarlo a cabo es:
