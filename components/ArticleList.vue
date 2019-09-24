@@ -14,7 +14,7 @@
       </figure>
       <p class="blog__excerpt">{{ post.description }}</p>
       <div class="blog__details">
-        <time class="time">{{ post.ctime }}</time>
+        <time class="time">{{ require('moment')(post.ctime).format("DD/MM/YYYY") }}</time>
         <div class="tags">{{ post.tags }}</div>
       </div>
       <p class="">
