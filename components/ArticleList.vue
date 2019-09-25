@@ -60,11 +60,4 @@ export default {
     justify-content: space-between;
   }
 }
-.time,
-.tags {
-  font-size: 1.3rem;
-  font-style: italic;
-  margin-bottom: .5rem;
-}
-
 </style>

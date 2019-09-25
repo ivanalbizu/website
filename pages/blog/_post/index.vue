@@ -16,6 +16,7 @@
     <footer class="">
       <nuxt-link to="/blog/" class="">&larr; Volver al blog</nuxt-link>
     </footer>
+    <script v-if="attributes.script_url" :src="attributes.script_url"></script>
   </section>
 </template>
 

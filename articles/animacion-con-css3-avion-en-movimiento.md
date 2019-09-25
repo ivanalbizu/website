@@ -1,7 +1,7 @@
 ---
 title: Animación con css3 - Avión en movimiento
 published: true
-description: Animación con css3 para crear efecto de movimiento
+description: Efecto de movimiento con CSS para generar animación usando "transform translate"
 tags: Css3,JavaScript
 ctime: Fri, 21 Feb 2014 09:47:56 +0000
 ---

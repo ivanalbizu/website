@@ -1,5 +1,5 @@
 @import 'reset';
-@import "../node_modules/highlight.js/styles/darcula.css";
+@import "../node_modules/highlight.js/styles/vs2015.css";
 
 $primary: #db0a5b;
 $link: $primary;
@@ -20,7 +20,14 @@ img {
   max-width: 100%;
 }
 p { margin-bottom: 1rem; }
+blockquote { margin-bottom: 2rem; }
 pre { margin-bottom: 2rem; }
+.time,
+.tags {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: .5rem;
+}
 a {
   color: $primary;
   transition: color .15s ease-out;
@@ -51,4 +58,31 @@ a {
   margin-bottom: 1.5rem;
   line-height: 1.1;
   display: inline-block;
+}
+.content {
+  h2 {
+    font-size: 2.2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  figure {
+    margin-bottom: 1rem;
+  }
+  p > code {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 1.2rem;
+    background-color: rgba(27,31,35,.05);
+    border-radius: 3px;
+  }
+  blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: .25em solid #dfe2e5;
+  }
 }
