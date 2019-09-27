@@ -3,9 +3,10 @@
     <header>
       <h1 class="page-title">{{ attributes.title }}</h1>
       <blockquote>{{ attributes.description }}</blockquote>
-      <p class="">
-        Publicado <time>{{require('moment')(attributes.ctime).format("DD/MM/YYYY")}}</time>
-      </p>
+      <div class="blog__details">
+        <time class="time">{{ require('moment')(attributes.ctime).format("DD/MM/YYYY") }}</time>
+        <div class="tags">{{ attributes.tags }}</div>
+      </div>
       <figure v-if="attributes.cover_image" class="">
         <img :src="require(`~/assets/images/articles/${attributes.cover_image}`)" :alt="attributes.cover_image_cp" loading="lazy"/>
       </figure>

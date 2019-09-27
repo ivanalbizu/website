@@ -4,7 +4,7 @@ published: true
 description: Aplicación con Angular 1 para mostrar datos meteorológicos proporcionados por la AEMET en formato XML. Parseo con PHP los datos XML para transformarlos a JSON
 tags: AngularJS,JavaScript,Php
 ctime: Wed, 07 Dec 2016 15:46:05 +0000
-cover_image: angular-consumiendo-aemet.jpg
+cover_image: angular-consumiendo-aemet.png
 ---
 
 En esta publicación vamos a crear una App Angular 1 que consume datos de la AEMET en formato Xml. Será necesario hacer operaciones en el backend y mostrarlos en el front.

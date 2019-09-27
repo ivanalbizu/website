@@ -5,9 +5,11 @@
         <div class="column is-10-tablet">
           <h1 class="title has-text-white">About me</h1>
           <div class="is-flex is-horizontal-center">
+            <!--
             <figure class="image is-128x128 profile-picture">
               <img class="is-rounded" src="~assets/images/profile.jpg?size=128" alt="Nicolò Rebughini" loading="lazy">
             </figure>
+            -->
           </div>
           <h2 class="subtitle is-size-5 has-text-white">
             I'm a Linux sysadmin focusing on email deliverability, system standardisation and deployment automation.

@@ -44,7 +44,7 @@ module.exports = {
     host: "0.0.0.0",
     port: 3000
   },
-  //css: ["assets/main.scss"],
+  css: ["~assets/main.scss"],
   plugins: [],
   modules: [
     "@nuxtjs/style-resources",
@@ -60,7 +60,7 @@ module.exports = {
   ],
   styleResources: {
     scss: [
-      'assets/main.scss'
+      '~assets/_variables.scss'
     ]
   },
   googleAnalytics: {

@@ -1,9 +1,6 @@
 @import 'reset';
 @import "../node_modules/highlight.js/styles/vs2015.css";
-
-$primary: #db0a5b;
-$link: $primary;
-$link-hover: #940DFF;
+@import "variables";
 
 :root {
   font-size: 62.5%;
@@ -18,6 +15,28 @@ $link-hover: #940DFF;
 }
 img {
   max-width: 100%;
+}
+.list-bullets {
+  li {
+    margin-left: 1em;
+  }
+  li::before {
+    content: "\2022";
+    color: $primary;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  .list-bullets {
+    margin-left: 1em;
+  }
+}
+ol.list-bullets li::before {
+  content: counter(li);
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl
 }
 p { margin-bottom: 1rem; }
 blockquote { margin-bottom: 2rem; }

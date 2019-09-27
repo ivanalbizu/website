@@ -23,15 +23,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 a, a:hover {
 	text-decoration: none;
 }
-ul {
-	margin: 1rem 0;
-}
-ul ul {
-	margin-left: 1.5rem;
-}
-li {
-	list-style-position: inside;
-	margin-bottom: .2rem;
+ol, ul {
+	list-style: none;	
 }
 blockquote, q {
 	quotes: none;

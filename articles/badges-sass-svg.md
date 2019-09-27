@@ -1,14 +1,15 @@
 ---
 title: Badges con SASS y SVG
-description: Mixing Sass para crear Badges que puedan ser modificadas y adaptadas mediante parámetros
+description: Mixing Sass para crear Badges que puedan ser modificados y adaptados mediante parámetros
 published: true
 tags: Pildoritas,Sass
 ctime: Tue, 11 Oct 2016 15:11:19 +0000
 ---
 
+## Código css Badge
 He construido badges con **sass y svg**. Mediante mixins de sass he creado el fondo del badge, en el que se puede personalizar el ancho, el color y el margen superior pasando los parámetros. El primer parámetro es el ancho en px (sin indicar la unidad), el siguiente el color y el último el margen al elemento superior (sin indicar la unidad).
 
-```
+```scss
 body {
   @include badge-generator(90, #ff1744, 200);
 }
@@ -16,7 +17,7 @@ body {
 
 Lo he incluido (@include) en el body para que se genere el css a partir de sass. Dichos elementos se van a generar a partir de la función @mixin. El código no tiene misterio, son operaciones para formar un hexágono.
 
-```
+```scss
 @mixin badge-generator($width: 94, $color: #ff1744, $margin_top: 0) {
 	$middle_width: $width/2;
 	$height: ($width/2) * 1.154700538;
@@ -59,9 +60,10 @@ Lo he incluido (@include) en el body para que se genere el css a partir de sass.
 }
 ```
 
+## Código html Badge
 Para usarlo en el html hay que seguir la siguiente estructura:
 
-```
+```html
 <div class="box-badge">
 	<div class="hexagon-draw">
 		<div class="hexagon-construct-top"></div>
@@ -82,4 +84,5 @@ Para usarlo en el html hay que seguir la siguiente estructura:
 </div>
 ```
 
-En la etiqueta de imagen se le añade la imagen, puede ser en cualquier formato, pero usando "svg" se adaptará mejor. El código completo para probarlo se encuentra en [mi GitHub.](https://github.com/ivanalbizu/Badges-with-Sass-and-Svg)
+En la etiqueta de imagen se le añade la imagen, puede ser en cualquier formato, pero usando "svg" se adaptará mejor a diferentes tamaños o escalados.
+El código completo para probarlo se encuentra en <a href="https://github.com/ivanalbizu/Badges-with-Sass-and-Svg" target="_blank">mi GitHub</a>.
