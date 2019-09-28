@@ -123,7 +123,7 @@ $app->run();
 ```
 
 ## App Cliente
-Desde la App, el usuario dispone de tres Select para poder seleccionar la provincia, la localidad y la fecha. Los Selects de provincia y localidad leen de ficheros JSON que contiene lista de provincias y localidades, que luego son los datos mandados al backend.
+Desde la App, el usuario dispone de tres Select para poder seleccionar la provincia, la localidad y la fecha. Los <code>&lt;select&gt;</code> de <code>provincia</code> y <code>localidad</code> leen de ficheros JSON que contiene lista de provincias y localidades, que luego son los datos mandados al backend.
 
 `app/js/app.js`
 ```javascript

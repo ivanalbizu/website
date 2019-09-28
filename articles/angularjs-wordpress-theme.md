@@ -13,12 +13,12 @@ Instalar el tema que se encuentra en mi <a href="https://github.com/ivanalbizu/A
 
 <ul class="list-bullets">
     <li>Instalar y habilitar los plugins</li>
-    <li>Especificar la ruta base de la instalación. En header.php la etiqueta <base href="/wordpress/"></li>
-    <li>Importar los custom fields con el archivo "advanced-custom-field-export.xml"</li>
+    <li>Especificar la ruta base de la instalación. En <code>header.php</code> la etiqueta <code>&lt;base href="/wordpress/"&gt;</code></li>
+    <li>Importar los custom fields con el archivo <code>advanced-custom-field-export.xml</code></li>
     <li>Editar el formulario de contacto que generar Contact Form 7 por defecto.</li>
     <ul class="list-bullets">
-        <li>Al campo correo electrónico añadir la siquiente ID: id:checkvalid</li>
-        <li>Al campo submit añadir las siguientes clases: waves-effect waves-light btn cyan darken-3</li>
+        <li>Al campo correo electrónico añadir la siquiente ID: <code>checkvalid</code></li>
+        <li>Al campo submit añadir las siguientes clases: <code>waves-effect waves-light btn cyan darken-3</code></li>
     </ul>
 </ul>
 
@@ -29,4 +29,4 @@ Instalar el tema que se encuentra en mi <a href="https://github.com/ivanalbizu/A
     <li>Hay dos tipo de entradas: ventas y alquileres. Crear contenido para ambos (para el tipo venta hay un campo llamado "Destacada venta", la entrada que la tenga marcada se mostrará en la Home)</li>
 </ul>
 
-Para ver la demo en funcionamiento: [http://inmo.mentiraspoliticas.es](http://inmo.mentiraspoliticas.es)
+Para ver la <a href="http://inmo.mentiraspoliticas.es" target="_blank">demo en funcionamiento</a>.

@@ -1,48 +1,54 @@
 ---
 title: Angular consumiendo de WordPress Rest Api – Crud
 published: true
-description: Angular consumiendo de WordPress Rest Api – Crud
+description: Publicación de sobre Angular 1 consumiendo de WordPress Rest Api – Crud
 tags: AngularJS,JavaScript,Wordpress
 ctime: Fri, 06 May 2016 15:39:14 +0000
 ---
 
-Siguiendo con la entrada anterior en la que configuraba la [Rest Api con Wordpress y Autenticación JWT con AngularJS](http://ivanalbizu.eu/angular-consumiendo-wordpress-rest-api-autenticacion/), voy a continuar ampliando el proyecto. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Visitando la [documentación del Plugin Wp Rest Api](http://v2.wp-api.org/)  podemos ver todo lo que se puede hacer, en concreto vamos a realizar:
+Siguiendo con la entrada anterior en la que configuraba la <a href="http://ivanalbizu.eu/blog/angular-consumiendo-wordpress-rest-api-autenticacion/">Rest Api con Wordpress y Autenticación JWT con AngularJS, voy a continuar ampliando el proyecto. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Visitando la <a href="http://v2.wp-api.org/" target="_blank">documentación del Plugin Wp Rest Api</a> podemos ver todo lo que se puede hacer, en concreto vamos a realizar:
 
-*   Listaremos varias entradas: GET /wp/v2/posts
-*   Obtendremos una entrada concreta: GET /wp/v2/posts/id
-*   Actualizaremos una entrada: POST /wp/v2/posts/id
-*   Crearemos una entrada: POST /wp/v2/posts
-*   Eliminaremos una entrada: DELETE /wp/v2/posts/id
+<ul class="list-bullets">
+  <li>Listaremos varias entradas: GET /wp/v2/posts</li>
+  <li>Obtendremos una entrada concreta: GET /wp/v2/posts/id</li>
+  <li>Actualizaremos una entrada: POST /wp/v2/posts/id</li>
+  <li>Crearemos una entrada: POST /wp/v2/posts</li>
+  <li>Eliminaremos una entrada: DELETE /wp/v2/posts/id</li>
+</ul>
 
-Los dos servicios, PostsServices y PostServices necesitan inyectarle varias dependencias, $http, $rootScope y URL_API:
+Los dos servicios, <code>PostsServices</code> y <code>PostServices</code> necesitan inyectarle varias dependencias, <code>$http</code>, <code>$rootScope</code> y <code>URL_API</code>:
 
-```
+```javascript
 .factory('PostsServices', PostsServices)
 .factory('PostServices', PostServices);
 
-PostsServices.$inject = \['$http', '$rootScope', 'URL_API'\];
+PostsServices.$inject = ['$http', '$rootScope', 'URL_API'];
 function PostsServices($http, $rootScope, URL_API) {..}
 
-PostServices.$inject = \['$http', '$rootScope', 'URL_API'\];
+PostServices.$inject = ['$http', '$rootScope', 'URL_API'];
 function PostServices($http, $rootScope, URL_API) {...}
 ```
 
 En la vista (posts.html) que contiene todas las entradas podremos:
 
-*   Ver todas las entradas.
-*   Eliminar una entrada.
-*   Crear nueva entrada.
+<ul class="list-bullets">
+  <li>Ver todas las entradas.</li>
+  <li>Eliminar una entrada.</li>
+  <li>Crear nueva entrada.</li>
+</ul>
 
-En la vista (post.html) que contiene una entrada concreta podremos:
+En la vista <code>post.html</code> que contiene una entrada concreta podremos:
 
-*   Obtener la entrada seleccionada.
-*   Editar la entrada.
+<ul class="list-bullets">
+  <li>Obtener la entrada seleccionada.</li>
+  <li>Editar la entrada.</li>
+</ul>
 
 ## Obtener todas las entradas
 
-Cuando la ruta sea '/posts' cargaremos la vista 'views/posts.html' y el controlador 'PostsCtrl'. Las llamadas desde la vista hacia el controlador las haremos mediante 'vm' sin necesidad de usar el '$scope'.
+Cuando la ruta sea <code>/posts</code> cargaremos la vista <code>views/posts.html</code> y el controlador <code>PostsCtrl</code>. Las llamadas desde la vista hacia el controlador las haremos mediante <code>vm</code> sin necesidad de usar el <code>$scope</code>.
 
-```
+```javascript
 .when('/posts', {
   templateUrl: 'views/posts.html',
   controller: 'PostsCtrl',
@@ -50,9 +56,9 @@ Cuando la ruta sea '/posts' cargaremos la vista 'views/posts.html' y el controla
 })
 ```
 
-El controlador 'PostsCtrl' tiene varios métodos, uno de ellos, llamado **getAll()**, que llama al método **getAllData()** del servicio 'PostsServices'. La respuesta recibida se le pasa a 'vm.posts' para que en la vista pueda ser usada. (No hay tratamiento de errores, pero se deberían tener en cuenta).
+El controlador <code>PostsCtrl</code> tiene varios métodos, uno de ellos, llamado <code>**getAll()**</code>, que llama al método <code>**getAllData()**</code> del servicio <code>PostsServices</code>. La respuesta recibida se le pasa a <code>vm.posts</code> para que en la vista pueda ser usada. (No hay tratamiento de errores, pero se deberían tener en cuenta).
 
-```
+```javascript
 var vm = this;
 
 vm.getAll = getAll;
@@ -66,9 +72,9 @@ function getAll() {
 }
 ```
 
-El servicio 'PostsServices' tiene varios métodos, uno de ellos el getAllData() realiza una petición GET a la Url de la **API de Wordpress** y devuelve el resultado que luego será capturado desde el controlador.
+El servicio <code>PostsServices</code> tiene varios métodos, uno de ellos el <code>getAllData()</code> realiza una petición GET a la Url de la <code>**API de Wordpress**</code> y devuelve el resultado que luego será capturado desde el controlador.
 
-```
+```javascript
 return {
   getAllData: getAllData
 };
@@ -76,7 +82,7 @@ return {
 function getAllData() {
   return $http({
     method : "GET",
-    url : URL\_API.BASE\_URL + '/wp/v2/posts',
+    url : URL_API.BASE_URL + '/wp/v2/posts',
   }).then(function(response) {
     return response.data;
   }, function(error) {
@@ -85,9 +91,11 @@ function getAllData() {
 }
 ```
 
-Para pintar las entradas, cuando se llama a la vista 'views/posts.html' entra en funcionamiento el controlador PostCtrl. Dicho controlador ejecuta directamente el método getAll(). Esto nos permite obtener todas las entradas ya que está asociado a vm: vm.posts = dataResponse, (convención de nomenclatura muy usada que significa View Model, de esta manera no se abusa del $scope). La vista pinta todas las entradas tras recorrerlas con 'ng-repeat'. Ya que no usamos el $scope, tenemos que especificar sobre que elementos iteramos: ng-repeat="post in vm.posts". El plugin Wordpress Rest Api devuelve el título, el contenido y el extracto de una entrada con etiquetas Html es por eso por lo que se usa la directiva ng-bind-html.
+Para pintar las entradas, cuando se llama a la vista <code>views/posts.html</code> entra en funcionamiento el controlador <code>PostCtrl</code>. Dicho controlador ejecuta directamente el método <code>getAll()</code>. Esto nos permite obtener todas las entradas ya que está asociado a <code>vm: vm.posts = dataResponse</code>, (convención de nomenclatura muy usada que significa View Model, de esta manera no se abusa del <code>$scope</code>). La vista pinta todas las entradas tras recorrerlas con <code>ng-repeat</code>.
 
-```
+Ya que no usamos el <code>$scope</code>, tenemos que especificar sobre que elementos iteramos: <code>ng-repeat="post in vm.posts"</code>. El plugin Wordpress Rest Api devuelve el título, el contenido y el extracto de una entrada con etiquetas Html es por eso por lo que se usa la directiva <code>ng-bind-html</code>.
+
+```html
 <table>
   ...
   <tr ng-repeat="post in vm.posts">
@@ -103,9 +111,9 @@ Para pintar las entradas, cuando se llama a la vista 'views/posts.html' entra
 
 ## Obtener una entrada
 
-Cuando la ruta sea '/post/:id' cargaremos la vista 'views/post.html' y el controlador 'PostCtrl'. Las llamadas desde la vista hacia el controlador las haremos mediante 'vm' sin necesidad de usar el '$scope'.
+Cuando la ruta sea <code>/post/:id</code> cargaremos la vista <code>views/post.html</code> y el controlador <code>PostCtrl</code>. Las llamadas desde la vista hacia el controlador las haremos mediante <code>vm</code> sin necesidad de usar el <code>$scope</code>.
 
-```
+```javascript
 .when('/post/:id', {
   templateUrl: 'views/post.html',
   controller: 'PostCtrl',
@@ -113,9 +121,9 @@ Cuando la ruta sea '/post/:id' cargaremos la vista 'views/post.html' y el contro
 })
 ```
 
-El controlador 'PostCtrl' tiene dos métodos, uno de ellos, llamado **getPost(id)**, que llama al método **getPostData(id)** del servicio 'PostServices'. La respuesta recibida se le pasa a 'vm.post' para que en la vista pueda ser usada.
+El controlador <code>PostCtrl</code> tiene dos métodos, uno de ellos, llamado <code>**getPost(id)**</code>, que llama al método <code>**getPostData(id)**</code> del servicio <code>PostServices</code>. La respuesta recibida se le pasa a <code>vm.post</code> para que en la vista pueda ser usada.
 
-```
+```javascript
 var vm = this;
 //Se obtiene por parámetro la ID de la entrada seleccionada
 var id = $routeParams.id;
@@ -132,17 +140,17 @@ function getPost(id) {
 }
 ```
 
-Para obtener el post que usuario ha seleccionado se le envía en el vínculo la 'id' de la entrada.
+Para obtener el post que usuario ha seleccionado se le envía en el vínculo la <code>id</code> de la entrada.
 
-```
+```javascript
 <a href="#/post/{{post.id}}" class="btn btn-warning">
   <i class="glyphicon glyphicon-eye-open"></i>
 </a>
 ```
 
-Con el método getPostData(id) del servicio 'PostServices' se devuelve la entrada seleccionada por su id.
+Con el método <code>getPostData(id)</code> del servicio <code>PostServices</code> se devuelve la entrada seleccionada por su <code>id</code>.
 
-```
+```javascript
 return {
   getPostData:  getPostData
 };
@@ -150,7 +158,7 @@ return {
 function getPostData(id) {
   return $http({
     method : "GET",
-    url : URL\_API.BASE\_URL + '/wp/v2/posts/' + id,
+    url : URL_API.BASE_URL + '/wp/v2/posts/' + id,
   }).then(function(response) {
     return response.data;
   }, function(error) {
@@ -159,9 +167,9 @@ function getPostData(id) {
 }
 ```
 
-Para pintar una entrada llamamos a cada uno de los atributos que queramos pintar (de entre los que nos manda el plugin Wordpress Rest Api) mediante 'vm.post'.
+Para pintar una entrada llamamos a cada uno de los atributos que queramos pintar (de entre los que nos manda el plugin Wordpress Rest Api) mediante <code>vm.post</code>.
 
-```
+```html
 <h2>Contenido del POST número {{vm.post.id}}</h2>
 <h3>Título: {{vm.post.title.rendered}}</h3>
 <h4>Contenido:</h4>
@@ -173,9 +181,9 @@ Para pintar una entrada llamamos a cada uno de los atributos que queramos pintar
 
 ## Editar una entrada
 
-La edición de una entrada voy a realizarlo a través de un modal de Bootstrap. Para abrir el modal se usa el método openModal() que se encuentra en el controlador PostCtrl(). En dicho método se especifica el controlador y la template que se usará.
+La edición de una entrada voy a realizarlo a través de un modal de Bootstrap. Para abrir el modal se usa el método <code>openModal()</code> que se encuentra en el controlador <code>PostCtrl()</code>. En dicho método se especifica el controlador y la template que se usará.
 
-```
+```javascript
 var vm = this;
 
 vm.openModal = openModal;
@@ -191,19 +199,21 @@ function openModal() {
 
 Y que es llamado en la vista post.html mediante un botón.
 
-```
+```html
 <button class="btn btn-primary" ng-click="vm.openModal()">Editar post</button>
 ```
 
-Se ha creado un nuevo controlador 'ModalPostCtrl' para realizar acciones con la entrada que se quiere editar.
+Se ha creado un nuevo controlador <code>ModalPostCtrl</code> para realizar acciones con la entrada que se quiere editar.
 
-*   Obtener la entrada por su ID con getPost(id).
-*   Guardar la edición de la entrada con el método editPost(post, id). Para eso le pasamos al método editPostData(data, id) del servicio 'PostServices' los nuevos datos del post y su ID.
-*   Cancelar y cerrar la ventana modal.
+<ul class="list-bullets">
+  <li>Obtener la entrada por su ID con getPost(id).</li>
+  <li>Guardar la edición de la entrada con el método editPost(post, id). Para eso le pasamos al método editPostData(data, id) del servicio 'PostServices' los nuevos datos del post y su ID.</li>
+  <li>Cancelar y cerrar la ventana modal.</li>
+</ul>
 
 El código completo del controlador de la ventana modal será:
 
-```
+```javascript
 ModalPostCtrl.$inject = [ '$routeParams', '$modalInstance', 'PostServices', '$route' ];
 function ModalPostCtrl ( $routeParams, $modalInstance, PostServices, $route ) {
 
@@ -243,9 +253,9 @@ function ModalPostCtrl ( $routeParams, $modalInstance, PostServices, $route ) {
 }
 ```
 
-La edición de una entrada la representamos mediante una vista modal. En este caso se llamarán a los datos de una entrada mediante 'vmm' para evitar posibles conflictos. Se identifica mediante la ID el nombre de la template html. Para actualizar la entrada se usa un formulario que tiene la directiva ng-submit con los nuevos datos y la ID de la entrada a actualizar 'ng-submit="vmm.editPost(vmm.post, vmm.post.id)"'.
+La edición de una entrada la representamos mediante una vista modal. En este caso se llamarán a los datos de una entrada mediante <code>vmm</code> para evitar posibles conflictos. Se identifica mediante la ID el nombre de la template html. Para actualizar la entrada se usa un formulario que tiene la directiva <code>ng-submit</code> con los nuevos datos y la ID de la entrada a actualizar <code>ng-submit="vmm.editPost(vmm.post, vmm.post.id)"</code>.
 
-```
+```javascript
 <script type="text/ng-template" id="modal-post.html">
   <form ng-submit="vmm.editPost(vmm.post, vmm.post.id)" method="post" role="form">
     <div class="modal-header">
@@ -272,9 +282,9 @@ La edición de una entrada la representamos mediante una vista modal. En este c
 
 ## Crear una nueva entrada
 
-Cómo he comentado anteriormente, la creación de una nueva entrada la realizaremos desde la vista '/posts' con el controlador 'PostsCtrl'. En este controlador tenemos el método createPost(post), que recibe los datos dela nueva entrada que el usuario a rellenado en la vista, y se le añade el atributo 'status' como 'publish' para que no aparezca como borrador, que es su comportamiento por defecto. Los datos son enviado al método createData(data) del servicio 'PostsServices'. Se incorpora el método getAll() para actualizar todas las entradas y el método resetFields() para limpiar el formulario en la vista.
+Cómo he comentado anteriormente, la creación de una nueva entrada la realizaremos desde la vista <code>/posts</code> con el controlador <code>PostsCtrl</code>. En este controlador tenemos el método <code>createPost(post)</code>, que recibe los datos dela nueva entrada que el usuario a rellenado en la vista, y se le añade el atributo <code>status</code> como <code>publish</code> para que no aparezca como borrador, que es su comportamiento por defecto. Los datos son enviado al método <code>createData(data)</code> del servicio <code>PostsServices</code>. Se incorpora el método <code>getAll()</code> para actualizar todas las entradas y el método <code>resetFields()</code> para limpiar el formulario en la vista.
 
-```
+```javascript
 var vm = this;
 
 vm.createPost = createPost;
@@ -299,9 +309,9 @@ function resetFields() {
 }
 ```
 
-El servicio createPostData(data) recibe la entrada y la envía a la Rest Api de Wordpress mediante POST. Devolviendo la respuesta del servidor.
+El servicio <code>createPostData(data)</code> recibe la entrada y la envía a la Rest Api de Wordpress mediante POST. Devolviendo la respuesta del servidor.
 
-```
+```javascript
 return {
   createPostData: createPostData
 };
@@ -309,7 +319,7 @@ return {
 function createPostData(data) {
   return $http({
     method : "POST",
-    url : URL\_API.BASE\_URL + '/wp/v2/posts',
+    url : URL_API.BASE_URL + '/wp/v2/posts',
     data: data,
   }).then(function(response) {
     return response.data;
@@ -319,9 +329,9 @@ function createPostData(data) {
 }
 ```
 
-Los campos para la creación de la nueva entrada está dentro de la tabla donde se pintan todas las entradas. Será enviado al controlador al activar el evento createPost(vm): ng-click="vm.createPost(vm)"
+Los campos para la creación de la nueva entrada está dentro de la tabla donde se pintan todas las entradas. Será enviado al controlador al activar el evento <code>createPost(vm): ng-click="vm.createPost(vm)"</code>
 
-```
+```html
 <table>
 ...
   <tr>
@@ -337,9 +347,9 @@ Los campos para la creación de la nueva entrada está dentro de la tabla donde 
 
 ## Eliminar una entrada
 
-Para eliminar una entrada la realizaremos desde la vista '/posts' con el controlador 'PostsCtrl'. El método deletePost(id) necesita la ID de la entrada a eliminar. Igual que hasta ahora, usamos para ello un servicio deletePostData(id) que se encarga de enviar la petición al servidor. Una vez procesado, se vuelve a solicitar todas las entradas con getAll() para actualizar la lista.
+Para eliminar una entrada la realizaremos desde la vista <code>/posts</code> con el controlador <code>PostsCtrl</code>. El método <code>deletePost(id)</code> necesita la ID de la entrada a eliminar. Igual que hasta ahora, usamos para ello un servicio <code>deletePostData(id)</code> que se encarga de enviar la petición al servidor. Una vez procesado, se vuelve a solicitar todas las entradas con <code>getAll()</code> para actualizar la lista.
 
-```
+```javascript
 var vm = this;
 
 vm.deletePost = deletePost;
@@ -352,9 +362,9 @@ function deletePost(id) {
 }
 ```
 
-El servicio deletePostData(id) se encarga de enviar la petición DELETE a la Rest Api de Wordpress con la ID de la entrada a eliminar.
+El servicio <code>deletePostData(id)</code> se encarga de enviar la petición DELETE a la Rest Api de Wordpress con la ID de la entrada a eliminar.
 
-```
+```javascript
 return {
   deletePostData: deletePostData
 };
@@ -362,7 +372,7 @@ return {
 function deletePostData(id) {
   return $http({
     method : "DELETE",
-    url : URL\_API.BASE\_URL + '/wp/v2/posts/' + id,
+    url : URL_API.BASE_URL + '/wp/v2/posts/' + id,
   }).then(function(response) {
     console.log("Se ha eliminado: ", response.data);
     return response.data;
@@ -374,10 +384,12 @@ function deletePostData(id) {
 
 En la vista de todas las entradas aparece justo al lado de cada entrada un botón para eliminar la entrada.
 
-```
+```html
 <a ng-click="vm.deletePost(post.id)" class="btn btn-danger">
   <i class="glyphicon glyphicon-trash"></i>
 </a>
 ```
 
-Hasta aquí está el **crud completo con AngularJS usando Wordpress como Api Rest.** [https://github.com/ivanalbizu/angular\_wordpress\_rest_api](http://Git Hub) En siguientes entradas publicaré como obtener las revisiones de una entrada.
+Hasta aquí está el **crud completo con AngularJS usando Wordpress como Api Rest.** <a href="https://github.com/ivanalbizu/angular_wordpress_rest_api" target="_blank">Código en mi GitHub</a>
+
+En siguientes entradas publicaré como obtener las revisiones de una entrada.

@@ -1,7 +1,7 @@
 ---
 title: Angular consumiendo de WordPress Rest Api – Custom post types
 published: true
-description: Angular 1 consumiendo de WordPress Rest Api – Custom post types
+description: Publicación de sobre Angular 1 consumiendo de WordPress Rest Api – Custom post types
 tags: AngularJS,JavaScript,Php,Wordpress
 ctime: Mon, 09 May 2016 20:07:31 +0000
 ---
@@ -10,9 +10,9 @@ En esta cuarta entrada sobre AngularJS y Wordpress Rest Api voy a crear una entr
 
 ## Configurando wordpress
 
-Lo primero es crear los tipos de entradas. En mi tema de Wordpress, en mi caso tema hijo de twentyfifteen, he editado el archivo functions.php para añadir el tipo de entrada. La documentación de [Wordpress Rest Api](http://v2.wp-api.org/extending/custom-content-types/) está bastante bien, incluso explica como crear un tipo de entrada personalizada. Lo más importante es habilitar a las opciones del tipo que se muestra en nuestra Rest Api, para ello hay que pasarle como argumento: 'show_in_rest'=> true. Hay más opciones, como la de cambiar los 'endpoint', en mi caso no lo he cambiado, ya que por defecto será en nombre de la entrada.
+Lo primero es crear los tipos de entradas. En mi tema de Wordpress, en mi caso tema hijo de twentyfifteen, he editado el archivo functions.php para añadir el tipo de entrada. La documentación de <a href="http://v2.wp-api.org/extending/custom-content-types/" target="_blank">Wordpress Rest Api</a> está bastante bien, incluso explica como crear un tipo de entrada personalizada. Lo más importante es habilitar a las opciones del tipo que se muestra en nuestra Rest Api, para ello hay que pasarle como argumento: <code>'show_in_rest'=> true</code>. Hay más opciones, como la de cambiar los <code>'endpoint'</code>, en mi caso no lo he cambiado, ya que por defecto será en nombre de la entrada.
 
-```
+```php
 global $theme_name;
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
@@ -83,16 +83,16 @@ function create_post_type( $post_type_name, $taxonomies = '', $slug = '', $singu
 	);
 
 	if ( $taxonomies != '' && !empty( $taxonomies ) ) {
-		$post_type_options\['taxonomies'\] = $taxonomies;
+		$post_type_options['taxonomies'] = $taxonomies;
 	}
 
 	register_post_type( $post_type_name, $post_type_options );
 }
 ```
 
-De momento podemos consultar, entre otros campos, el título, el contenido, el extracto y las revisiones de la nueva entrada creada. Vamos a añadir dos nuevos campos, pero no desde cero, si no con el [plugin Advanced Custom Field](https://wordpress.org/plugins/advanced-custom-fields/). Una vez que hemos creado los campos con el plugin anterior, tendremos que editar el archivo functions.php de nuestro tema de Wordpress. La documentación de Wp Rest Api nos ayuda para registrar los nuevos campos a nuestra Rest. Si visitamos la sección [Extending -> Modifying Response](http://v2.wp-api.org/extending/modifying/) vemos las instrucciones. He usado las tres últimas funciones, tiene muchas líneas pero tan sólo hay que añadir nuestro nombre de campos creados con ACF.
+De momento podemos consultar, entre otros campos, el título, el contenido, el extracto y las revisiones de la nueva entrada creada. Vamos a añadir dos nuevos campos, pero no desde cero, si no con el <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank">plugin Advanced Custom Field</a>. Una vez que hemos creado los campos con el plugin anterior, tendremos que editar el archivo functions.php de nuestro tema de Wordpress. La documentación de Wp Rest Api nos ayuda para registrar los nuevos campos a nuestra Rest. Si visitamos la sección <a href="http://v2.wp-api.org/extending/modifying/" target="_blank">Extending -> Modifying Response</a> vemos las instrucciones. He usado las tres últimas funciones, tiene muchas líneas pero tan sólo hay que añadir nuestro nombre de campos creados con ACF.
 
-```
+```php
 /**
  * Add the field "spaceship" to REST API responses for posts read and write
  */
@@ -127,7 +127,7 @@ function slug_register_spaceship() {
  * @return mixed
  */
 function slug_get_spaceship( $object, $field_name, $request ) {
-  return get_post_meta( $object\[ 'id' \], $field_name );
+  return get_post_meta( $object[ 'id' ], $field_name );
 }
 
 /**
@@ -150,13 +150,13 @@ function slug_update_spaceship( $value, $object, $field_name ) {
 }
 ```
 
-**Trabajos con AngularJS** Nuestro archivo 'studies-services.js' es prácticamente igual a 'posts-services.js'. Sólo cambiarán las diferentes rutas. Por ejemplo, para obtener todos los registros será: URL_API.BASE_URL + '/wp/v2/formacion'.
+**Trabajos con AngularJS** Nuestro archivo <code>studies-services.js</code> es prácticamente igual a <code>posts-services.js</code>. Sólo cambiarán las diferentes rutas. Por ejemplo, para obtener todos los registros será: <code>URL_API.BASE_URL + '/wp/v2/formacion'</code>.
 
 ## Crear nuevo registro
 
-Dentro de nuestro controlador 'StudiesCtrl' creamos el método createStudy(study). Tenemos los dos nuevos campos, _year_ y _school_, que como vemos, es igual que el resto de campos
+Dentro de nuestro controlador <code>StudiesCtrl</code> creamos el método <code>createStudy(study)</code>. Tenemos los dos nuevos campos, <code>year</code> y <code>school</code>, que como vemos, es igual que el resto de campos
 
-```
+```javascript
 function createStudy(study) {
   vm.enable = false;
   var data = $.param({
@@ -174,9 +174,9 @@ function createStudy(study) {
 }
 ```
 
-La única diferencia será en la vista, más en concreto será la forma de pintarla: {{study.year\[0\]}}.
+La única diferencia será en la vista, más en concreto será la forma de pintarla: <code>{{study.year[0]}}</code>.
 
-```
+```html
 <div class="row">
 
   <table class="table table-striped">
@@ -198,8 +198,8 @@ La única diferencia será en la vista, más en concreto será la forma de pinta
     </tr>
     <tr ng-repeat="study in vm.studies">
       <td ng-bind-html="study.title.rendered"></td>
-      <td>{{study.year\[0\]}}</td>
-      <td>{{study.school\[0\]}}</td>
+      <td>{{study.year[0]}}</td>
+      <td>{{study.school[0]}}</td>
       <td ng-bind-html="study.content.rendered"></td>
       <td>
         <a href="#/study/{{study.id}}" class="btn btn-warning"><i class="glyphicon glyphicon-eye-open"></i></a>
@@ -217,7 +217,7 @@ La única diferencia será en la vista, más en concreto será la forma de pinta
 
 Es similar a lo anterior, por lo que no explico otra vez lo mismo, el código es:
 
-```
+```php
 function editStudy(study, id) {
   var data = $.param({
     title: study.title.rendered,
@@ -233,11 +233,11 @@ function editStudy(study, id) {
 }
 ```
 
-```
+```html
 <h2>Contenido del ESTUDIO número {{vm.study.id}}</h2>
 <h3>Título: {{vm.study.title.rendered}}</h3>
-<h4>Año: {{vm.study.year\[0\]}}</h4>
-<h4>Colegio: {{vm.study.school\[0\]}}</h4>
+<h4>Año: {{vm.study.year[0]}}</h4>
+<h4>Colegio: {{vm.study.school[0]}}</h4>
 <h4>Contenido:</h4>
 <div ng-bind-html="vm.study.content.rendered"></div>
 <a href="{{vm.study.link}}" target="_blank">{{vm.study.link}}</a><br>
@@ -271,4 +271,4 @@ function editStudy(study, id) {
 </div>
 ```
 
-[https://github.com/ivanalbizu/angular_wordpress_rest_api](http://Git Hub)
+<a href="https://github.com/ivanalbizu/angular_wordpress_rest_api" target="_blank">Código en mi GitHub</a>
