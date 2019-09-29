@@ -32,7 +32,7 @@ define('JWT/AUTH/SECRET_KEY', 'palabra-clave-que-generará-el-token');
 define('JWT/AUTH/CORS_ENABLE', true);
 ```
 
-A partir de aquí la mayoría de las modificaciones van a ser sobre la **instalación de AngularJS realizada usando [Yeoman](http://ivanalbizu.eu/blog/demo-angularjs-shop-01-generando-proyecto-con-yeoman/)**.
+A partir de aquí la mayoría de las modificaciones van a ser sobre la <a href="demo-angularjs-shop-01-generando-proyecto-con-yeoman/">instalación de AngularJS realizada usando Yeoman.</a>
 
 ## Dependencias:
 

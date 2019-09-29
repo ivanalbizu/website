@@ -6,7 +6,7 @@ tags: AngularJS,JavaScript,Wordpress
 ctime: Fri, 06 May 2016 15:39:14 +0000
 ---
 
-Siguiendo con la entrada anterior en la que configuraba la <a href="http://ivanalbizu.eu/blog/angular-consumiendo-wordpress-rest-api-autenticacion/">Rest Api con Wordpress y Autenticación JWT con AngularJS, voy a continuar ampliando el proyecto. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Visitando la <a href="http://v2.wp-api.org/" target="_blank">documentación del Plugin Wp Rest Api</a> podemos ver todo lo que se puede hacer, en concreto vamos a realizar:
+Siguiendo con la entrada anterior en la que configuraba la <a href="angular-consumiendo-wordpress-rest-api-autenticacion/">Rest Api con Wordpress y Autenticación JWT con AngularJS</a>, voy a continuar ampliando el proyecto. (Al final de la entrada he publicado un vídeo y el repositorio en Git Hub). Visitando la <a href="http://v2.wp-api.org/" target="_blank">documentación del Plugin Wp Rest Api</a> podemos ver todo lo que se puede hacer, en concreto vamos a realizar:
 
 <ul class="list-bullets">
   <li>Listaremos varias entradas: GET /wp/v2/posts</li>

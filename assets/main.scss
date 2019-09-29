@@ -92,6 +92,10 @@ a {
   }
   figure {
     margin-bottom: 1rem;
+    img {
+      display: block;
+      margin: auto;
+    }
   }
   p > code,
   li > code {

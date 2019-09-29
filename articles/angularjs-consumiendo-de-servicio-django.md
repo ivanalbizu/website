@@ -1,19 +1,19 @@
 ---
 title: AngularJS consumiendo de servicio Django
 published: true
-description: AngularJS consumiendo de servicio Django
+description: Aplicación Frontend construida con AngularJS de libros y autores consumiendo de servicio REST construido con Django
 tags: AngularJS,JavaScript
 ctime: Mon, 09 Nov 2015 11:29:53 +0000
 ---
 
-En esta ocasión publico entrada sobre Angular como cliente y Django como servicio REST. Contendrá dos modelos, libro y autores. Los campos de libro son título, editorial, género y su autor. Los campos de autor serán nombre y apellidos. Las peticiones son enviadas desde angular usando **$resource** hacía **Django rest framework**.
+En esta ocasión publico entrada sobre Angular como cliente y Django como servicio REST. Contendrá dos modelos: libro y autores. Los campos de libro son <code>título</code>, <code>editorial</code>, <code>género</code> y su <code>autor</code>. Los campos de autor serán <code>nombre</code> y <code>apellidos</code>. Las peticiones son enviadas desde angular usando **$resource** hacía **Django rest framework**.
 
-## Cliente - Services
+## Cliente AngularJS - Services
 
-En la "Factory" BookServices (similar para autores) se definen los métodos GET, POST, PUT y DELETE para manipular un registro de tipo libro.
+En la "Factory" <code>BookServices</code> (similar para autores) se definen los métodos GET, POST, PUT y DELETE para manipular un registro de tipo libro.
 
-```
-.factory('BookServices', \['$resource',
+```javascript
+.factory('BookServices', ['$resource',
   function($resource) {
     return $resource(
       'http://127.0.0.1:8000/books/:id', {}, {
@@ -22,29 +22,34 @@ En la "Factory" BookServices (similar para autores) se definen los métodos GET,
         upctime: {method: 'PUT', cache: false, isArray: false},
         delete: {method: 'DELETE', cache: false, isArray: false}
       });
-  }\])
+  }])
 ```
 
-En la "Factory" BooksServices (similar para autores) se define el método GET que devolverá todos los registros de tipo libro.
+Se define el método GET que devolverá todos los registros de tipo libro.
 
-```
-.factory('BooksServices', \['$resource',
+```javascript
+.factory('BooksServices', ['$resource',
   function($resource) {
     return $resource(
       'http://127.0.0.1:8000/books', {}, {
         get: {method: 'GET', cache: false, isArray: true}
       });
-  }\])
+  }])
 ```
 
-## Cliente - Controllers
+## Cliente AngularJS - Controllers
 
-Existen tres "controllers": BookCtrl, CurrentBookCtrl y NewBookCtrl.
+Existen tres "controllers":
+<ul class="list-bullets">
+  <li><code>BookCtrl</code></li>
+  <li><code>CurrentBookCtrl</code></li>
+  <li><code>NewBookCtrl</code></li>
+</ul>
 
-*   Con BookCtrl se obtienen todos los registros, haciendo la llamada al método get de BooksServices.
+Con <code>BookCtrl</code> se obtienen todos los registros, haciendo la llamada al método get de <code>BooksServices</code>.
 
-```
-.controller('BookCtrl', \['$scope', 'BooksServices',
+```javascript
+.controller('BookCtrl', ['$scope', 'BooksServices',
   function ($scope, BooksServices) {
     BooksServices.get({},
       function success(response) {
@@ -54,13 +59,13 @@ Existen tres "controllers": BookCtrl, CurrentBookCtrl y NewBookCtrl.
         console.log("Error:"	+	JSON.stringify(errorResponse));
       }
     )
-}\])
+}])
 ```
 
-*   Con CurrentBookCtrl se permite obtener un registro, borrarlo y editarlo llamando a los métodos get, delete y update respectivamente de BookServices.
+Con <code>CurrentBookCtrl</code> se permite obtener un registro, borrarlo y editarlo llamando a los métodos get, delete y update respectivamente de <code>BookServices</code>.
 
-```
-.controller('CurrentBookCtrl', \['$scope', '$routeParams', '$location', 'BookServices',
+```javascript
+.controller('CurrentBookCtrl', ['$scope', '$routeParams', '$location', 'BookServices',
   function ($scope, $routeParams, $location, BookServices) {
 
     var bookId = $routeParams.id;
@@ -97,13 +102,13 @@ Existen tres "controllers": BookCtrl, CurrentBookCtrl y NewBookCtrl.
       )
     };
 
-}\])
+}])
 ```
 
-*   Con NewBookCtrl se permite crear un nuevo registro llamando al método  save de BookServices.
+Con <code>NewBookCtrl</code> se permite crear un nuevo registro llamando al método save de <code>BookServices</code>.
 
-```
-.controller('NewBookCtrl', \['$scope', '$location', 'BookServices', '$controller',
+```javascript
+.controller('NewBookCtrl', ['$scope', '$location', 'BookServices', '$controller',
   function ($scope, $location, BookServices, $controller) {
     $scope.save = function(data) {
       BookServices.save(data,
@@ -117,16 +122,23 @@ Existen tres "controllers": BookCtrl, CurrentBookCtrl y NewBookCtrl.
       )
     };
 
-}\])
+}])
 ```
 
-## Servidor - Django Rest Framework
+## Servidor API Rest - Django Rest Framework
 
-Cómo he comentado, el servidor será Django Rest Framework. En este caso no entro en detalle, sólo comentar que los archivos creados y/o editados son: settings.py, urls.py, models.py, viewsets.py, serializers.py
+Cómo he comentado, el servidor será Django Rest Framework. En este caso no entro en detalle, sólo comentar que los archivos creados y/o editados son:
+<ul class="list-bullets">
+  <code>settings.py</code>
+  <code>urls.py</code>
+  <code>models.py</code>
+  <code>viewsets.py</code>
+  <code>serializers.py</code>
+</ul>
 
-*   En settings.py se añaden las dependencias y configuraciones de "rest_framework" y "corsheaders" (este último para simplificar y evitar problemas con CORS).
+En <code>settings.py</code> se añaden las dependencias y configuraciones de "rest_framework" y "corsheaders" (este último para simplificar y evitar problemas con CORS).
 
-```
+```python
 INSTALLED_APPS = (
     # Otras configuraciones
     'rest_framework',
@@ -140,19 +152,19 @@ MIDDLEWARE_CLASSES = (
 )
 
 REST_FRAMEWORK = {
-    'DEFAULT\_AUTHENTICATION\_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': (
         # Simplicar operaciones
         'rest_framework.permissions.AllowAny',
     )
 }
 
 APPEND_SLASH = False
-CORS\_ORIGIN\_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 ```
 
-*   En urls.py como su nombre indica se definen el tema de rutas.
+En <code>urls.py</code> como su nombre indica se definen el tema de rutas.
 
-```
+```python
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
@@ -165,15 +177,15 @@ router.register(r'authors', AutorViewSet)
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest\_framework.urls', namespace='rest\_framework')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^admin/', include(admin.site.urls)),
 )
 ```
 
-*   En models.py se crean los modelos y sus campos.
+En <code>models.py</code> se crean los modelos y sus campos.
 
-```
+```python
 from django.db import models
 
 class Autor(models.Model):
@@ -187,9 +199,9 @@ class Libro(models.Model):
     autor = models.ForeignKey(Autor)
 ```
 
-*   En serializers.py se serializan los modelos.
+En <code>serializers.py</code> se serializan los modelos.
 
-```
+```python
 from rest_framework.serializers import ModelSerializer
 from .models import Libro, Autor
 
@@ -204,9 +216,9 @@ class AutorSerializer(ModelSerializer):
         fields = ('id', 'nombre', 'apellido')
 ```
 
-*   Los viewsets.py son necesarios para hacer la conexión de los modelos serializados con el ruteo de urls en urls.py
+Los <code>viewsets.py</code> son necesarios para hacer la conexión de los modelos serializados con el ruteo de urls en <code>urls.py</code>
 
-```
+```python
 from .models import Libro, Autor
 from .serializers import LibroSerializer, AutorSerializer
 from rest_framework import viewsets
@@ -220,4 +232,6 @@ class AutorViewSet(viewsets.ModelViewSet):
     queryset = Autor.objects.all()
 ```
 
-Hasta aquí la configuración de Django Rest Framework. Sobre el cliente he obviado cosas para no hacerlo muy extenso. En mi repositorio de [GitHub](https://github.com/ivanalbizu/django_angular) se puede encontrar todo el código de AngularJS.
+Hasta aquí la configuración de Django Rest Framework. Sobre el cliente he obviado cosas para no hacerlo muy extenso.
+
+En <a href="https://github.com/ivanalbizu/django_angular" target="_blank">mi repositorio de GitHub</a> se puede encontrar todo el código de AngularJS y de Django.
