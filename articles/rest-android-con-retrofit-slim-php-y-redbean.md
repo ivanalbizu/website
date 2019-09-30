@@ -67,7 +67,7 @@ function getUser($id) {
 	if ($users) {
 		$app->response()->header('Content-Type', 'application/json');
 		$json_user = $users->getProperties();
-		echo json\_encode($json\_user);
+		echo json_encode($json_user);
 	} else {
 		$app->response()->status(404);
 	}

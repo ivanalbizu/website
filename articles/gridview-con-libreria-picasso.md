@@ -6,16 +6,22 @@ tags: Android,Java
 ctime: Mon, 15 Dec 2014 15:40:06 +0000
 ---
 
-Gridview con libreria Picasso Android. En esta entrada voy a hacer un sencillo ejemplo de GridvView. Para ello necesitamos descargarnos el [Jar de la librería Picasso](http://square.github.io/picasso/ "Web para descargar librería Picasso") Se trabajará sobre cuatro archivos:
+Gridview con libreria Picasso Android. En esta entrada voy a hacer un sencillo ejemplo de GridvView. Para ello necesitamos descargarnos el JAR <a href="http://square.github.io/picasso/" target="_blank">Web para descargar librería Picasso</a>.
 
-1.  La vista de la aplicación: **activity_main.xml**
-2.  El adaptador del GridView: **GridviewAdapter.java**
-3.  El programa principal: **MainActivity.java**
-4.  Modificar el **AndroidManifest.xml** para dar permisos de internet
+Se trabajará sobre cuatro archivos:
 
-El primer archivo, **activity_main.xml**, contiene el GridView y su ID será **@+id/gridView**. Su código es:
+<ol class="list-bullets">
+	<li>La vista de la aplicación <code>activity_main.xml</code></li>
+	<li>El adaptador del GridView <code>GridviewAdapter.java</code></li>
+	<li>El programa principal <code>MainActivity.java</code></li>
+	<li>Modificar el <code>AndroidManifest.xml</code> para dar permisos de internet</li>
+</ol>
 
-```
+El primer archivo, <code>activity_main.xml</code>, contiene el GridView y su ID será <code>@+id/gridView</code>.
+
+Su código es:
+
+```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
@@ -35,17 +41,22 @@ El primer archivo, **activity_main.xml**, contiene el GridView y su ID será *
 </RelativeLayout>
 ```
 
-El segundo archivo, el adaptador del GridView se llama **GridviewAdapter.java** lo construyo extendiendo de BaseAdapter.
+El segundo archivo, el adaptador del <code>GridView</code> se llama <code>GridviewAdapter.java</code> lo construyo extendiendo de <code>BaseAdapter</code>.
 
-*   El constructor del adaptador será con dos parámetros. El primero hace referencia al contexto, y el segundo aun Array de String que contendrá lista de URL que pasarán en el programa principal.
-*   Se implementan los tres métodos propios del base adapter: public int getCount(), public Object getItem(int position) y public long getItemId(int position).
-*   Se da forma al public View getView(int position, View convertView, ViewGroup parent).
-    *   Se declara un ImageView. La primera vez que se itere dentro de getView se instancia el ImageView y se iguala a convertView. En el resto de iteraciones el convertView se castea y se pasa al ImageView.
-    *   Se usa la librería Picasso. Existen muchos métodos. Los necesarios son cargar (load()) las imágenes y especificar sobre que se cargarán, en mi caso sobre "img", es decir, sobre el ImageView.
+<ul class="list-bullets">
+	<li>El constructor del adaptador será con dos parámetros. El primero hace referencia al contexto, y el segundo aun Array de String que contendrá lista de URL que pasarán en el programa principal.</li>
+	<li>Se implementan los tres métodos propios del base adapter: <code>public int getCount()</code>, <code>public Object getItem(int position)</code> y <code>public long getItemId(int position)</code>.</li>
+	<li>Se da forma al <code>public View getView(int position, View convertView, ViewGroup parent)</code>.
+		<ul class="list-bullets">
+			<li>Se declara un <code>ImageView</code>. La primera vez que se itere dentro de <code>getView</code> se instancia el <code>ImageView</code> y se iguala a <code>convertView</code>. En el resto de iteraciones el <code>convertView</code> se castea y se pasa al <code>ImageView</code>.</li>
+			<li>Se usa la librería Picasso. Existen muchos métodos. Los necesarios son cargar <code>load()</code> las imágenes y especificar sobre que se cargarán, en mi caso sobre <code>img</code>, es decir, sobre el <code>ImageView</code>.</li>
+		</ul>
+	</li>
+</ul>
 
 El código es:
 
-```
+```java
 package eu.ivanalbizu.picasso;
 
 import android.content.Context;
@@ -117,15 +128,17 @@ public class GridviewAdapter extends BaseAdapter{
 }
 ```
 
-En **MainActivity.java:**
+En <code>MainActivity.java:</code>
 
-*   Se declaran tres variables, una variable GridView y obtengo la referencia de la vista, otra variable para hacer uso del adaptador y un Array de String que contiene las URL de las imágenes.
-*   Se construye el adaptador con los dos parámetros, primero se pasa la clase actual (MainActivity.this) y segundo el Array de String
-*   Al gridView se le especifica que haga uso del adaptador que acabamos de crear.
+<ul class="list-bullets">
+	<li>Se declaran tres variables, una variable GridView y obtengo la referencia de la vista, otra variable para hacer uso del adaptador y un Array de String que contiene las URL de las imágenes.</li>
+	<li>Se construye el adaptador con los dos parámetros, primero se pasa la clase actual (MainActivity.this) y segundo el Array de String</li>
+	<li>Al gridView se le especifica que haga uso del adaptador que acabamos de crear.</li>
+</ul>
 
 Su código:
 
-```
+```java
 package eu.ivanalbizu.picasso;
 
 import android.app.Activity;
@@ -165,4 +178,12 @@ public class MainActivity extends Activity {
 }
 ```
 
-En **AndroidManifest.xml** tenemos que dar permisos de internet: <uses-permission android:name="android.permission.INTERNET"/> Vídeo del proyecto: Se puede decargar [código de GridView con librería Picasso](https://db.tt/EFMK4Nm4 "Código GridView con librería Picasso")
+En <code>AndroidManifest.xml</code> tenemos que dar permisos de internet <code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</code>
+
+Vídeo del proyecto:
+
+<div class="ratio-16-9">
+    <iframe title="GridView Android con librería Picaso" type="text/html" src="http://www.youtube.com/embed/LpLq3OC3478?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+Descargar el código completo <a href="(https://db.tt/EFMK4Nm4" target="_blank">GridView con Picasso de galería del móvil</a>

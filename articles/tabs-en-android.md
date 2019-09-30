@@ -8,13 +8,15 @@ ctime: Sun, 14 Dec 2014 10:35:52 +0000
 
 Crear Tabs en Android es sencillo. Necesitaremos el archivo XML.
 
-*   La etiqueta **TabHost** contiene toda la información.
-*   La etiqueta **TabWidget** hace referencia al sistema de pestañas: al menú.
-*   Los contenidos de cada pestaña está dentro de **LinearLayout**.
+<ul class="list-bullets">
+  <li>La etiqueta <code>TabHost</code> contiene toda la información.</li>
+  <li>La etiqueta <code>TabWidget</code> hace referencia al sistema de pestañas: al menú.</li>
+  <li>Los contenidos de cada pestaña está dentro de <code>LinearLayout</code>.</li>
+</ul>
 
 Su código:
 
-```
+```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
@@ -78,18 +80,20 @@ Su código:
 </RelativeLayout>
 ```
 
-La clase MainActivity.java, dentro de onCreate,  obtiene las referencias de cada elemento de la vista.
+La clase <code>MainActivity.java</code>, dentro de <code>onCreate</code> obtiene las referencias de cada elemento de la vista.
 
-*   Se obtiene la referencia al sistema de pestañas **TabHost tabs = (TabHost) findViewById(android.R.id.tabhost)**
-*   Llamamos al método **setup()** antes de empezar a añadir pestañas usando la ID.
-*   Indicamos una nueva pestaña **newTabSpec("Pestaña 1")**
-*   Asignamos la referencia **spec.setContent(R.id.tab1)** e indicamos el nombre **spec.setIndicator("Menú 1")**
-*   Asignamos la pestaña creada al sistema de pestañas **tabs.addTab(spec)**
-*   Establecemos la primera pestaña como predeterminada **tabs.setCurrentTab(0)**
+<ul class="list-bullets">
+  <li>Se obtiene la referencia al sistema de pestañas <code>TabHost tabs = (TabHost) findViewById(android.R.id.tabhost)</code></li>
+  <li>Llamamos al método <code>setup()</code> antes de empezar a añadir pestañas usando la ID.</li>
+  <li>Indicamos una nueva pestaña <code>newTabSpec("Pestaña 1")</code></li>
+  <li>Asignamos la referencia <code>spec.setContent(R.id.tab1)</code> e indicamos el nombre <code>spec.setIndicator("Menú 1")</code></li>
+  <li>Asignamos la pestaña creada al sistema de pestañas <code>tabs.addTab(spec)</code></li>
+  <li>Establecemos la primera pestaña como predeterminada <code>tabs.setCurrentTab(0)</code></li>
+</ul>
 
 Su código:
 
-```
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
@@ -117,4 +121,8 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-El vídeo del ejemplo
+El vídeo del ejemplo:
+
+<div class="ratio-16-9">
+    <iframe title="Sistema de Tabs en Android" type="text/html" src="http://www.youtube.com/embed/sUYtMNP66xk?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>

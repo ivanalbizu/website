@@ -6,18 +6,20 @@ tags: Android,Java
 ctime: Wed, 17 Dec 2014 18:17:18 +0000
 ---
 
-Continuando con mi publicación anterior sobre [GridView con librería Picasso I](http://ivanalbizu.eu/gridview-con-libreria-picasso/ "GridView con librería Picasso"), voy a implementar:
+Continuando con mi publicación anterior sobre <a href="gridview-con-libreria-picasso/">GridView con librería Picasso</a>, voy a implementar:
 
-*   Usar las imágenes de nuestro móvil
-*   Posibilidad de controlar el número de columnas del GridView
-*   Permitir ver la imagen con la aplicación por defecto
-*   Mejorar la visualización en función del tamaño de pantalla
+<ul class="list-bullets">
+	<li>Usar las imágenes de nuestro móvil</li>
+	<li>Posibilidad de controlar el número de columnas del <code>GridView</code></li>
+	<li>Permitir ver la imagen con la aplicación por defecto</li>
+	<li>Mejorar la visualización en función del tamaño de pantalla</li>
+</ul>
 
-## 1. Usar imágenes de nuestro móvil.
+## Usar imágenes de nuestro móvil.
 
-Para obtener las imágenes que tenemos en nuestro teléfono usaremos un método estático que nos devuelve un ArrayList de String. El método lo implementamos dentro de MainActivity.java Su código:
+Para obtener las imágenes que tenemos en nuestro teléfono usaremos un método estático que nos devuelve un <code>ArrayList</code> de <code>String</code>. El método lo implementamos dentro de <code>MainActivity.java</code>. Su código:
 
-```
+```java
 /**
  * Getting All Images Path
  * 
@@ -52,31 +54,38 @@ public static ArrayList<String> getAllShownImagesPath(Activity activity) {
 }
 ```
 
-Necesitamos ahora modificar el código del adaptador, ya que su constructor recibía como uno de sus parámetros un Array de String. Por tanto
+Necesitamos ahora modificar el código del adaptador, ya que su constructor recibía como uno de sus parámetros un <code>Array</code> de <code>String</code>. Por tanto
 
-1.  La variable que contiene las imágenes será **private ArrayList<String> items;**
-2.  El contructor será del tipo **public GridviewAdapter(Context context, ArrayList<String> items) {...}**.
-3.  Para determinar cuantos elementos tiene el Array ahora será **public int getCount() { return items.length; }**
-4.  Para conocer sobre que imagen se itera dentro de getView necesitaremos cambiarlo a **public Object getItem(int position) { return items.get(position); }**
-5.  Para hacer uso de la librería Picasso modificaremos el método que obtiene la imagen a procesar **.load("file://"+items.get(position))**. Concatenamos antes de la ruta de la imagen un trozo de String para referenciarla correctamente: "file://"
+<ol class="list-bullets">
+	<li>La variable que contiene las imágenes será <code>private ArrayList<String> items;</code></li>
+	<li>El contructor será del tipo <code>public GridviewAdapter(Context context, ArrayList<String> items) {...}</code>.</li>
+	<li>Para determinar cuantos elementos tiene el <code>Array</code> ahora será <code>public int getCount() { return items.length; }</code></li>
+	<li>Para conocer sobre que imagen se itera dentro de <code>getView</code> necesitaremos cambiarlo a <code>public Object getItem(int position) { return items.get(position); }</code></li>
+	<li>Para hacer uso de la librería Picasso modificaremos el método que obtiene la imagen a procesar <code>.load("file://"+items.get(position))</code>. Concatenamos antes de la ruta de la imagen un trozo de <code>String</code> para referenciarla correctamente: <code>file://</code></li>
+</ol>
 
-Hasta aquí ya usamos las imágenes de nuestro móvil para crear el GridView.
+Hasta aquí ya usamos las imágenes de nuestro móvil para crear el <code>GridView</code>.
 
-## 2. Controlar el número de columnas.
+## Controlar el número de columnas.
 
 Necesitaremos crear y modificar varios archivos.
 
-1.  Crear el menú de opciones, sobre esto ya hice un [vídeo](https://www.youtube.com/watch?v=4r7RNfK89lg&list=UUgAVPB3yw74JP5UEEXHgccA "Vídeo menú de opciones")
-2.  Registramos el menú en el MainActivity.java con **public boolean onCreateOptionsMenu(Menu menu) {...}**
-3.  Le damos funcionalidad a los ítems del menú con **public boolean onOptionsItemSelected(MenuItem item) {...}**
-    1.  Establecemos al comienzo todos los ítems como no seleccionados **item.setChecked(false);**
-    2.  Según ítem seleccionado, pasamos (**numColumn**) a una variable el valor de columnas y establecemos el ítem como "checked" **item.setChecked(true);**
-    3.  Después del SWITCH le comunicamos al GridView el número de columnas: **.setNumColumns(numColumn);** y el adaptador actualizado: **.setAdapter(new GridviewAdapter(MainActivity.this, getAllShownImagesPath(this), numColumn));**
-    4.  Añadimos nueva variable al adaptador y modificamos el constructor para que reciba el tercer parámetro que indica el número de columnas: **public GridviewAdapter(Context context, ArrayList<String> items, int numColumn) {..}**
+<ol class="list-bullets">
+	<li>Crear el menú de opciones, sobre esto ya hice un [vídeo](https://www.youtube.com/watch?v=4r7RNfK89lg&list=UUgAVPB3yw74JP5UEEXHgccA "Vídeo menú de opciones")</li>
+	<li>Registramos el menú en el <code>MainActivity.java</code> con <code>public boolean onCreateOptionsMenu(Menu menu) {...}</code></li>
+	<li>Le damos funcionalidad a los ítems del menú con <code>public boolean onOptionsItemSelected(MenuItem item) {...}</code>
+		<ol class="list-bullets">
+			<li>Establecemos al comienzo todos los ítems como no seleccionados <code>item.setChecked(false);</code></li>
+			<li>Según ítem seleccionado, pasamos <code>numColumn</code> a una variable el valor de columnas y establecemos el ítem como <code>checked</code> <code>item.setChecked(true);</code></li>
+			<li>Después del SWITCH le comunicamos al <code>GridView</code> el número de columnas: <code>.setNumColumns(numColumn);</code> y el adaptador actualizado: <code>.setAdapter(new GridviewAdapter(MainActivity.this, getAllShownImagesPath(this), numColumn));</code></li>
+			<li>Añadimos nueva variable al adaptador y modificamos el constructor para que reciba el tercer parámetro que indica el número de columnas: <code>public GridviewAdapter(Context context, ArrayList<String> items, int numColumn) {..}</code></li>
+		</ol>
+	</li>
+</ol>
 
 Código XML del menú:
 
-```
+```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
@@ -110,7 +119,7 @@ Código XML del menú:
 
 Código de creación y control del menú:
 
-```
+```java
 @Override
 public boolean onCreateOptionsMenu(Menu menu) {
 	getMenuInflater().inflate(R.menu.main, menu);
@@ -119,7 +128,6 @@ public boolean onCreateOptionsMenu(Menu menu) {
 }
 
 private void getOverflowMenu() {
-
 	try {
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
@@ -165,11 +173,11 @@ public boolean onOptionsItemSelected(MenuItem item) {
 }
 ```
 
-## 3. Permitir ver la imagen con la aplicación por defecto.
+## Permitir ver la imagen con la aplicación por defecto.
 
-Dentro del método onCreate(...) incluimos listener al GridView del tipo "ítem seleccionado". Su código:
+Dentro del método <code>onCreate(...)</code> incluimos listener al GridView del tipo "ítem seleccionado". Su código:
 
-```
+```java
 gridView.setOnItemClickListener(new OnItemClickListener() {
 
 	@Override
@@ -185,11 +193,13 @@ gridView.setOnItemClickListener(new OnItemClickListener() {
 });
 ```
 
-## 4. Mejorar la visualización en función del tamaño de pantalla.
+## Mejorar la visualización en función del tamaño de pantalla.
 
-Para optimizar el ancho de pantalla del móvil y el número de columnas a mostrar modificaremos el código del getView del adaptador. Se necesita obtener el ancho de pantalla del teléfono (detecta si está vertical u horizontal el móvil). Al método **.resize(...)** de la librería Picasso le pasamos como parámetros el resultado de dividir el ancho del móvil entre el número de columnas** int imageWidth = (int) (width / numColumn);** El método completo del getView es:
+Para optimizar el ancho de pantalla del móvil y el número de columnas a mostrar modificaremos el código del <code>getView</code> del adaptador. Se necesita obtener el ancho de pantalla del teléfono (detecta si está vertical u horizontal el móvil). Al método <code>resize(...)</code> de la librería Picasso le pasamos como parámetros el resultado de dividir el ancho del móvil entre el número de columnas <code>int imageWidth = (int) (width / numColumn);</code>.
 
-```
+El método completo del <code>getView</code> es:
+
+```java
 @Override
 public View getView(int position, View convertView, ViewGroup parent) {
 	WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -228,4 +238,10 @@ public View getView(int position, View convertView, ViewGroup parent) {
 }
 ```
 
-Vídeo del proyecto: Descargar el código completo de el [GridView con librería Picasso](https://drive.google.com/open?id=0BzQS5pOyF_HjOWc5ekxRWS01bjQ "GridView con Picasso de galería del móvil")
+Vídeo del proyecto:
+
+<div class="ratio-16-9">
+    <iframe title="GridView Android con librería Picaso" type="text/html" src="http://www.youtube.com/embed/KRIBZyP1hd8?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+Descargar el código completo <a href="https://drive.google.com/open?id=0BzQS5pOyF_HjOWc5ekxRWS01bjQ" target="_blank">GridView con Picasso de galería del móvil</a>
