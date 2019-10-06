@@ -5,6 +5,7 @@ import NavBar from '~/components/NavBar';
       <nuxt-link to="/">ivan albizu</nuxt-link>
     </div>
     <div class="navbar__menu">
+      <nuxt-link class="button" to="/curriculum/">Currículum</nuxt-link>
       <nuxt-link class="button" to="/blog/">Blog</nuxt-link>
     </div>
   </nav>
@@ -22,5 +23,24 @@ export default {
   justify-content: space-between;
   margin-bottom: 2rem;
   font-size: 2.4rem;
+  font-size: 5vw;
+  .button:not(:first-of-type) {
+    margin-left: 1rem;
+  }
+}
+@media(min-width: 20rem) {
+  .navbar {
+    font-size: 5vw;
+  }
+}
+@media(min-width: 40rem) {
+  .navbar {
+    font-size: 3vw;
+  }
+}
+@media(min-width: 60rem) {
+  .navbar {
+    font-size: 2.4rem;
+  }
 }
 </style>

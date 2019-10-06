@@ -1,5 +1,5 @@
 <template>
-  <img :src="require(`~/assets/images/articles/${image}`)" :alt="alt" loading="lazy" >
+  <img :src="require(`~/assets/images/articles/${image}`)" :alt="alt" loading="lazy">
 </template>
 
 <script>

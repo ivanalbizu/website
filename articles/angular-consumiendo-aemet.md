@@ -5,6 +5,7 @@ description: Aplicación con Angular 1 para mostrar datos meteorológicos propor
 tags: AngularJS,JavaScript,Php
 ctime: Wed, 07 Dec 2016 15:46:05 +0000
 cover_image: angular-consumiendo-aemet.png
+alt_image: Angular consumiendo de AEMET
 ---
 
 En esta publicación vamos a crear una App Angular 1 que consume datos de la AEMET en formato Xml. Será necesario hacer operaciones en el backend y mostrarlos en el front.

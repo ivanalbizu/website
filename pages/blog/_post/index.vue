@@ -8,7 +8,7 @@
         <div class="tags">{{ attributes.tags }}</div>
       </div>
       <figure v-if="attributes.cover_image" class="">
-        <img :src="require(`~/assets/images/articles/${attributes.cover_image}`)" :alt="attributes.cover_image_cp" loading="lazy"/>
+        <img :src="require(`~/assets/images/articles/${attributes.cover_image}`)" :alt="attributes.alt_image" loading="lazy"/>
       </figure>
     </header>
     <article>

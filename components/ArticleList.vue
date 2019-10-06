@@ -8,7 +8,7 @@
       <figure v-if="post.cover_image" class="blog__img">
         <img
           :src="require(`~/assets/images/articles/${post.cover_image}`)"
-          :alt="post.cover_image_cp"
+          :alt="post.alt_image"
           loading="lazy"
         >
       </figure>

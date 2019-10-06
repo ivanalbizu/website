@@ -8,7 +8,8 @@
       <p class="hero__txt">Maquetador web que le gusta trastear e investigar diferentes "cacharros"</p>
       <p class="hero__txt">He estudiado FP Superior Aplicaciones móviles Android, desarrollado diferentes sitios con temas propios en Wordpress. Actualmente desarrollando una App Web con nodejs para integrar la Api de Mailjet en el diseño de Newsletter con MJML, usando Autenticación con JWT, base de datos Mongo para Login, Pug para las vistas de la aplicación, expressjs para manejar las rutas, gulp para tareas de la App y alguna otra cosa más</p>
       <p class="hero__txt">Recienteme estaba en departamento de Commerce maquetando diseños a medida de tiendas online construidas mediante Prestashop</p>
-      <p class="hero__txt">También cambiando mi Web antigua construida en Wordpress para usar NUXT + VUE. Poco a iré trayendo viejos contenidos a mi nuevo sitio, al tiempo que aprendo :)</p>
+      <p class="hero__txt">También cambiando mi Web antigua construida en Wordpress para usar NUXT + VUE. Poco a iré trayendo viejos contenidos a mi nuevo sitio, al tiempo que aprendo</p>
+      <p>😆</p>
     </article>
   </section>
 </template>
@@ -20,8 +21,9 @@
   align-items: center;
   text-align: center;
   margin-bottom: 5rem;
-  padding: 3rem 1rem;
-  background-color: $primary;
+  padding: 3rem 2rem;
+  background: $primary url('~assets/images/bg-hero.jpg') no-repeat center;
+  background-size: cover;
   color: #FFF;
   &__header {
     margin-bottom: 1.5rem;
@@ -39,6 +41,11 @@
     margin-bottom: 1rem;
     line-height: 1.3;
     letter-spacing: .08rem;
+  }
+}
+@media(min-width: 40rem) {
+  .hero {
+    padding: 7rem 4rem;
   }
 }
 </style>

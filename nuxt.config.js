@@ -53,7 +53,7 @@ module.exports = {
     [
       "@nuxtjs/sitemap",
       {
-        hostname: 'https://ivanalbizu.eu',
+        hostname: 'https://www.ivanalbizu.eu',
         gzip: true,
       }
     ]

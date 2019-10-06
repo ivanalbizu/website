@@ -2,17 +2,18 @@
 @import "../node_modules/highlight.js/styles/vs2015.css";
 @import "variables";
 
-:root {
+html {
   font-size: 62.5%;
-  body {
-    font-family: Helvetica, sans-serif;
-    font-size: 1.6rem;
-    margin: 1rem auto;
-    line-height: 1.4em;
-    letter-spacing: .015rem;
-    color: #111;
-  }
 }
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.6rem;
+  margin: 1rem auto;
+  line-height: 1.4em;
+  letter-spacing: .015rem;
+  color: #111;
+}
+
 img {
   max-width: 100%;
 }
