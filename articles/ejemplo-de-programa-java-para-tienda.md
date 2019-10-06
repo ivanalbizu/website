@@ -6,9 +6,13 @@ tags: Java
 ctime: Sun, 14 Sep 2014 14:15:54 +0000
 ---
 
-Ejemplo de programa Java para tienda de venta de juegos, música y películas. Al final del post añado vínculo para descargar el programa y probarlo y un vídeo explicando el código. El programa está compuesto de seis clases: Test.java, Gestion.java, Producto.java, Cine.java, Musica.java y Videojuego.java. La clase producto define propiedades comunes de los tipos Cine, Música y Videjuego, y cada una de estas define sus propios atributos. La clase Gestión, como su nombre indica, gestiona la tienda y la clase Test ejecuta el programa. Como se ha comentado, la clase principal que ejecuta el programa es la **Test**. El código es el siguiente:
+Ejemplo de programa Java para tienda de venta de juegos, música y películas. Al final del post añado vínculo para descargar el programa y probarlo y un vídeo explicando el código.
 
-```
+El programa está compuesto de seis clases: <code>Test.java</code>, <code>Gestion.java</code>, <code>Producto.java</code>, <code>Cine.java</code>, <code>Musica.java</code> y <code>Videojuego.java</code>. La clase producto define propiedades comunes de los tipos Cine, Música y Videjuego, y cada una de estas define sus propios atributos. La clase Gestión, como su nombre indica, gestiona la tienda y la clase Test ejecuta el programa. Como se ha comentado, la clase principal que ejecuta el programa es la <code>Test</code>.
+
+El código es el siguiente:
+
+```java
 package ejerc03;
 import leer.*;
 public class Test {
@@ -83,9 +87,19 @@ public class Test {
 }
 ```
 
-Explicando un poco el código de Test. Se declaran tres variables. Una variable booleana "_Continuar_" para repetir  el proceso de compra, dos variables enteras "_lecturaProducto_" y "_lecturaCantidad_" para que el usuario elija el producto que desea y su cantidad. Se declaran y cargan cinco arrays para contener productos de tipos "_Música_", "_Cine_" y "_Juegos_" que serán guardados en el array "_Catálogo_". Se declara el objeto "_Gestion_" para realizar los procesos del programa. Al ejecutarse el programa el usuario ve un pequeño menú con las opciones: Mostrar productos, vender, mostrar caja y salir. La opción elegida por el usuario determinará que trozo de código debe ejecutarse mediante un Switch. Si la opción elegida es mostrar productos se le aplica el método **mostrarProductos(Catalogo)** al objeto "_Gestion_". Si la opción es vender producto se muestra los nombres de los productos mediante **gestion.mostrarNombreProductos(catalogo)** y luego se solicita la cantidad de dicho producto, y se ejecuta la venta con el método: **gestion.comprarProducto(catalogo, lecturaProducto, lecturaCantidad)** en el que se pasan como parámetros el catálogo, el producto y la cantidad. Si la opción es "mostrar caja" se ejecuta el método **gestion.mostrarCaja()** que devuelve el importe de las ventas. La última opción de salida se lleva a cabo si el usuario introduce un número diferente al 1, 2 ó 3. La clase que lleva la lógica del programa es la **Gestion**, su código es el siguiente:
+## Explicando un poco el código de Test
 
-```
+Se declaran tres variables. Una variable booleana <code>Continuar</code> para repetir el proceso de compra, dos variables enteras <code>lecturaProducto</code> y <code>lecturaCantidad</code> para que el usuario elija el producto que desea y su cantidad.
+
+Se declaran y cargan cinco arrays para contener productos de tipos <code>Música</code>, <code>Cine</code> y <code>Juegos</code> que serán guardados en el array <code>Catálogo</code>. Se declara el objeto <code>Gestion</code> para realizar los procesos del programa. Al ejecutarse el programa el usuario ve un pequeño menú con las opciones: Mostrar productos, vender, mostrar caja y salir.
+
+La opción elegida por el usuario determinará que trozo de código debe ejecutarse mediante un <code>switch</code>. Si la opción elegida es mostrar productos se le aplica el método <code>mostrarProductos(Catalogo)</code> al objeto <code>Gestion</code>. Si la opción es vender producto se muestra los nombres de los productos mediante <code>gestion.mostrarNombreProductos(catalogo)</code> y luego se solicita la cantidad de dicho producto, y se ejecuta la venta con el método: <code>gestion.comprarProducto(catalogo, lecturaProducto, lecturaCantidad)</code> en el que se pasan como parámetros el catálogo, el producto y la cantidad. Si la opción es "mostrar caja" se ejecuta el método <code>gestion.mostrarCaja()</code> que devuelve el importe de las ventas.
+
+La última opción de salida se lleva a cabo si el usuario introduce un número diferente al 1, 2 ó 3. La clase que lleva la lógica del programa es la <code>Gestion</code>.
+
+Su código es el siguiente:
+
+```java
 package ejerc03;
 
 public class Gestion {
@@ -135,9 +149,33 @@ public class Gestion {
 }
 ```
 
-En la clase "**Gestion**" se declaran dos atributos, un array de tipo "_Producto_" para contener los productos  y otro de tipo "_Double_" para contener el importe. Se declaran dos constructores, uno vació y otro que carga el array de productos. Esta clase contiene 5 métodos. El primero, **public Producto[] cargarProductos()**, devuelve el array de productos. El segundo, **public void mostrarProductos(Producto[] productos)**, recibe como parámetro el array de productos que se mostrarán. El tercer método, **public void mostrarNombreProductos(Producto[] productos)**, es parecido al anterior, con la diferencia que dentro de su código se llama al código método getNombre() para imprimir por pantalla el nombre en lugar de todo el array de productos. El cuarto método, public double **comprarProducto(Producto[] productos, int num, int cantidadUnidades)**, recibe el array de productos, un entero identificador del producto seleccionado y otro entero para la cantidad de productos elegida por el usuario. Este método, comprueba que el producto seleccionado exista **if (productos[num-1].isDisponible())** y que la cantidad seleccionada sea menor que la cantidad en stock **if (productos[num-1].getCantStock() >= cantidadUnidades)**. En el caso que la compra se pueda llevar a cabo cumpliendo las condiciones anteriores, la cantidad de productos en stock será actualizado **productos[num -1].setCantStock(productos[num -1].getCantStock()-cantidadUnidades)** y se añadirá el importe de la compra a la caja: **caja+=cantidadUnidades*productos[num-1].getPrecioUnit()**. El último método, **public double mostrarCaja()**, devuelve entero que indica el importe de la venta actual  **caja=Math.round(caja*100); return caja/100;**. En la clase Producto se definen atributos comunes a los tipos "_Música_", "_Videojuego_" y "_Cine_": "_nombre_", "_precioUnit_", "_cantStock_" y "_disponible_". Se crea un cuarto atributo estático llamado "_dimensionArray_" para que cuando en la clase Test se cree el catálogo de productos le podamos designar la dimensión de este array directamente usando esta variable: **Producto catalogo[] = new  producto[Producto.dimesionArray]** (cada nueva creación de objeto Producto incrementa en uno la dimensión). El código de la clase **Producto** es el siguiente:
+## Explicando un poco el código de Gestion
 
-```
+En la clase <code>Gestion</code> se declaran dos atributos, un array de tipo <code>Producto</code> para contener los productos y otro de tipo <code>Double</code> para contener el importe.
+
+Se declaran dos constructores, uno vació y otro que carga el array de productos.
+
+Esta clase contiene 5 métodos.
+
+El primero, <code>public Producto[] cargarProductos()</code>, devuelve el array de productos.
+
+El segundo, <code>public void mostrarProductos(Producto[] productos)</code>, recibe como parámetro el array de productos que se mostrarán.
+
+El tercer método, <code>public void mostrarNombreProductos(Producto[] productos)</code>, es parecido al anterior, con la diferencia que dentro de su código se llama al código método <code>getNombre()</code> para imprimir por pantalla el nombre en lugar de todo el array de productos.
+
+El cuarto método, public double <code>comprarProducto(Producto[] productos, int num, int cantidadUnidades)</code>, recibe el array de productos, un entero identificador del producto seleccionado y otro entero para la cantidad de productos elegida por el usuario. Este método, comprueba que el producto seleccionado exista <code>if (productos[num-1].isDisponible())</code> y que la cantidad seleccionada sea menor que la cantidad en stock <code>if (productos[num-1].getCantStock() >= cantidadUnidades)</code>. En el caso que la compra se pueda llevar a cabo cumpliendo las condiciones anteriores, la cantidad de productos en stock será actualizado <code>productos[num -1].setCantStock(productos[num -1].getCantStock()-cantidadUnidades)</code> y se añadirá el importe de la compra a la caja: <code>caja+=cantidadUnidades\*productos[num-1].getPrecioUnit()</code>.
+
+El último método, <code>public double mostrarCaja()</code>, devuelve entero que indica el importe de la venta actual <code>caja=Math.round(caja*100); return caja/100;</code>.
+
+## Explicando un poco el código de Producto
+
+En la clase Producto se definen atributos comunes a los tipos <code>Música</code>, <code>Videojuego</code> y <code>Cine</code>: <code>nombre</code>, <code>precioUnit</code>, <code>cantStock</code> y <code>disponible</code>. Se crea un cuarto atributo estático llamado <code>dimensionArray</code> para que cuando en la clase Test se cree el catálogo de productos le podamos designar la dimensión de este array directamente usando esta variable: <code>Producto catalogo[] = new  producto[Producto.dimesionArray]</code> (cada nueva creación de objeto Producto incrementa en uno la dimensión).
+
+En esta clase también generamos los <code>getters</code> y <code>setters</code> para acceder a los atributos. También el método <code>toString()</code>. Uno de los métodos generados <code>public boolean isDisponible()</code> lo modificamos un poco. En la declaración de atributos pusimos a <code>false</code> la disponibilidad, con lo que siempre figura que no existe producto, para ello usamos: <code>if(getCantStock()>0) this.disponible = true;</code> sabremos si hay disponibilidad.
+
+El código de la clase <code>Producto</code> es el siguiente:
+
+```java
 package ejerc03;
 
 public abstract class Producto {
@@ -200,9 +238,11 @@ public abstract class Producto {
 }
 ```
 
-En esta clase generamos los _getters_ y _setters_ para acceder a los atributos. También el método **toString()**. Uno de los métodos generados **public boolean isDisponible()** lo modificamos un poco. En la declaración de atributos pusimos a "_false_" la disponibilidad, con lo que siempre figura que no existe producto, para ello usamos: **if(getCantStock()>0) this.disponible = true;** sabremos si hay disponibilidad. Las tres clases restantes: "_Musica_", "_Videojuego_" y "_Cine_" se crean por _herencia_ de la clase padre "_Producto_". Por darle un poco de diferencia, he añadido un atributo a cada una de ellas: "genero", "tematica" y "director". Por herencia se crean los constructores y método toString(). Y se añaden getters y setters de los nuevos atributos. Para no añadir mucho código, copio el código de la clase **Musica**:
+## Resto de clases
 
-```
+Las tres clases restantes: <code>Musica</code>, <code>Videojuego</code> y <code>Cine</code> se crean por <code>herencia</code> de la clase padre <code>Producto</code>. Por darle un poco de diferencia, he añadido un atributo a cada una de ellas: "genero", "tematica" y "director". Por herencia se crean los constructores y método <code>toString()</code>. Y se añaden getters y setters de los nuevos atributos. Para no añadir mucho código, copio el código de la clase <code>Musica</code>:
+
+```java
 package ejerc03;
 
 public class Cine extends Producto {
@@ -237,9 +277,11 @@ public class Cine extends Producto {
 }
 ```
 
-Lo único a mencionar de esta clase es que en su declaración inicial se añade la palabra reservada "extends" indicando que extiende de la clase padre "Producto".
+## Clase de utlidad Leer
 
-```
+Lo único a mencionar de esta clase es que en su declaración inicial se añade la palabra reservada <code>extends</code> indicando que extiende de la clase padre <code>Producto</code>.
+
+```java
 package leer;
 
 import java.io.*;
@@ -287,4 +329,11 @@ public class Leer {
 }
 ```
 
-En este vídeo explico el código: [Descargar Programa java tienda](https://drive.google.com/open?id=0BzQS5pOyF_HjTGpjdnRzQnlfeDA "Descargar Programa java tienda") Nota final. El programa ha sido creado para FP aplicaciones móviles que estoy estudiando, es con fines didácticos, por lo que fuera de este uso, carece de sentido.
+En este vídeo explico el código:
+
+<div class="ratio-16-9">
+    <iframe title="Programa ehemplo crear tienda en Java" type="text/html" src="http://www.youtube.com/embed/FqQSwOSC830?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+
+Aquí dejo el <a href="https://drive.google.com/open?id=0BzQS5pOyF_HjTGpjdnRzQnlfeDA" target="_blank">código para descargar Programa de tienda en java</a>

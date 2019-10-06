@@ -8,9 +8,12 @@ ctime: Fri, 21 Feb 2014 09:47:56 +0000
 
 **Animación con css3** para crear movimiento de un avión y de su fondo. Se crean controles, mediante simples **funciones javascript**, que permitan aumentar o disminuir la velocidad, parar y reanudar la animación css3. Para esta animación he necesitado:
 
-*   Una **imagen de fondo** simétrica .
-*   **Imagen de un avión**.
+<ul class="list-bullets">
+	<li>Una imagen de fondo simétrica.</li>
+	<li>Imagen de un avión.</li>
+</ul>
 
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,10 +46,15 @@ ctime: Fri, 21 Feb 2014 09:47:56 +0000
 
 </body>
 </html>
-
-La imagen de fondo es simétrica y de ancho es el doble a la zona visible de la animación. En mi caso la imagen es de 1200px y el visor (#visor) de 600px. La imagen de fondo la he usado en dos cajas: #paisaje y #paisaje2. El movimiento lo he realizado con **keyframes**, y aplicado sobre las dos capas anteriores modificando el valor de "left", y cada capa moviéndose una justo al lado de la otra. El avión también recibe movimiento variando su posicionamiento con top y left. Ambas animaciones css3 se repiten infinítamente. Para el paisaje un ciclo de la animación dura 10 segundos y para el avión 13 segundos.
-
 ```
+
+La imagen de fondo es simétrica y de ancho es el doble a la zona visible de la animación. En mi caso la imagen es de 1200px y el visor (#visor) de 600px. La imagen de fondo la he usado en dos cajas: <code>#paisaje</code> y <code>#paisaje2</code>.
+
+El movimiento lo he realizado con **keyframes**, y aplicado sobre las dos capas anteriores modificando el valor de "left", y cada capa moviéndose una justo al lado de la otra.
+
+El avión también recibe movimiento variando su posicionamiento con top y left. Ambas animaciones css3 se repiten infinítamente. Para el paisaje un ciclo de la animación dura 10 segundos y para el avión 13 segundos.
+
+```css
 #visor {
 	position:absolute;
 	overflow:hidden;
@@ -114,15 +122,17 @@ form {
 }
 ```
 
-Para crear las funcionalidades de parar, reanudar, incrementar o disminuir la velocidad se han creado tres funciones.
+Para crear las funcionalidades de <code>parar</code>, <code>reanudar</code>, <code>incrementar</code> o <code>disminuir</code> la velocidad se han creado tres funciones.
 
-*   parar();
-*   reanudar();
-*   cambiar_velocidad();
+<ul class="list-bullets">
+	<li><code>parar();</code></li>
+	<li><code>reanudar();</code></li>
+	<li><code>cambiar_velocidad();</code></li>
+</ul>
 
-Para las tres funciones lo que se hace es rescatar con javascript los elementos por su identificador (#ID - #paisaje, #paisaje2, #avion) y cambiando su estilo según se trate. El caso de cambiar la velocidad he usado una lista desplegable (select) en el que tienen unos valores (values) concretos. Estos valores serán los capturados en el script y luego se pasan al css.
+Para las tres funciones lo que se hace es rescatar con javascript los elementos por su identificador (#ID - #paisaje, #paisaje2, #avion) y cambiando su estilo según se trate. El caso de cambiar la velocidad he usado una lista desplegable <code>&lt;select&gt;</code> en el que tienen unos valores (values) concretos. Estos valores serán los capturados en el <code>script</code> y luego se pasan al <code>css</code>.
 
-```
+```javascript
 // Función para parar la animación
 function parar() {
 	//Se obtiene por el ID el elemento, y se modifica el estilo de la animación
@@ -159,4 +169,4 @@ function cambiar_velocidad() {
 }
 ```
 
-Si quieres puedes descargar la animación pulsando en el enlace [Animación css3 y controles javascript](https://drive.google.com/open?id=0BzQS5pOyF_HjbzZoY3U1eDJNMTQ "Animación css3 y javascript")
+Si quieres puedes descargar la animación pulsando en el enlace <a href="https://drive.google.com/open?id=0BzQS5pOyF_HjbzZoY3U1eDJNMTQ" target="_blank">animación css3 y javascript</a>

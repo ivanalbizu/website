@@ -1,14 +1,22 @@
 ---
 title: Ecuación de segundo grado en Java
 published: true
-description: Ecuación de segundo grado construida en Java
+description: Construcción de Aplicación en Java para realizar operación de ecuación de segundo grado
 tags: Java,Pildoritas
 ctime: Mon, 07 Apr 2014 07:11:45 +0000
 ---
 
-En la clase **CEcuacion2Grado.java** se realizan las operaciones necesarias para resolver una ecuación de segundo y lanzar las excepciones principales. La clase contiene dos métodos que serán los que devuelvan los resultados: **public double calcularUnSigno(double a, double b, double c) {...}** y **public double calcularOtroSigno(double a, double b, double c) {...}**. El primer método devuelve un resultado tras realizar la operación a este fragmento de la ecuación: -b-... y el segundo método tras realizar: -b+... Ambos métodos reciben tres parámetros dobles introducidos por el usuario y ambas lanzan una excepción que es definida en este programa. También se crean dos métodos más para lanzar la excepción que pudieran surgir en el programa. El método **public double calcularDiscriminante(double a, double b, double c) {...}** sirve para saber si el discriminante (operación realizada dentro de la raíz cuadrada) es negativo, y el método **public double comprobarDivisible(double a) {...}** se usa para saber si en la resolución de la ecuación a introducido un valor igual a 0 como divisor.
+En la clase <code>CEcuacion2Grado.java</code> se realizan las operaciones necesarias para resolver una ecuación de segundo y lanzar las excepciones principales.
 
-```
+La clase contiene dos métodos que serán los que devuelvan los resultados: <code>public double calcularUnSigno(double a, double b, double c) {...}</code> y <code>public double calcularOtroSigno(double a, double b, double c) {...}</code>.
+
+El primer método devuelve un resultado tras realizar la operación a este fragmento de la ecuación: <code>-b-...</code> y el segundo método tras realizar: <code>-b+...</code>. Ambos métodos reciben tres parámetros dobles introducidos por el usuario y ambas lanzan una excepción que es definida en este programa.
+
+También se crean dos métodos más para lanzar la excepción que pudieran surgir en el programa.
+
+El método <code>public double calcularDiscriminante(double a, double b, double c) {...}</code> sirve para saber si el discriminante (operación realizada dentro de la raíz cuadrada) es negativo, y el método <code>public double comprobarDivisible(double a) {...}</code> se usa para saber si en la resolución de la ecuación a introducido un valor igual a 0 como divisor.
+
+```java
 package ejerc05;
 
 public class CEcuacion2Grado {
@@ -29,9 +37,9 @@ public class CEcuacion2Grado {
 }
 ```
 
-La excepción llamada **ExcepcionNegativo.java** extiende de Exception y se construye sin parámetros y llamando a su clase padre (Exception) mediante super();, y con un parámetros para dar la posibilidad de añadir un mensaje al invocar la excepción.
+La excepción llamada <code>ExcepcionNegativo.java</code> extiende de <code>Exception</code> y se construye sin parámetros y llamando a su clase padre (Exception) mediante <code>super();</code>, y con un parámetros para dar la posibilidad de añadir un mensaje al invocar la excepción.
 
-```
+```java
 package ejerc05;
 
 public class ExcepcionNegativo extends Exception {
@@ -47,9 +55,11 @@ public class ExcepcionNegativo extends Exception {
 }
 ```
 
-Para este programa se ha creado una clase **Menu.java** para realizar la lectura por teclado. En este caso se crean dos métodos, uno devuelve un "entero" y el otro un "doble" (siendo puntillosos, se podría haber casteado la salida de ambos métodos ya que en el código interior se realizan operaciones como: opcion=Integer.parseInt(sc.nextLine());). El entero se usa como opción elegida por elusuario, y el doble para que el usuario introduzca los datos con que operar. Ambos métodos capturan y tratan las excepciones.
+Para este programa se ha creado una clase <code>Menu.java</code> para realizar la lectura por teclado. En este caso se crean dos métodos, uno devuelve un <code>entero</code> y el otro un <code>doble</code> (siendo puntillosos, se podría haber casteado la salida de ambos métodos ya que en el código interior se realizan operaciones como: <code>opcion=Integer.parseInt(sc.nextLine());)</code>.
 
-```
+El entero se usa como opción elegida por el usuario, y el doble para que el usuario introduzca los datos con que operar. Ambos métodos capturan y tratan las excepciones.
+
+```java
 package ejerc05;
 
 import java.util.Scanner;
@@ -88,9 +98,11 @@ public class Menu {
 }
 ```
 
-La clase Test.java ejecuta el programa. En ella se declaran las variables necesarias. Se realizan las llamadas a las clases Menu.java para solocitar al usuario si desea repetir el programa y para solicitar los números necesarios para resolver la ecuación de 2º. Si los datos introducidos por el usuario no tiene solución posible (se capturan y tratan las excepciones) se le solicita que introduzca nuevamente los datos.
+La clase <code>Test.java</code> ejecuta el programa. En ella se declaran las variables necesarias. Se realizan las llamadas a las clases <code>Menu.java</code> para solocitar al usuario si desea repetir el programa y para solicitar los números necesarios para resolver la ecuación de 2º.
 
-```
+Si los datos introducidos por el usuario no tiene solución posible (se capturan y tratan las excepciones) se le solicita que introduzca nuevamente los datos.
+
+```java
 package ejerc05;
 
 public class Test {
@@ -138,4 +150,4 @@ public class Test {
 }
 ```
 
-Puedes descargar el código para probarlo en el siguiente enlace: [Descargar el programa de colecciones de la API de Java](https://dl.dropboxusercontent.com/u/12043780/ivanalbizu.eu/ejerc05.zip "Descargar ejemplo programa Excepciones Ecuación de 2 grado") Nota final. Este ejercicio se ha desarrollado con fines didácticos, para adquirir destreza en el manejo de excepciones de Java, por lo que fuera de este uso -aprendizaje- no tiene mucho sentido.
+Puedes descargar el código para probarlo en el siguiente enlace <a href="https://dl.dropboxusercontent.com/u/12043780/ivanalbizu.eu/ejerc05.zip" title="Descargar ejemplo programa Excepciones Ecuación de 2 grado" target="_blank">programa de colecciones de la API de Java</a>.

@@ -7,7 +7,7 @@
   body {
     font-family: Helvetica, sans-serif;
     font-size: 1.6rem;
-    margin: 1rem;
+    margin: 1rem auto;
     line-height: 1.4em;
     letter-spacing: .015rem;
     color: #111;
@@ -65,8 +65,11 @@ a {
   }
 }
 
-.main {
+.navbar,
+.content,
+.footer {
   margin: auto;
+  padding: 0 1rem;
   @media(min-width: 60rem) {
     max-width: 110rem;
   }
@@ -103,6 +106,12 @@ a {
       display: block;
       margin: auto;
     }
+    figcaption {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
   }
   p > code,
   li > code {
@@ -116,6 +125,9 @@ a {
     padding: 0 1em;
     color: #6a737d;
     border-left: .25em solid #dfe2e5;
+  }
+  strong {
+    font-weight: 600;
   }
 }
 .ratio-16-9 {

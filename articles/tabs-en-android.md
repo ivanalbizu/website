@@ -21,57 +21,57 @@ Su código:
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context="eu.ivanalbizu.tabapp.MainActivity" >
+  tools:context="eu.ivanalbizu.tabapp.MainActivity">
 
   <TabHost
     android:id="@android:id/tabhost"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentLeft="true"
-    android:layout_alignParentTop="true" >
+    android:layout_alignParentTop="true">
 
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:orientation="vertical" >
+      android:orientation="vertical">
 
       <TabWidget
         android:id="@android:id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
       </TabWidget>
 
       <FrameLayout
         android:id="@android:id/tabcontent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <LinearLayout
           android:id="@+id/tab1"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:orientation="horizontal" >
+          android:orientation="horizontal">
         </LinearLayout>
 
         <LinearLayout
           android:id="@+id/tab2"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:orientation="horizontal" >
+          android:orientation="horizontal">
         </LinearLayout>
 
         <LinearLayout
           android:id="@+id/tab3"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:orientation="horizontal" >
+          android:orientation="horizontal">
         </LinearLayout>
 
         <LinearLayout
           android:id="@+id/tab4"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:orientation="horizontal" >
+          android:orientation="horizontal">
         </LinearLayout>
       </FrameLayout>
     </LinearLayout>

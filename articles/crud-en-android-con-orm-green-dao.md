@@ -1,14 +1,14 @@
 ---
 title: Crud en Android con ORM Green Dao
-description: Realizar operaciones CRUD (create, read, update, delete) para Android usando ORM Green Dao
+description: Realizar, en App Android, operaciones CRUD (create, read, update, delete) para Android usando ORM Green Dao
 published: true
 tags: Android,Java
 ctime: Wed, 19 Nov 2014 21:59:59 +0000
 ---
 
-En este proyecto realizaré un sistema Crud en Android con el ORM de Green Dao. Para crear el proyecto he adaptado a mis necesidades el DaoExampleGenerator que se puede encontrar en [GitHub de Green Dao](https://github.com/greenrobot/greenDAO "GitHub de Green Dao").
+En este proyecto realizaré un sistema Crud en Android con el ORM de Green Dao. Para crear el proyecto he adaptado a mis necesidades el DaoExampleGenerator que se puede encontrar en <a href="https://github.com/greenrobot/greenDAO" target="_blank">GitHub de Green Dao</a>.
 
-```
+```java
 public static void main(String[] args) throws Exception {
 	//Primer parámetro: versión de la base de datos
 	//Segundo parámetro: paquete de mi proyecto Android quiero que se exporten 
@@ -35,9 +35,9 @@ private static void addGestor(Schema schema) {
 }
 ```
 
-Prepara contenidos para luego cargarlos a la base de datos en el archivo Data.java
+Preparar contenidos para luego cargarlos a la base de datos en el archivo <code>Data.java</code>
 
-```
+```java
 public class Data {
 	
 	public static SQLiteDatabase db;
@@ -63,9 +63,9 @@ public class Data {
 }
 ```
 
-Y para cargar los datos en la aplicación vamos al archivo DaoMaster.java y en el método onCreate(SQLiteDatabase db) que está dentro del método Abstracto OpenHelper extends SQLiteOpenHelper añadimos Data.generarDatos(db);
+Y para cargar los datos en la aplicación vamos al archivo <code>DaoMaster.java</code> y en el método <code>onCreate(SQLiteDatabase db)</code> que está dentro de la clase Abstracta <code>OpenHelper extends SQLiteOpenHelper</code> añadimos <code>Data.generarDatos(db);</code>
 
-```
+```java
 public static abstract class OpenHelper extends SQLiteOpenHelper {
 
     public OpenHelper(Context context, String name, CursorFactory factory) {
@@ -81,16 +81,26 @@ public static abstract class OpenHelper extends SQLiteOpenHelper {
 }
 ```
 
-Ahora voy a crear las Activitys y las Vistas (cuando proceda). Son las siguientes:
+Ahora vamos a crear las Activitys y las Vistas.
 
-*   ListadoActivity.java + activity_listado.xml
-*   list_item_gestor.xml
-*   AddActivity.java + activity_add.xml
-*   EditDeleteActivity.java + activity_edit_delete.xml
+Son las siguientes:
 
-Vista "list_item_gestor.xml" el contenedor será RelativeLayout. No usaremos clase, sóĺo vista XML. Para representar cada ítem dentro de un LinearLayout colocamos ImageView y TextView. Vista "activity_main.xml". Sólo tendremos dos botones, a los cuales añadiremos los eventos más adelante. Uno será para ver listado de gestores de contenido y el otro para ir a la interfaz de añadir. Vista "activity_add.xml". Contiene TextView y EditText. Y un Button para incluir el evento de añadir gestor de contenido. Vista "activity_edit_delete.xml". Recibe en el nombre en un TextView del gestor de contenido sobre el que se pulsó, y un EditText para que se pueda cambiar el nombre. Y dos botones, uno para "Modificar" y otro para "Eliminar". **A partir de ahora sólo tocamos archivos "java", excepto para insertar los eventos dentro de los layouts.** **GestorAdapter.java** Primero configuro el adaptador de la vista, cuyo código es:
+<ul class="list-bullets">
+	<li><code>ListadoActivity.java</code> + <code>activity_listado.xml</code></li>
+	<li><code>list_item_gestor.xml</code>
+	<li><code>AddActivity.java</code> + <code>activity_add.xml</code></li>
+	<li><code>EditDeleteActivity.java</code> + <code>activity_edit_delete.xml</code></li>
+</ul>
 
-```
+En la vista <code>list_item_gestor.xml</code> el contenedor será <code>RelativeLayout</code>. No usaremos clase, sóĺo vista XML. Para representar cada ítem dentro de un <code>LinearLayout</code> colocamos <code>ImageView</code> y <code>TextView</code>.
+
+En la vista <code>activity_main.xml</code> sólo tendremos dos botones, a los cuales añadiremos los eventos más adelante. Uno será para ver listado de gestores de contenido y el otro para ir a la interfaz de añadir. Vista <code>activity_add.xml</code>. Contiene <code>TextView</code> y <code>EditText</code>. Y un <code>Button</code> para incluir el evento de añadir gestor de contenido. Vista <code>activity_edit_delete.xml</code>. Recibe el nombre en un <code>TextView</code> del gestor de contenido sobre el que se pulsó, y un <code>EditText</code> para que se pueda cambiar el nombre. Y dos botones, uno para "Modificar" y otro para "Eliminar".
+
+**A partir de ahora sólo tocamos archivos "java", excepto para insertar los eventos dentro de los layouts.**
+
+En el fichero <code>GestorAdapter.java</code> se configura el adaptador de la vista, cuyo código es:
+
+```java
 public class GestorAdapter extends ArrayAdapter<Gestor> {
 
 	private List<Gestor> gestores;
@@ -123,9 +133,9 @@ public class GestorAdapter extends ArrayAdapter<Gestor> {
 }
 ```
 
-**ListadoActivity.java** Se declaran las variables propias de la base de datos de Green Dao, que son:
+En el fichero <code>ListadoActivity.java</code> Se declaran las variables propias de la base de datos de Green Dao, que son:
 
-```
+```java
 public DaoSession daoSession;
 public DaoMaster daoMaster;
 private SQLiteDatabase db;
@@ -133,7 +143,7 @@ private SQLiteDatabase db;
 
 Y las variables que modelan las clases de la aplicación y sus relaciones, que son:
 
-```
+```java
 private GestorDao gestorDao;
 private List<Gestor> gestores;
 private Gestor gestor;
@@ -142,9 +152,13 @@ private GestorAdapter adaptadorGestor;
 private static final int EDITAR_ELIMINAR_GESTOR = 1;
 ```
 
-Tendremos tres métodos. En el método onCreate(Bundle savedInstanceState) se trabaja con las variables creadas para la base de datos. Se trata de obtener los ítems de la tabla y pasarlo al adaptador. El segundo método es onListItemClick(ListView l, View v, int position, long id), para enviar el "Intent" con la ID del gestor seleccionado. El tercer método es  onActivityResult(int requestCode, int resultCode, Intent data), para recibir el resultado que nos envía la clase EditDeleteActivity.java. El código completo de esta clase:
+Tendremos tres métodos.
 
-```
+En el método <code>onCreate(Bundle savedInstanceState)</code> se trabaja con las variables creadas para la base de datos. Se trata de obtener los ítems de la tabla y pasarlo al adaptador. El segundo método es <code>onListItemClick(ListView l, View v, int position, long id)</code>, para enviar el <code>Inten</code> con la ID del gestor seleccionado. El tercer método es <code>onActivityResult(int requestCode, int resultCode, Intent data)</code>, para recibir el resultado que nos envía la clase <code>EditDeleteActivity.java</code>.
+
+El código completo de esta clase:
+
+```java
 public class ListadoActivity extends ListActivity {
 
 	//Variables propias
@@ -225,9 +239,9 @@ public class ListadoActivity extends ListActivity {
 }
 ```
 
-**EditDeleteActivity.java** Recibe el gestor que ha sido seleccionado en en la clase ListadoActivity.java y se habilita la opción de editar o eliminar. Se declaran las variables propias de la base de datos de Green Dao, que son:
+El fichero <code>EditDeleteActivity.java</code> recibe el gestor que ha sido seleccionado en en la clase <code>ListadoActivity.java</code> y se habilita la opción de editar o eliminar. Se declaran las variables propias de la base de datos de Green Dao, que son:
 
-```
+```java
 public DaoSession daoSession;
 public DaoMaster daoMaster;
 private SQLiteDatabase db;
@@ -235,15 +249,19 @@ private SQLiteDatabase db;
 
 Y las variables que modelan las clases de la aplicación y sus relaciones, que son:
 
-```
+```java
 private GestorDao gestorDao;
 private EditText editTexto;
 private Gestor gestorAEditarEliminar;
 ```
 
-Tendremos tres métodos. En el método onCreate(Bundle savedInstanceState) se trabaja con las variables creadas para la base de datos. Se trata de obtener los ítems de la tabla y pasarlo al adaptador. El método editarGestor(View v), captura la información del TextView y se actualiza en la base de datos. Y el otro, eliminarGestor(View v), elimina el gestor seleccionado. El código completo de esta clase:
+Tendremos tres métodos.
 
-```
+En el método <code>onCreate(Bundle savedInstanceState)</code> se trabaja con las variables creadas para la base de datos. Se trata de obtener los ítems de la tabla y pasarlo al adaptador. El método <code>editarGestor(View v)</code>, captura la información del <code>TextView</code> y se actualiza en la base de datos. Y el otro, <code>eliminarGestor(View v)</code>, elimina el gestor seleccionado.
+
+El código completo de esta clase:
+
+```java
 public class EditDeleteActivity extends Activity {
 	
 	//Variables propias
@@ -313,9 +331,9 @@ public class EditDeleteActivity extends Activity {
 }
 ```
 
-**AddActivity.java** Se declaran las variables propias de la base de datos de Green Dao, que son:
+En el fichero <code>AddActivity.java</code> se declaran las variables propias de la base de datos de Green Dao, que son:
 
-```
+```java
 public DaoSession daoSession;
 public DaoMaster daoMaster;
 private SQLiteDatabase db;
@@ -323,14 +341,18 @@ private SQLiteDatabase db;
 
 Y las variables que modelan las clases de la aplicación y sus relaciones, que son:
 
-```
+```java
 private EditText nombreGestor;
 private GestorDao gestorDao;
 ```
 
-Tendremos dos métodos. En el método onCreate(Bundle savedInstanceState) se carga la base de datos. El método guardarGestor(View v) guarda el nuevo contenido en la base de datos y nos envía a la página principal. El código completo de esta clase:
+Tendremos dos métodos.
 
-```
+En el método <code>onCreate(Bundle savedInstanceState)</code> se carga la base de datos. El método <code>guardarGestor(View v)</code> guarda el nuevo contenido en la base de datos y nos envía a la página principal.
+
+El código completo de esta clase:
+
+```java
 public class AddActivity extends Activity {
 	
 	//Variables propias
@@ -379,9 +401,13 @@ public class AddActivity extends Activity {
 }
 ```
 
-**MainActivity.java** Sólo había que crear dos métodos. El primero listadoGestor(View v) y el segundo anadirGestor(View v), nos lanzan a las Activitys correspondientes. El código completo es:
+En <code>MainActivity.java</code> sólo hay que crear dos métodos.
 
-```
+El primero <code>listadoGestor(View v)</code> y el segundo <code>anadirGestor(View v)</code>, nos lanzan a las Activitys correspondientes.
+
+El código completo es:
+
+```java
 public class MainActivity extends Activity {
 
 	@Override
@@ -402,4 +428,10 @@ public class MainActivity extends Activity {
 }
 ```
 
-El vídeo: Y el enlace de descarga del [proyecto Android Green Dao ORM](https://db.tt/FiOBFetH "Descargar proyecto Android Green Dao ORM")
+El vídeo del ejemplo:
+
+<div class="ratio-16-9">
+    <iframe title="CRUD en Android con ORM Gren DAO" type="text/html" src="http://www.youtube.com/embed/KWeRnXsjUmA?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+Y el enlace de descarga del <a href="https://db.tt/FiOBFetH" target="_blank">proyecto Android Green Dao ORM</a>

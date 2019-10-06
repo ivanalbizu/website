@@ -6,25 +6,32 @@ tags: Android,Java
 ctime: Fri, 31 Oct 2014 16:09:58 +0000
 ---
 
-Spinner enlazados en Android, en el que un segundo Spinner carga sus contenidos en función del ítem seleccionado del primer Spinner. Los pasos que he seguido para conseguirlo han sido:
+Spinner enlazados en Android, en el que un segundo <code>Spinner</code> carga sus contenidos en función del ítem seleccionado del primer <code>Spinner</code>.
 
-1.  Creación de arrays dentro del archivo strings.xml.
-2.  Creación de la vista en el archivo layout.xml
-3.  Declaración de variables.
-4.  Referenciado de variables del XML.
-5.  Construcción del "adaptador" para el primer Spinner.
-6.  Cargar el tipo de vista para el adaptador.
-7.  Aplicar el adaptador al Spinner de localidades.
-8.  Listener para saber que item ha sido seleccionado y poder usarlo en el método "onItemSelected".
-9.  Sobre escribir el método "onItemSelected" de la interfaz "OnItemSelectedListener".
-    1.  Se guarda en array de enteros los arrays de las provincias.
-    2.  Construcción del "adaptador" para el segundo Spinner.
-    3.  Se carga el tipo de vista para el adaptador.
-    4.  Se aplica el adaptador al Spinner de localidades.
+Los pasos que he seguido para conseguirlo han sido:
 
-Creación de los arrays para los Spinner:
+<ol class="list-bullets">
+	<li>Creación de arrays dentro del archivo <code>strings.xml</code>.</li>
+	<li>Creación de la vista en el archivo <code>layout.xml</code>.</li>
+	<li>Declaración de variables.</li>
+	<li>Referenciado de variables del XML.</li>
+	<li>Construcción del "adaptador" para el primer <code>Spinner</code>.</li>
+	<li>Cargar el tipo de vista para el adaptador.</li>
+	<li>Aplicar el adaptador al <code>Spinner</code> de localidades.</li>
+	<li>Listener para saber que item ha sido seleccionado y poder usarlo en el método <code>onItemSelected</code>.</li>
+	<li>Sobre escribir el método <code>onItemSelected</code> de la interfaz <code>OnItemSelectedListener</code>.
+		<ol class="list-bullets">
+			<li>Se guarda en array de enteros los arrays de las provincias.</li>
+			<li>Construcción del adaptador para el segundo <code>Spinner</code>.</li>
+			<li>Se carga el tipo de vista para el adaptador.</li>
+			<li>Se aplica el adaptador al <code>Spinner</code> de localidades.</li>
+		</ol>
+	</li>
+</ol>
 
-```
+Creación de los arrays para los <code>Spinner</code>:
+
+```xml
 <string-array name="array_provincias">
     <item>Sevilla</item>
     <item>Málaga</item>
@@ -41,9 +48,11 @@ Creación de los arrays para los Spinner:
     <item>Manilva</item>
     <item>Estepona</item>
 </string-array>
+```
 
 Creación de Spinner en la vista:
 
+```xml
 <Spinner
     android:id="@+id/spinnerProvincia"
     android:layout_width="wrap_content"
@@ -61,9 +70,9 @@ Creación de Spinner en la vista:
     android:layout_marginTop="66dp" />
 ```
 
-Declaración y referenciado de los Spinner:
+Declaración y referenciado de los <code>Spinner</code>:
 
-```
+```java
 //Declaración de variables
 private Spinner spinnerPro, spinnerLoc;
 
@@ -79,9 +88,9 @@ protected void onCreate(Bundle savedInstanceState) {
   /*------ Método OnCreate continua ------*/
 ```
 
-Adaptador para primer Spinner:
+Adaptador para primer <code>Spinner</code>:
 
-```
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   /*------ Método continuado ------*/
@@ -103,9 +112,9 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-Segundo Spinner, enlazado:
+Segundo <code>Spinner</code>, enlazado:
 
-```
+```java
 //Sobre escrito el método "onItemSelected" de
 //la interfaz "OnItemSelectedListener"
 @Override
@@ -127,4 +136,10 @@ public void onItemSelected(AdapterView<?> parent, View view, int position, long 
 }
 ```
 
-He creado un vídeo en el que realizo este ejemplo de Spinner enlazados en Android: Para descargar el código completo [Spinner enlazados en Android](https://drive.google.com/open?id=0BzQS5pOyF_HjSElVSTZuZlEzR00 "Spinner enlazadosen Android")
+He creado un vídeo en el que realizo este ejemplo de Spinner enlazados en Android:
+
+<div class="ratio-16-9">
+	<iframe title="Spinner enlazados en Android" type="text/html" src="http://www.youtube.com/embed/AtuZoSpbypI?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+Para descargar el código completo <a href="https://drive.google.com/open?id=0BzQS5pOyF_HjSElVSTZuZlEzR00" target="_blank">Spinner enlazados en Android</a>

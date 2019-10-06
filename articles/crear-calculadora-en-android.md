@@ -1,14 +1,14 @@
 ---
 title: Crear calculadora en Android
-description: Aplicación Android en la que se construye una calculadora
+description: Aplicación Android en la que se construye una calculadora de suma, resta, multiplicación y resta
 published: true
 tags: Android,Java
 ctime: Sun, 26 Oct 2014 15:33:41 +0000
 ---
 
-Crear calculadora en Android con funciones básicas de suma, resta, multiplicación y división. En el MainActivity.java se define en su comienzo las variables necesarias. Para poder trabajar mejor con las operaciones lo he dividido en "operando1", "operando2", "operacion", "resultado" y botón "borrar". El botón de "limpiar" no lo he declarado en el MainActivity.java, sólo he creado un método que será usado en el XML. Sus referencias de la vista XML son rescatadas con el método findViewById(R.id.nombreCorrespondiente).
+En el <code>MainActivity.java</code> se define en su comienzo las variables necesarias. Para poder trabajar mejor con las operaciones lo he dividido en <code>operando1</code>, <code>operando2</code>, <code>operacion</code>, <code>resultado</code> y botón <code>borrar</code>. El botón de <code>limpiar</code> no lo he declarado en el <code>MainActivity.java</code>, sólo he creado un método que será usado en el XML. Sus referencias de la vista XML son rescatadas con el método <code>findViewById(R.id.nombreCorrespondiente)</code>.
 
-```
+```java
 private TextView operando1, operando2, operacion, resultado;
 private Button borrar;
 private final static int TESTIGO = 1234;
@@ -25,11 +25,12 @@ protected void onCreate(Bundle savedInstanceState) {
 	borrar = (Button) findViewById(R.id.buttonBorrar);
 
 	/*Código de onCreate(Bundle savedInstanceState) continua*/
+};
 ```
 
-Se crean "listener" dentro de onCreate(Bundle savedInstanceState) para botones numéricos y para seleccionar el tipo de operación:
+Se crean "listener" dentro de <code>onCreate(Bundle savedInstanceState)</code> para botones numéricos y para seleccionar el tipo de operación:
 
-```
+```java
 //Listener para botones numéricos
 OnClickListener marcar = new View.OnClickListener() {
 	@Override
@@ -73,15 +74,17 @@ OnClickListener accion = new View.OnClickListener() {
 };
 ```
 
-Para poder **borrar** el último dígito el "listener" se lo he asignado directamente al botón y he seguido los siguientes pasos:
+Para poder <code>borrar</code> el último dígito el "listener" se lo he asignado directamente al botón y he seguido los siguientes pasos:
 
-1.  Si existe operando2, borro su último dígito (hasta dejar vacío)
-2.  Si existe operación, la borro
-3.  Si existe operando1, borro su último dígito (hasta dejar vacío)
+<ol class="list-bullets">
+	<li>Si existe operando2, borro su último dígito (hasta dejar vacío)</li>
+	<li>Si existe operación, la borro</li>
+	<li>Si existe operando1, borro su último dígito (hasta dejar vacío)</li>
+</ol>
 
 Su código es:
 
-```
+```java
 //Borrado el último dígito marcado
 borrar.setOnClickListener(new View.OnClickListener() {
 	@Override
@@ -104,9 +107,9 @@ borrar.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-La acción de obtener resultado (pulsar sobre "=") se llama **public void lanzarOperacion(View v)** y crea directamente al pulsar sobre de igual. El evento se adjudica directamente en el XML. Dicho evento lanzará Intent y recibirá el resultado procesado (hacer uso de Intent no es necesario, lo realizo así para abarcar más métodos). El evento no será lanzado si el operando2 esta vacío. Se usa sentencias if, else if para saber a que Intent se debe lanzar.
+La acción de obtener resultado (pulsar sobre "=") se llama <code>public void lanzarOperacion(View v)</code> y crea directamente al pulsar sobre de igual. El evento se adjudica directamente en el XML. Dicho evento lanzará <code>Intent</code> y recibirá el resultado procesado (hacer uso de <code>Intent</code> no es necesario, lo realizo así para abarcar más métodos). El evento no será lanzado si el operando2 esta vacío. Se usa sentencias <code>if</code>, <code>else if</code> para saber a que <code>Intent</code> se debe lanzar.
 
-```
+```java
 public void lanzarOperacion(View v) {
 	//Si operando 2 no contiene valor numérico, no se lanza el evento
 	if (operando2.getText().toString().equals("")) {
@@ -133,9 +136,9 @@ public void lanzarOperacion(View v) {
 }
 ```
 
-Y el resultado recibido por la "actividad" se procesa en **protected void onActivityResult(int requestCode, int resultCode, Intent data)** y su código es el siguiente:
+Y el resultado recibido por la "actividad" se procesa en <code>protected void onActivityResult(int requestCode, int resultCode, Intent data)</code> y su código es el siguiente:
 
-```
+```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	//Si lo recibido corresponde con lo esperado (TESTIGO)
@@ -153,9 +156,11 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
-Para poder introducir decimales he creado el método **public void introducirDecimales(View v)**. Si el usuario acaba de obtener un resultado no procede insertar decimales, por lo que se sale del evento. La primera situación prevista es que se introdujera operación a realizar, lo que equivale a decir que se desea insertar decimal al segundo operando. Caso contrario, se trataría del primer operando. En ambos casos se comprueba que el número no tenga ya decimales **(operando1.getText().toString().split(".").length == 1)**, si ya tuviese decimales no hay nada más que hacer, pero si no tiene se concatena el punto al operando de que se trate. El código es el siguiente:
+Para poder introducir decimales he creado el método <code>public void introducirDecimales(View v)</code>. Si el usuario acaba de obtener un resultado no procede insertar decimales, por lo que se sale del evento. La primera situación prevista es que se introdujera operación a realizar, lo que equivale a decir que se desea insertar decimal al segundo operando. Caso contrario, se trataría del primer operando. En ambos casos se comprueba que el número no tenga ya decimales <code>(operando1.getText().toString().split(".").length == 1)</code>, si ya tuviese decimales no hay nada más que hacer, pero si no tiene se concatena el punto al operando de que se trate.
 
-```
+El código es el siguiente:
+
+```java
 public void introducirDecimales(View v){
 	TextView txt = (TextView) v;
 	//Si ya existe un "resultado" no procede insertar decimal
@@ -184,9 +189,13 @@ public void introducirDecimales(View v){
 }
 ```
 
-Termino el post comentado una de las clases que sirven para recibir el startActivityForResult(). En este caso, sólo comentar el caso de la suma, ya que su código sólo difiere de la multiplicación, resta o división en una operación. En **public class SumaActivity extends Activity** {...  Se capturan los dos operando del **MainActivity.java** mediante **getIntent().getStringExtra("operando1")**. Y se parsea a Double. Puede dar excepción si se introduce de manera incorrecta el punto decimal, por lo que se trata la excepción y mediante el bloque **cacth** y se envía el Intent, si no se da excepción se pasa el parámetro extra del resultado de la operación que está esperando la clase MainActivity.java. Su código es el siguiente:
+Termino el post comentado una de las clases que sirven para recibir el <code>startActivityForResult()</code>. En este caso, sólo comentar el caso de la suma, ya que su código sólo difiere de la multiplicación, resta o división en una operación.
 
-```
+En <code>public class SumaActivity extends Activity {...}</code> se capturan los dos operando del <code>MainActivity.java</code> mediante <code>getIntent().getStringExtra("operando1")</code>. Y se parsea a Double. Puede dar excepción si se introduce de manera incorrecta el punto decimal, por lo que se trata la excepción y mediante el bloque <code>cacth</code> y se envía el <code>Intent</code>, si no se da excepción se pasa el parámetro extra del resultado de la operación que está esperando la clase <code>MainActivity.java</code>.
+
+Su código es el siguiente:
+
+```java
 public class SumaActivity extends Activity{
 	
 	@Override
@@ -222,4 +231,6 @@ public class SumaActivity extends Activity{
 }
 ```
 
-**Nota Importante**: cuando se crean nuevas actividades sin usar el asistente de Eclipse, es decir, crear una clase que extienda "Activity" sin su vista layout (por que no se necesite, como este caso) hay que acordarse de registrar la actividad en el AndroidManifiest.xml. Si se genera la actividad y al mismo tiempo su vista Layout con el asistente de Eclipse no es necesario registrar la actividad ya que Eclipse se encarga de registrarla. Proyecto en [GitHub](https://github.com/ivanalbizu/android/tree/master/Calculadora) En el enlace se puede descargar el [código de calculadora para Android completo](https://drive.google.com/open?id=0BzQS5pOyF_HjYmZ1dm1CNmw4a2s "Descargar código calculadora para Android").
+**Nota Importante**: cuando se crean nuevas actividades sin usar el asistente de Eclipse, es decir, crear una clase que extienda <code>Activity</code> sin su vista layout (por que no se necesite, como este caso) hay que acordarse de registrar la actividad en el <code>AndroidManifiest.xml</code>. Si se genera la actividad y al mismo tiempo su vista Layout con el asistente de Eclipse no es necesario registrar la actividad ya que Eclipse se encarga de registrarla.
+
+Proyecto en <a href="https://github.com/ivanalbizu/android/tree/master/Calculadora" target="_blank">mi GitHub</a>

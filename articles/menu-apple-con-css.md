@@ -1,14 +1,18 @@
 ---
 title: Menú apple con css
 published: true
-description: Recreación de Html y Css del menú usado por Apple
+description: Recreación usando Html y Css del menú usado por Apple
 tags: Css3,Sass
 ctime: Sat, 15 Feb 2014 22:17:54 +0000
 ---
 
-**Menú apple con css**, construido usando **Sass**. En este artículo quería compartir como he reproducido el menú de navegación de la web de Apple, sin usar imágenes, sólo con degradados de css3 y jugando con los bordes para crear los diferentes botones. Se obtiene también las sombras y los bordes redondeados. El aspecto que no he tratado de reproducir ha sido el último botón, el de la búsqueda. Para realizar el menú he usado **SASS** para ahorrar un poco de tiempo, y para que cada cambio en colores o degradados suponga cambiar menos información en la hoja de estilos, ya que con sass se pueden usar variables, funciones y otras muchas cosas. Aquí se puede ver la hoja de estilos **.scss**
+**Menú apple con css**, construido usando **Sass**. En este artículo quería compartir como he reproducido el menú de navegación de la web de Apple, sin usar imágenes, sólo con degradados de css3 y jugando con los bordes para crear los diferentes botones. Se obtiene también las sombras y los bordes redondeados. El aspecto que no he tratado de reproducir ha sido el último botón, el de la búsqueda.
 
-```
+Para realizar el menú he usado **SASS** para ahorrar un poco de tiempo, y para que cada cambio en colores o degradados suponga cambiar menos información en la hoja de estilos, ya que con sass se pueden usar variables, funciones y otras muchas cosas.
+
+Aquí se puede ver la hoja de estilos <code>.scss</code>
+
+```scss
 @import "compass";
 @mixin shadow_nav($left, $top, $blur, $color){
   box-shadow:$left $top $blur $color;
@@ -94,9 +98,9 @@ nav ul li:first-child:hover {
 }
 ```
 
-Aquí el contenido del archivo **.html**
+Aquí el contenido del archivo <code>.html</code>
 
-```
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -130,4 +134,6 @@ Aquí el contenido del archivo **.html**
 </html>
 ```
 
-Me gustaría destacar la comprobación del navegador del usuario, para saber si usa una versión de internet explorer inferior a la 9, para que pueda visualizarse correctamente. Si quieres descargare el menú y probarlo directamente, puedes hacerlo en el siguiente enlace. [Descargar menú apple con css](https://dl.dropboxusercontent.com/u/12043780/ivanalbizu.eu/menu_apple_con_css.zip "Menú Apple con ccs")
+Me gustaría destacar la comprobación del navegador del usuario, para saber si usa una versión de internet explorer inferior a la 9, para que pueda visualizarse correctamente.
+
+Si quieres descargar el menú y probarlo directamente, puedes hacerlo en el siguiente enlace <a href="https://dl.dropboxusercontent.com/u/12043780/ivanalbizu.eu/menu_apple_con_css.zip" target="_blank">Menú Apple con ccs</a>

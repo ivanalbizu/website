@@ -6,16 +6,11 @@ tags: Java
 ctime: Sat, 15 Nov 2014 10:23:28 +0000
 ---
 
-En esta entrada voy a realizar un sencillo ejemplo para parsear un archivo XML usando Java Stax. El archivo a parsear contiene información meteorológica de la ciudad de Sevilla. Voy a obtener los días en los que la temperatura máxima fuese mayor a una temperatura "X". El procedimiento para llevarlo a cabo es:
+En esta entrada voy a realizar un sencillo ejemplo para parsear un archivo XML usando Java Stax. El archivo a parsear contiene información meteorológica de la ciudad de Sevilla. Voy a obtener los días en los que la temperatura máxima fuese mayor a una temperatura "X".
 
-1.  Llegar a la etiqueta de apertura día y obtener la fecha.
-2.  Obtener la _etiqueta máxima_ que corresponde a la _etiqueta temperatura._
-3.  Al llegar al cierre de la etiqueta día, añado el día a la lista.
-4.  A partir de la lista generada de días, construyo método para que a partir de la lista y de una temperatura se muestren los días filtrados.
+Un fragmento del archivo XML que vaa ser parseado es el siguiente:
 
-Un fragmento del archivo XML es el siguiente:
-
-```
+```xml
 <?xml version="1.0" encoding="ISO-8859-15"?>
 <root id="41091" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.aemet.es/xsd/localidades.xsd">
 	<origen>
@@ -79,9 +74,9 @@ Un fragmento del archivo XML es el siguiente:
 </root>
 ```
 
-La clase modelo contiene dos atributos: private String dia y private int temperatura. (Para hacerlo corto, no formateo la fecha).
+La clase modelo contiene dos atributos: <code>private String dia</code> y <code>private int temperatura</code>. (Para hacerlo corto, no formateo la fecha).
 
-```
+```java
 public class Pojo {
 
 	private String dia;
@@ -113,9 +108,20 @@ public class Pojo {
 }
 ```
 
-El archivo Test.java ejecuta el programa. Contiene el método main, y dos métodos más. Uno genera una lista de fechas y sus tempearturas máximas de todos los días. El otro método, a partir de una lista de días obtiene aquellos días que cumplan la condición de temperatura máxima. El código es sencillo y está comentado, y se puede descargar más abajo.
+El archivo <code>Test.java</code> ejecuta el programa. Contiene el método <code>main</code>, y dos métodos más. Uno genera una lista de fechas y sus tempearturas máximas de todos los días. El otro método, a partir de una lista de días obtiene aquellos días que cumplan la condición de temperatura máxima.
 
-```
+El procedimiento para llevarlo a cabo es:
+
+<ol class="list-bullets">
+	<li>Llegar a la etiqueta de apertura <code>dia</code> y obtener el atributo <code>fecha</code>.</li>
+	<li>Obtener la etiqueta <code>maxima</code> que está dentro de la etiqueta <code>temperatura</code>.</li>
+	<li>Al llegar al cierre de la etiqueta <code>dia</code>, añado el día a la lista días.</li>
+	<li>A partir de la lista generada de días, construyo método para que a partir de la lista y de una temperatura se muestren los días filtrados.</li>
+</ol>
+
+El código es sencillo y está comentado, y se puede descargar más abajo.
+
+```java
 public class Test {
 
 	/**
@@ -210,4 +216,10 @@ public class Test {
 }
 ```
 
-El vídeo completo: El código para descargar [Xml parseado con Java Stax](https://db.tt/SMYeYC6o "Código Xml parseado con Java Stax")
+El vídeo completo:
+
+<div class="ratio-16-9">
+    <iframe title="Parsear XML usando Java Stax Cursor" type="text/html" src="http://www.youtube.com/embed/zcmtlgPULFU?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+El código para descargar [Xml parseado con Java Stax](https://db.tt/SMYeYC6o "Código Xml parseado con Java Stax")

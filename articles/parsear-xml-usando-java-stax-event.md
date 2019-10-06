@@ -6,16 +6,18 @@ tags: Java
 ctime: Wed, 19 Nov 2014 17:17:33 +0000
 ---
 
-En mi último post realicé un [parseo de XML usando Java Stax Cursor](http://ivanalbizu.eu/parsear-xml-usando-java-stax-cursor/ "Enlace a entrada: parseo de XML usando Java Stax Cursor"), en esta ocasión voy a realizar el mismo ejemplo pero usando Java Stax Event. Sabiendo bien cómo está estructurado el XML, marcamos los pasos para obtener la temperatura máxima y la fecha del día en cuestión son;
+En mi último post realicé un <a href="parsear-xml-usando-java-stax-cursor/">parseo de XML usando Java Stax Cursor</a>, en esta ocasión voy a realizar el mismo ejemplo pero usando Java Stax Event. Sabiendo bien cómo está estructurado el XML, marcamos los pasos para obtener la temperatura máxima y la fecha del día en cuestión son:
 
-1.  Instanciar día llegando a tagDia
-2.  Añadir día mediante dentro de tagDia usando atrDia
-3.  Añadir temperatura máxima mediante path: /root/prediccion/dia/temperatura/maxima
-4.  Añadir POJO a lista días mediante tagDia
+<ol class="list-bullets">
+	<li>Instanciar día llegando a <code>tagDia</code></li>
+	<li>Añadir día mediante dentro de <code>tagDia</code> usando <code>atrDia</code></li>
+	<li>Añadir temperatura máxima mediante path: <code>/root/prediccion/dia/temperatura/maxima</code></li>
+	<li>Añadir POJO a lista días mediante <code>tagDia</code></li>
+</ol>
 
 Necesitaremos entonces las siguientes variables:
 
-```
+```java
 String path = "";
 String pathTemMax = "/root/prediccion/dia/temperatura/maxima";
 String tagDia = "dia";
@@ -24,7 +26,7 @@ String atrDia = "fecha";
 
 El código completo está comentado, y es el siguiente:
 
-```
+```java
 public class Test {
 
 	/**
@@ -47,8 +49,8 @@ public class Test {
 		//Localizar elementos
 		String path			= "";
 		String pathTemMax	= "/root/prediccion/dia/temperatura/maxima";
-		String tagDia		= "dia";
-		String atrDia		= "fecha";
+		String tagDia			= "dia";
+		String atrDia			= "fecha";
 		
 		XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 		try {
@@ -111,7 +113,7 @@ public class Test {
 	 * Devuelve una lista de objetos Días (Pojo) en los que la temperatura
 	 * temperatura máxima sea mayor a la indicada por parámetro
 	 * @param dias		Lista de todos los días que contiene el XML
-	 * @param limite	Temperatura a partir de la que se desea filtrar
+	 * @param limite		Temperatura a partir de la que se desea filtrar
 	 * @return			Lista de días que complen condición de temperatura
 	 * 					máxima mayor a la indicada
 	 */
@@ -127,4 +129,14 @@ public class Test {
 }
 ```
 
-Cómo se puede ver ha método para realizar el filtro de temperaturas. No he incluido el fichero XML, puede verse en el enlace al otro que post que publiqué [http://ivanalbizu.eu/parsear-xml-usando-java-stax-cursor/](http://ivanalbizu.eu/parsear-xml-usando-java-stax-cursor/ "http://ivanalbizu.eu/parsear-xml-usando-java-stax-cursor/") Enlace de descarga del [código Parsear XML con StAX Event](https://db.tt/1Rnb9kID "Parsear XML con StAX event")
+Cómo se puede ver hay método para realizar el filtro de temperaturas <code>List&lt;Pojo&gt; filtroTMax(List&lt;Pojo&gt; dias, double limite)</code>.
+
+No he incluido el fichero XML, puede verse en el enlace al otro que post que publiqué sobre <a href="parsear-xml-usando-java-stax-cursor/">parseo de XML usando Java Stax Cursor</a>
+
+El vídeo completo:
+
+<div class="ratio-16-9">
+    <iframe title="Parsear XML usando Java Stax Event" type="text/html" src="http://www.youtube.com/embed/LZo76kHNWh0?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+Enlace de descarga del <a href="https://db.tt/1Rnb9kID" target="_blank">código Parsear XML con Stax Event</a>

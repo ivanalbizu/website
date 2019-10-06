@@ -6,9 +6,9 @@ tags: Java
 ctime: Sun, 02 Mar 2014 22:24:10 +0000
 ---
 
-Programa java venta de móviles desarrollado en el curso formativo de aplicaciones para móviles. El programa consta de tres clases: Principal.java, Movil.java y GestionMovil.java. La clase **Principal.java** gestiona el conjunto de la aplicación java. Dicha clase tiene como atributos precio, caja, marca, repetir programa y la opción seleccionada por el usuario.
+Programa java venta de móviles desarrollado en el curso formativo de aplicaciones para móviles. El programa consta de tres clases: <code>Principal.java</code>, <code>Movil.java</code> y <code>GestionMovil.java</code>. La clase <code>Principal.java</code> gestiona el conjunto de la aplicación java. Dicha clase tiene como atributos <code>precio</code>, <code>caja</code>, <code>marca</code>, <code>repetir</code> programa y la <code>opcion</code> seleccionada por el usuario.
 
-```
+```java
 package ejerc3;
 
 import leer.*;
@@ -98,15 +98,19 @@ public class Principal {
 }
 ```
 
-En dicha clase se crea el array que que contendrá los móviles con la dimensión seleccionada por el usuario. Se crea también la variable gestión de tipo "GestionMovil" para poder operar con el array de móviles. Un bucle que solicitará los datos de cada uno de los móviles al usuario de la aplicación. El usuario interactuará con la aplicación mediante un menú, para ello construido con un bucle tipo "switch" La clase **Movil.java** tiene como atributos:
+En la clase <code>Principal</code> se crea el array que que contendrá los móviles con la dimensión seleccionada por el usuario. Se crea también la variable gestión de tipo <code>GestionMovil</code> para poder operar con el array de móviles. Un bucle que solicitará los datos de cada uno de los móviles al usuario de la aplicación. El usuario interactuará con la aplicación mediante un menú, para ello construido con un bucle tipo <code>switch</code>.
 
-*   Precio
-*   Marca
-*   Cantidad de móviles vendidos
-*   Si se han vendido todos o no
-*   Beneficio de un móvil
+La clase <code>Movil.java</code> tiene como atributos:
 
-```
+<ul class="list-bullets">
+    <li>Precio</li>
+    <li>Marca</li>
+    <li>Cantidad de móviles vendidos</li>
+    <li>Si se han vendido todos o no</li>
+    <li>Beneficio de un móvil</li>
+</ul>
+
+```java
 package ejerc3;
 /**
  * Movil genera objetos de tipo móvil cuyos atributos son:
@@ -207,26 +211,34 @@ public class Movil {
 }
 ```
 
-Consta de dos constructores, uno vacío y el constructor que recibe el precio y la marca.
+La clase <code>Movil</code> consta de dos constructores, uno vacío y el constructor que recibe el precio y la marca.
 
-*   Tiene dos métodos, ambos reciben como parámetro el array de móviles
-*   Un método que imprime las características del móvil
-*   Precio y marca de un móvil concreto
+<ul class="list-bullets">
+    <li>Tiene dos métodos, ambos reciben como parámetro el array de móviles</li>
+    <li>Un método que imprime las características del móvil</li>
+    <li>Precio y marca de un móvil concreto</li>
+    <li>Los gets y sets La clase</li>
+</ul>
 
-Los gets y sets La clase **GestionMovil.java** tiene como atributos:
 
-*   Array de móviles
-*   Una variable doble que almacena las ventas
+<code>GestionMovil.java</code> tiene como atributos:
 
-Cómo métodos:
+<ul class="list-bullets">
+    <li>Array de móviles</li>
+    <li>Una variable doble que almacena las ventas</li>
+</ul>
 
-*   Array de móviles
-*   Ver precio de un móvil
-*   Comprar un móvil
-*   Ver ganancias de las ventas
-*   Cerrar la caja
+Y cómo métodos:
 
-```
+<ul class="list-bullets">
+    <li>Array de móviles</li>
+    <li>Ver precio de un móvil</li>
+    <li>Comprar un móvil</li>
+    <li>Ver ganancias de las ventas</li>
+    <li>Cerrar la caja</li>
+</ul>
+
+```java
 package ejerc3;
 
 /**
@@ -337,4 +349,14 @@ public class GestionMovil {
 }
 ```
 
-El método mostrar móvil void mostrarMoviles(...) recibe un array de móviles y muestra la lista de móviles con sus atributos. El método ver precio void verPrecio(...) recibe como parámetros el array de los móviles y un entero que es introducido por el usuario de la aplicación para devolver el precio de un móvil concreto. El método comprar móvil double comprarMovil(...) recibe los mismos parámetros que el método anterior. Primero comprueba que no esté vendido el móvil solicitado, caso de estar vendido se muestra el mensaje correspondiente. Segundo, se modifica el atributo booleano vendido a "true" para marcar que el móvil elegido está vendido. Por último, se obtiene el precio del movil y se guarda en la variable que acumula las ganacias "caja". El método ver ganancias void verGanancias(...) recibe como parámetros el array de móviles y un número introducido por el usuario para seleccionar un móvil. Se comprueba que el móvil esté vendido y luego se obtienen dos datos, el precio y su beneficio y se multiplican, mostrando por pantalla su resultado. El método cerrarCaja void cerrarCaja(...) recibe como parámetro el array de teléfonos, que es recorrido entero y guardado en la variable "gananciasDia" para aquellos móviles que fueron vendidos. Puedes descargar el código para probarlo en el siguiente enlace: [Descargar programa Java - Venta de móviles.](https://drive.google.com/open?id=0BzQS5pOyF_HjMDdUdXRwTDhZZ0U "Descargar programa java venta móviles") Nota final. Este ejercicio se ha desarrollado con fines didácticos, para adquirir destreza en el manejo de colecciones y métodos, por lo que fuera de este uso -aprendizaje- no tiene mucho sentido.
+El método mostrar móvil <code>void mostrarMoviles(...)</code> recibe un array de móviles y muestra la lista de móviles con sus atributos.
+
+El método ver precio <code>void verPrecio(...)</code> recibe como parámetros el array de los móviles y un entero que es introducido por el usuario de la aplicación para devolver el precio de un móvil concreto.
+
+El método comprar móvil <code>double comprarMovil(...)</code> recibe los mismos parámetros que el método anterior. Primero comprueba que no esté vendido el móvil solicitado, caso de estar vendido se muestra el mensaje correspondiente. Segundo, se modifica el atributo booleano vendido a <code>true</code> para marcar que el móvil elegido está vendido. Por último, se obtiene el precio del movil y se guarda en la variable que acumula las ganacias <code>caja</code>.
+
+El método ver ganancias <code>void verGanancias(...)</code> recibe como parámetros el array de móviles y un número introducido por el usuario para seleccionar un móvil. Se comprueba que el móvil esté vendido y luego se obtienen dos datos, el precio y su beneficio y se multiplican, mostrando por pantalla su resultado.
+
+El método cerrarCaja <code>void cerrarCaja(...)</code> recibe como parámetro el array de teléfonos, que es recorrido entero y guardado en la variable <code>gananciasDia</code> para aquellos móviles que fueron vendidos.
+
+Puedes descargar el código para probarlo en el siguiente enlace <a href="https://drive.google.com/open?id=0BzQS5pOyF_HjMDdUdXRwTDhZZ0U" target="_blank">Descargar programa java venta móviles</a>

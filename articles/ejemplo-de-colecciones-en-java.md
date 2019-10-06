@@ -6,21 +6,39 @@ tags: Java
 ctime: Sun, 23 Mar 2014 19:16:26 +0000
 ---
 
-En este artículo quiero poner un ejemplo del **uso de colecciones en Java**. El ejemplo es sencillo. Se trata de modelar una empresa en la que se guardan datos de sus trabajadores. Sus datos personales, el departamento en el que trabajan, su puesto de trabajo y su salario. Las opciones habilitadas al programa son:
+En este artículo quiero poner un ejemplo del **uso de colecciones en Java**. El ejemplo es sencillo. Se trata de modelar una empresa en la que se guardan datos de sus trabajadores. Sus datos personales, el departamento en el que trabajan, su puesto de trabajo y su salario.
 
-*   0.- SALIR
-*   1.- Cargar trabajadores
-*   2.- Añadir nuevo trabajador
-*   3.- Mostrar trabajadores
-*   4.- Borrar trabajador
-*   5.- Editar trabajador
-*   6.- Ordenar trabajadores por nombre
-*   7.- Ordenar trabajadores por apellidos
-*   8.- Ordenar trabajadores por departamento
+Las opciones habilitadas al programa son:
 
-Explicaré las partes del código que son más relevantes, y al final del post pondré  un enlace para descargar y así probarlo. El proyecto contiene varios paquetes. Gestión, persona, test, trabajador y utilidades. En Gestión se definen los principales métodos del programa. En Persona se definen los atributos generales de cualquier persona. En Test se ejecuta el programa.  En Trabajador se especifican los atributos propios de los trabajadores. En Utilidades se crean las clases para poder leer por teclado, se generan algunos mensajes estándar del programa y se crean clases para realizar ordenaciones de los trabajadores por diferentes criterios. La clase **persona.java** está dentro del paquete persona y define los atributos nombre, apellidos y dni. Se define el método "_toString_" y "_compareTo_", para esto último, clase persona debe implmentar la interfaz "_comparable<Persona>_".  La ordenación definida con "_compareTo_" es ordenar primero por apellidos, si estos fueran iguales se ordena por nombre, y si aún así se repiten nombre y apellidos se ordena por dni.
+<ol class="list-bullets">
+	<li>SALIR</li>
+	<li>Cargar trabajadores</li>
+	<li>Añadir nuevo trabajador</li>
+	<li>Mostrar trabajadores</li>
+	<li>Borrar trabajador</li>
+	<li>Editar trabajador</li>
+	<li>Ordenar trabajadores por nombre</li>
+	<li>Ordenar trabajadores por apellidos</li>
+	<li>Ordenar trabajadores por departamento</li>
+</ol>
 
-```
+Explicaré las partes del código que son más relevantes, y al final del post pondré un enlace para descargar y así probarlo.
+
+El proyecto contiene varios paquetes. <code>Gestion</code>, <code>persona</code>, <code>test</code>, <code>trabajador</code> y <code>utilidades</code>.
+
+En <code>Gestion</code> se definen los principales métodos del programa.
+
+En <code>Persona</code> se definen los atributos generales de cualquier persona.
+
+En <code>Test</code> se ejecuta el programa.
+
+En <code>Trabajador</code> se especifican los atributos propios de los trabajadores. 
+
+En <code>Utilidades</code> se crean las clases para poder leer por teclado, se generan algunos mensajes estándar del programa y se crean clases para realizar ordenaciones de los trabajadores por diferentes criterios.
+
+La clase <code>persona.java</code> está dentro del paquete persona y define los atributos <code>nombre</code>, <code>apellidos</code> y <code>dni</code>. Se define el método <code>toString</code> y <code>compareTo</code>, para esto último, clase persona debe implementar la interfaz <code>comparable&lt;Persona&gt;</code>. La ordenación definida con <code>compareTo</code> es ordenar primero por apellidos, si estos fueran iguales se ordena por nombre, y si aún así se repiten nombre y apellidos se ordena por dni.
+
+```java
 public int compareTo(Persona pers) {
 //Ordered by default: 1º Surname, 2º Name, 3º Profession 
 
@@ -38,9 +56,23 @@ public int compareTo(Persona pers) {
 }
 ```
 
-La clase **Trabajador.java** extiende de la clase Persona.java y está dentro del paquete persona. Se definen sus atributos departamento, puesto de trabajo y el salario. La clase **Gestion.java** está dentro del paquete gestion. La clase Gestion.java realiza las principales operaciones del programa. Para poder trabajar con esta clase se declara el atributo como "trabajadores" de tipo _List<Trabajador>_ y su constructor de tipo _ArrayList<Trabajador>_. Se declara el método **public List<Trabajador> findAll()** para devolver toda la colección. El método **public void mostrarTodo()** como su nombre indica es usado para imprimir toda la colección de trabajadores mediante un _for each_. Un método importante e interesante dentro de Gestion.java es _public Trabajador findByName(String busqueda)_, ya que será un método usado para editar y para borrar un usuario (usando su nombre para devolver un objeto). El método **public Trabajador findByName(String busqueda)** recibe como parámetro un String que será la búsqueda que hará el usuario. Mediante un _while_ se recorre la colección de los trabajadores desde el principio (_int i = 0_ y _i < trabajadores.size()_) hasta que se llegue al final, o hasta que se encuentre la primera ocurrencia elegida por el usuario. Para esto último se usa el condicional _if (trabajadores.get(i).getNombre().equalsIgnoreCase(busqueda))_ en el que caso que se encuentre se devuelve _encontrado = true_ para poder salir del condicional _while (i < trabajadores.size() && **!encontrado**)_ donde se encontraba la ejecución del programa. Luego, mediante condicional _if(encontrado){} else {}_ se devueve el el objeto encontrado o _null_ para no encontrado.
+La clase <code>Trabajador.java</code> extiende de la clase <code>Persona.java</code> y está dentro del paquete persona. Se definen sus atributos departamento, puesto de trabajo y el salario.
 
-```
+La clase <code>Gestion.java</code> está dentro del paquete gestion. esta clase realiza las principales operaciones del programa. Para poder trabajar con esta clase se declara el atributo como <code>trabajadores</code> de tipo <code>List&lt;Trabajador&gt;</code> y su constructor de tipo <code>ArrayList&lt;Trabajador&gt;</code>.
+
+Se declara el método <code>public List&lt;Trabajador&gt; findAll()</code> para devolver toda la colección.
+
+El método <code>public void mostrarTodo()</code> como su nombre indica es usado para imprimir toda la colección de trabajadores mediante un <code>for each</code>.
+
+Un método importante e interesante dentro de <code>Gestion.java</code> es <code>public Trabajador findByName(String busqueda)</code>, ya que será un método usado para editar y para borrar un usuario (usando su nombre para devolver un objeto).
+
+El método <code>public Trabajador findByName(String busqueda)</code> recibe como parámetro un <code>String</code> que será la búsqueda que hará el usuario.
+
+Mediante un <code>while</code> se recorre la colección de los trabajadores desde el principio (<code>int i = 0</code> y <code>i < trabajadores.size()</code>) hasta que se llegue al final, o hasta que se encuentre la primera ocurrencia elegida por el usuario. Para esto último se usa el condicional <code>if (trabajadores.get(i).getNombre().equalsIgnoreCase(busqueda))</code> en el que caso que se encuentre se devuelve <code>encontrado = true</code> para poder salir del condicional <code>while (i < trabajadores.size() && !encontrado)</code> donde se encontraba la ejecución del programa.
+
+Luego, mediante condicional <code>if(encontrado){} else {}</code> se devueve el el objeto encontrado o <code>null</code> para no encontrado.
+
+```java
 public Trabajador findByName(String busqueda){
 	int i = 0;
 	boolean encontrado = false;
@@ -62,9 +94,9 @@ public Trabajador findByName(String busqueda){
 }
 ```
 
-Otro método interesante, y que usa el método anterior es **public void borrarTrabajador()**. Para poder borrar a un trabajador necesitamos saber que trabajador desea borrar el usuario, a partir de un nombre elegido por él, para ello ese usa:_ Trabajador trab = null_ y _trab = findByName(Leer.dato())_ y con un condicional simple _if (trab != null)_ sabemos si el objeto ha sido encontrado y se procede a eliminar mediante _trabajadores.remove(trab)_.
+Otro método interesante, y que usa el método anterior es <code>public void borrarTrabajador()</code>. Para poder borrar a un trabajador necesitamos saber que trabajador desea borrar el usuario, a partir de un nombre elegido por él, para ello ese usa: <code>Trabajador trab = null</code> y <code>trab = findByName(Leer.dato())</code> y con un condicional simple <code>if (trab != null)</code> sabemos si el objeto ha sido encontrado y se procede a eliminar mediante <code>trabajadores.remove(trab)</code>.
 
-```
+```java
 public void borrarTrabajador(){
 	Trabajador trab = null;
 	System.out.println("Nombre de la persona que desea borrar");
@@ -80,9 +112,9 @@ public void borrarTrabajador(){
 }
 ```
 
-El método  **public void editName()** es muy parecido al anterior. La diferencia se trata en el método usado, en este caso se usa el método definido en la clase Persona.java **trab.setNombre(...)**, mientras que antes se uso un método propio del API ArrayList.
+El método <code>public void editName()</code> es muy parecido al anterior. La diferencia se trata en el método usado, en este caso se usa el método definido en la clase <code>Persona.java</code> <code>trab.setNombre(...)</code>, mientras que antes se uso un método propio del <code>API ArrayList</code>.
 
-```
+```java
 public void editName(){
 	Trabajador trab = null;
 	System.out.println("Nombre de la persona que desea editar");
@@ -100,18 +132,20 @@ public void editName(){
 }
 ```
 
-El último método que voy a explicar de esta clase es **public List<Trabajador> orderByDepart()**, este método necesita que se pase el array que se va a ordenar, en este caso el array de trabajadores. Por ser ArrayList se puede usar la interfaz **Collections** y su método **sort**, al que se le pasan como parámetros el array y la clase **OrderBySurname()** definido con los criterios necesarios para realizar la operación.
+El último método que voy a explicar de esta clase es <code>public List&lt;Trabajador&gt; orderByDepart()</code>, este método necesita que se pase el array que se va a ordenar, en este caso el array de trabajadores. Por ser <code>ArrayList</code> se puede usar la interfaz <code>Collections</code> y su método <code>sort</code>, al que se le pasan como parámetros el array y la clase <code>OrderBySurname()</code> definido con los criterios necesarios para realizar la operación.
 
-```
+```java
 public List<Trabajador> orderBySurname(){
 	Collections.sort(trabajadores, new OrderBySurname());
 	return trabajadores;
 }
 ```
 
-Dentro del paquete de utilidades hay varias clases, una de ellas llamada **OrderBySurname.java**. La declario de la clase es **public class OrderBySurname implements Comparator<Trabajador>**, tiene un único método, y es usado para ordenar la colección por apellidos. El método "compare" recibe dos parámetros, dos objeto trabajadores, y devuelve un entero. Más información en la [API de Java](http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html "API JAVA COMPARATOR")
+Dentro del paquete de utilidades hay varias clases, una de ellas llamada <code>OrderBySurname.java</code>. La declario de la clase es <code>public class OrderBySurname implements Comparator&lt;Trabajador&gt;</code>, tiene un único método, y es usado para ordenar la colección por apellidos. El método <code>compare</code> recibe dos parámetros, dos objeto trabajadores, y devuelve un entero.
 
-```
+Más información en la <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html" target="_blank">API JAVA COMPARATOR</a>
+
+```java
 public class OrderBySurname implements Comparator<Trabajador>{
 	@Override
 	public int compare(Trabajador trab1, Trabajador trab2) {
@@ -120,9 +154,11 @@ public class OrderBySurname implements Comparator<Trabajador>{
 }
 ```
 
-La clase principal que contiene la ejecución del programa se llama **Test.java** y está dentro del paquete test. Dentro de esta clase se crea un objeto tipo Gestion que será con el que se gestiona el programa. Dicha clase contiene un bucle _do while_ para que el usuario ejecute el programa con sus diferentes opciones. Dichas opciones son llamadas a petición del usuario con estructura _switch_. Las opciones que podrá hacer el usuario son las enumeradas al principio de este post. Por ejemplo, para el caso de cargar datos existentes se usa el caso 1. Sólo se puede cargar una vez, para no duplicar datos. Para ello, la variable booleana _flag_ al comienzo del programa (antes del _do while_) está iniciada a _true_, una vez se cargan los datos su valor se cambia a _false_.
+La clase principal que contiene la ejecución del programa se llama <code>Test.java</code> y está dentro del paquete test.
 
-```
+Dentro de esta clase se crea un objeto tipo <code>Gestion</code> que será con el que se gestiona el programa. Dicha clase contiene un bucle <code>do while</code> para que el usuario ejecute el programa con sus diferentes opciones. Dichas opciones son llamadas a petición del usuario con estructura <code>switch</code>. Las opciones que podrá hacer el usuario son las enumeradas al principio de este post. Por ejemplo, para el caso de cargar datos existentes se usa el caso 1. Sólo se puede cargar una vez, para no duplicar datos. Para ello, la variable booleana <code>flag</code> al comienzo del programa (antes del <code>do while</code>) está iniciada a <code>true</code>, una vez se cargan los datos su valor se cambia a <code>false</code>.
+
+```java
 case 1://add existent workers
 	//Carga sólo una vez los trabajadores predefinidos
 	if(flag){
@@ -134,4 +170,6 @@ case 1://add existent workers
 	break;
 ```
 
-El programa contiene más clases, pero algunas son obvias y otras son similares a las que he comentado. No son difíciles de entender. Puedes descargar el código para probarlo en el siguiente enlace: [Descargar el programa de colecciones de la API de Java](https://drive.google.com/open?id=0BzQS5pOyF_HjcGNfRUswVE53a00 "Descargar ejemplo programa colecciones API Java") Nota final. Este ejercicio se ha desarrollado con fines didácticos, para adquirir destreza en el manejo de la API de Java, colecciones y métodos, por lo que fuera de este uso -aprendizaje- no tiene mucho sentido.
+El programa contiene más clases, pero algunas son obvias y otras son similares a las que he comentado. No son difíciles de entender.
+
+Puedes descargar el código para probarlo en el siguiente enlace <a href="https://drive.google.com/open?id=0BzQS5pOyF_HjcGNfRUswVE53a00" target="_blank">descargar ejemplo programa colecciones API Java</a>

@@ -1,14 +1,18 @@
 ---
 title: Bonito menú horizontal con Css3
-description: Menú horizontal con css3
+description: Menú horizontal centrado con css3 y animación en hover
 published: true
 tags: Css3
 ctime: Thu, 13 Feb 2014 18:58:52 +0000
 ---
 
-Menú horizontal construido con CSS3. Con pocas líneas de código se consigue este menú. Lo he adaptado para que se vea bien en la entrada de mi blog. Si se quiere se puede adaptar perfectamente para una web de ancho corriente (980px). Cambiando el ancho de contenedor de 700px a 980px y añadiendo dos ítem más de menú, la apariencia del **menú con Css3** queda muy bonita. Tiene una pequeña animación a situar el ratón sobre uno de los elementos del menú. Se trata de  cambiar el color y la dimensión e del ítem en cuestión. Para este último punto, la opción que me ha parecido más fácil de implementar ha sido aumentar (del selector "a") el **line-height 4px** y un **margin-top  -2px** para conseguir la apariencia de centrado en vertical. Aquí se puede ver el código fuente del archivo _css_.
+Menú horizontal construido con **CSS3**. Con pocas líneas de código se consigue este menú. Lo he adaptado para que se vea bien en la entrada de mi blog. Si se quiere se puede adaptar perfectamente para una web de ancho corriente (980px). Cambiando el ancho de contenedor de 700px a 980px y añadiendo dos ítem más de menú, la apariencia del **menú con Css3** queda muy bonita.
 
-```
+Tiene una pequeña animación al situar el ratón sobre uno de los elementos del menú. Se trata de cambiar el color y la dimensión e del ítem en cuestión.
+
+Aquí se puede ver el código fuente del archivo <code>.css</code>.
+
+```css
 body {
 	font-family:'Verdana', sans-serif;
 	background:#D8D8D8 url('../img/noise.png') repeat;
@@ -89,6 +93,7 @@ article {
 
 Y el código del archivo html, es sencillo, con un poco de texto de relleno, cortesía: [http://www.quijotipsum.com/](Quijotipsum "Texto de relleno")
 
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -113,11 +118,11 @@ Y el código del archivo html, es sencillo, con un poco de texto de relleno, cor
 			<p>Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino. Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, a, o Quesada, que en esto hay alguna diferencia en los autores que deste caso escriben; aunque, por conjeturas verosímiles, se deja entender que se llamaba Quejana. Pero esto importa poco a nuestro cuento; basta que en la narración dél no se salga un punto de la verdad. </p>
 			<p>En un lugar  Quieren decir que tenía el sobrenombre de Quijada, o Quesada, que en esto hay alguna diferencia en los autores que deste caso escriben; aunque, por conjeturas verosímiles, se deja entender que se llamaba Quejana. Pero esto importa poco a nuestro cuento; basta que en la narración dél no se salga un punto de la verdad.</p>
 			<p>EQuieren decir que tenía el sobrenombre de Quijada, o Quesada, que en esto hay alguna diferencia en los autores que deste caso escriben; aunque, por conjeturas verosímiles, se deja entender que se llamaba Quejana. Pero esto importa poco a nuestro cuento; basta que en la narración dél no se salga un punto de la verdad. </p>
-
 		</article>
 
 	</div>
 </body>
 </html>
+```
 
-Si te ha gustado el menú, puedes descargarlo desde este enlace: [menu horizontal css3](https://dl.dropboxusercontent.com/u/12043780/ivanalbizu.eu/bonito-menu-horizontal-css3.zip)
+Si te ha gustado el menú, puedes descargarlo desde este enlace <a href="https://dl.dropboxusercontent.com/u/12043780/ivanalbizu.eu/bonito-menu-horizontal-css3.zip" target="_blank">menu horizontal css3</a>

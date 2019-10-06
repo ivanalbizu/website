@@ -8,21 +8,25 @@ ctime: Tue, 25 Feb 2014 21:07:50 +0000
 
 El programa java sirve para gestionar el registro de alumnos de una clase. Las funciones habilitadas al programa son:
 
-*   Registrar los alumnos de la clase
-*   Mostrar todos los alumnos
-*   Mostrar un alumno
-*   Modificar un alumno
-*   Borrar un alumno
+<ul class="list-bullets">
+	<li>Registrar los alumnos de la clase</li>
+	<li>Mostrar todos los alumnos</li>
+	<li>Mostrar un alumno</li>
+	<li>Modificar un alumno</li>
+	<li>Borrar un alumno</li>
+</ul>
 
 El programa tiene tres archivos:
 
-*   Test.java
-*   Alumno.java
-*   Gestion.java
+<ul class="list-bullets">
+	<li><code>Test.java</code></li>
+	<li><code>Alumno.java</code></li>
+	<li><code>Gestion.java</code></li>
+</ul>
 
-**Test.java** es el principal archivo del programa, el que carga la aplicación
+<code>Test.java</code> es el principal archivo del programa, el que carga la aplicación
 
-```
+```java
 package coleccionesEjerc07;
 import java.util.*;
 
@@ -112,9 +116,9 @@ public class Test {
 }
 ```
 
-**Alumno.java** configura las características básicas de un alumno.
+<code>Alumno.java</code> configura las características básicas de un alumno.
 
-```
+```java
 package coleccionesEjerc07;
 
 public class Alumno {
@@ -163,9 +167,9 @@ public class Alumno {
 }
 ```
 
-**Gestion.java** realiza las operaciones propias del programa.
+<code>Gestion.java</code> realiza las operaciones propias del programa.
 
-```
+```java
 package coleccionesEjerc07;
 import java.util.List;
 
@@ -291,4 +295,20 @@ public class Gestion {
 }
 ```
 
-Los atributos de _Alumno.java_ son su nombre, sus apellidos y su edad. Contiene los "_gets_" y sets y el método "_toString_", y sus constructores. En _Test.java_ se crea el objeto gestión y la colección (array) para guardar los registros de alumnos. Contiene el menú propiamente dicho, con el que actuará el usuario en la aplicación. Para ello se crea un "_switch_" con cada una de las opciones posibles. La opción "_default_" del switch será la que hará salir del programa. La clase más interesante de todas es la llamada _Gestion.java_, en esta se escriben los métodos que paso a comentar brévemente. (Los propios archivos ya viene comentados con javadoc, así que algunas cosas las obviaré en esta explicación). El primer método, _void mostrarMenu_ carga el menú general de la aplicación. El método _int menuEditar()_ es llamado en el método _void modificarAlumno(...)_, éste último recibirá un número entero, que representa la opción elegida por el usuario. El método añadir _Alumno anadirAlumno()_ devuelve un objeto "_Alumno_". Éste método es llamado desde dos sitios. Una vez en el archivo Test.java para iniciar el programa, y se ejecutará tantas veces como el usuario marque en la opción de insertar X objetos. La otra llamada se realiza dentro del mismo archivo, en la opción de añadir más alumnos, pero en esta ocasión se ejecuta una sóla vez, para repetir esta opción el usuario deberá selecciona nuevamente la opción de añadir nuevo alumno. El método booleano _boolean noVacio(...)_ devuelve si un objeto existe o no dentro dela colección de alumnos. Este método será llamado desde el método _Alumno obtenerAlumno(...)_. El método _Alumno obtenerAlumno(...)_ devolverá un alumno elegido por el usuario. Se apoya en el método _boolean noVacio(...)_, no devolviendo objeto hasta que no se indique una posición válida. El objeto devuelto por este método es usado en los métodos _void eliminarAlumno(...)_ y _void modificarAlumno(...)_. El método _void eliminarAlumno(...)_ captura el objeto devuelto por _Alumno obtenerAlumno(...)_ y lo elimina con el método propio _remove(...)_ de ArrayList El último método, _void modificarAlumno(...)_ recibe los métodos _Alumno obtenerAlumno(...)_ para operar sobre él (modificarlo) y el método _int menuEditar()_ para realizar la operación seleccionada por el usuario, en este caso son: editar nombre, apellidos y edad. Las modificaciones se llevan a cabo mediante los "_set_" adecuados dentro del archivo Alumno.java. Puedes descargar el código para probarlo en el siguiente enlace: [Descargar programa Java - Gestion de alumnos.](https://drive.google.com/open?id=0BzQS5pOyF_HjSFFtWldxQlQ5OFE "Descargar programa Java gestionar Alumnos") Nota final. Este ejercicio se ha desarrollado con fines didácticos,  para adquirir destreza en el manejo de colecciones y métodos, por lo que fuera de este uso -aprendizaje- no tiene mucho sentido.
+Los atributos de <code>Alumno.java</code> son su nombre, sus apellidos y su edad. Contiene los <code>gets</code> y <code>sets</code> y el método <code>toString</code>, y sus constructores.
+
+En <code>Test.java</code> se crea el objeto gestión y la colección para guardar los registros de alumnos. Contiene el menú propiamente dicho, con el que actuará el usuario en la aplicación. Para ello se crea un <code>switch</code> con cada una de las opciones posibles. La opción <code>default</code> del switch será la que hará salir del programa.
+
+La clase más interesante de todas es la llamada <code>Gestion.java</code>, en esta se escriben los métodos que paso a comentar brévemente. (Los propios archivos ya viene comentados con javadoc, así que algunas cosas las obviaré en esta explicación).
+
+<ul class="list-bullets">
+	<li>El primer método, <code>void mostrarMenu</code> carga el menú general de la aplicación.</li>
+	<li>El método <code>int menuEditar()</code> es llamado en el método <code>void modificarAlumno(...)</code>, éste último recibirá un número entero, que representa la opción elegida por el usuario.</li>
+	<li>El método añadir <code>Alumno anadirAlumno()</code> devuelve un objeto <code>Alumno</code>. Éste método es llamado desde dos sitios. Una vez en el archivo <code>Test.java</code> para iniciar el programa, y se ejecutará tantas veces como el usuario marque en la opción de insertar X objetos. La otra llamada se realiza dentro del mismo archivo, en la opción de añadir más alumnos, pero en esta ocasión se ejecuta una sóla vez, para repetir esta opción el usuario deberá selecciona nuevamente la opción de añadir nuevo alumno.</li>
+	<li>El método booleano <code>boolean noVacio(...)</code> devuelve si un objeto existe o no dentro dela colección de alumnos. Este método será llamado desde el método <code>Alumno obtenerAlumno(...)</code></li>
+	<li>El método <code>Alumno obtenerAlumno(...)</code> devolverá un alumno elegido por el usuario. Se apoya en el método <code>boolean noVacio(...)</code>, no devolviendo objeto hasta que no se indique una posición válida. El objeto devuelto por este método es usado en los métodos <code>void eliminarAlumno(...)</code> y <code>void modificarAlumno(...)</code></li>
+	<li>El método <code>void eliminarAlumno(...)</code> captura el objeto devuelto por <code>Alumno obtenerAlumno(...)</code> y lo elimina con el método propio <code>remove(...)</code> de <code>ArrayList</code></li>
+	<li>El último método, <code>void modificarAlumno(...)</code> recibe los métodos <code>Alumno obtenerAlumno(...)</code> para operar sobre él (modificarlo) y el método <code>int menuEditar()</code> para realizar la operación seleccionada por el usuario, en este caso son: editar nombre, apellidos y edad. Las modificaciones se llevan a cabo mediante los <code>set</code> adecuados dentro del archivo <code>Alumno.java</code>.</li>
+</ul>
+
+Puedes descargar el código para probarlo en el siguiente enlace <a href="https://drive.google.com/open?id=0BzQS5pOyF_HjSFFtWldxQlQ5OFE" target="_blank">descargar programa Java gestionar Alumnos</a>

@@ -6,17 +6,25 @@ tags: Android,Java
 ctime: Thu, 23 Oct 2014 16:21:47 +0000
 ---
 
-En esta entrada voy a crear, mediante un ejemplo, un interfaz Android en la que se use startActivityForResult(). El método **startActivityForResult()** se emplea para lanzar una actividad y que ésta nos devuelva una información que será usada en la actividad "origen".
+En esta entrada voy a crear, mediante un ejemplo, un interfaz Android en la que se use <code>startActivityForResult()</code>. El método <code>startActivityForResult()</code> se emplea para lanzar una actividad y que ésta nos devuelva una información que será usada en la actividad "origen".
 
-1.  Para ello, en la actividad "origen" crearemos:
-    1.  Un método que lanzará un Intent al pulsar sobre un botón.
-    2.  Otro método que será el que espere el resultado del Intent.
-2.  En la actividad "destino" crearemos:
-    1.  Dos métodos, cada uno vinculado a su botón correspondiente, para devolver el Intent mediante setResult()
+<ol class="list-bullets">
+    <li>Para ello, en la actividad "origen" crearemos:
+        <ol class="list-bullets">
+            <li>Un método que lanzará un Intent al pulsar sobre un botón.</li>
+            <li>Otro método que será el que espere el resultado del Intent.</li>
+      </ol>
+    </li>
+    <li>En la actividad "destino" crearemos:
+        <ol class="list-bullets">
+            <li>Dos métodos, cada uno vinculado a su botón correspondiente, para devolver el <code>Intent</code> mediante <code>setResult()</code></li>
+        </ol>
+    </li>
+</ol>
 
 El código de la clase "origen" es el siguiente:
 
-```
+```java
 package eu.ivanalbizu.condicionesregistro;
 
 import android.app.Activity;
@@ -76,7 +84,7 @@ public class MainActivity extends Activity {
 
 Y el código de la clase "destino" es:
 
-```
+```java
 package eu.ivanalbizu.condicionesregistro;
 
 import android.app.Activity;
@@ -133,4 +141,4 @@ public class CondicionActivity extends Activity {
 }
 ```
 
-El código XML para las vistas no está incluido en la entrada, es muy simple, y se puede descargar el [ejemplo completo desde aquí](https://db.tt/z9PuhFkh "Ejemplo startActivityForResult")
+El código XML para las vistas no está incluido en la entrada, es muy simple, y se puede descargar el <a href="https://db.tt/z9PuhFkh" target="_blank">Ejemplo startActivityForResult</a>

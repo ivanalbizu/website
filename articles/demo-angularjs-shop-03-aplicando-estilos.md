@@ -12,27 +12,27 @@ En esta entrada explicaré los principales estilos aplicados (alguno puede que l
 
 Descomentamos la línea que carga el menú superior y quitamos la clase header que pusimos provisionalmente para añadir clases de bootstrap, quedando así:
 
-```
+```html
 <div ng-include="'views/userMenu.html'" class="navbar navbar-default navbar-fixed-top"></div>
 ```
 
 ## Modificaciones sobre views/userMenu.html
 
-Eliminamos el primer div, ya que ahora tenemos las clases necesarias dentro del archivo index.html. Y modificamos algunas líneas: El primer vínculo quedará así:
+Eliminamos el primer <code>&lt;div&gt;</code>, ya que ahora tenemos las clases necesarias dentro del archivo <code>index.html</code>. Y modificamos algunas líneas, el primer vínculo quedará así:
 
-```
+```html
 <a href="" class="dropdown-toggle" data-toggle="dropdown">User</a>
 ```
 
 y el segundo así:
 
-```
+```html
 <a href="" class="dropdown-toggle" data-toggle="dropdown">Cart (1 product)</a>
 ```
 
-Y a los "ul" le añadimos el atributo role="menu" Para no extenderme mucho, el archivo views/userMenu.html quedará así:
+Y a los <code>&lt;ul&gt;</code> le añadimos el atributo <code>role="menu"</code>. Para no extenderme mucho, el archivo <code>views/userMenu.html</code> quedará así:
 
-```
+```html
 <div class="navbar-collapse collapse navbar-inverse">
   <ul class="nav navbar-nav navbar-left">
     <li class="dropdown">
@@ -59,9 +59,9 @@ Y a los "ul" le añadimos el atributo role="menu" Para no extenderme mucho, el a
 </div>
 ```
 
-A la hoja de estilos styles/main.css le añadimos al final de el último estilo que ya venía incluido el siguiente código:
+A la hoja de estilos <code>styles/main.css</code> le añadimos al final de el último estilo que ya venía incluido el siguiente código:
 
-```
+```css
 /*Estilos generales*/
 body{
   font-family: Helvetica;
@@ -253,9 +253,9 @@ ul#cart li a > button{
 }
 ```
 
-Y para dejar preparada la siguiente entrada, modificamos el archivo views/product.html con el siguiente código:
+Y para dejar preparada la siguiente entrada, modificamos el archivo <code>views/product.html</code> con el siguiente código:
 
-```
+```html
 <div class="row marketing">
   <div>
     <div class="product left">
@@ -276,4 +276,10 @@ Y para dejar preparada la siguiente entrada, modificamos el archivo views/produc
 </div>
 ```
 
-En la siguiente entrada empezaremos con lo más chulo. Será trabajar con directivas de AngularJS sobre el archivo views/product.html
+Vídeo del paso a paso
+
+<div class="ratio-16-9">
+    <iframe title="Demo AngularJS Shop - Estilos" type="text/html" src="http://www.youtube.com/embed/rkaqYCFJ4dk?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+En la siguiente entrada empezaremos con lo más chulo. Será trabajar con directivas de AngularJS sobre el archivo </code>views/product.html</code>

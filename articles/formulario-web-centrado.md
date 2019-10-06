@@ -6,9 +6,11 @@ tags: Css3,Pildoritas
 ctime: Mon, 03 Mar 2014 22:18:41 +0000
 ---
 
-Formulario web centrado en la página web no es complicado. El método aquí explicado puede usarse para cualquier elemento, es válido para un formulario web como para cualquier otro elemento o caja. Para conseguir el centrado he posicionado el contenedor de manera absolute y definido sus atributos left, right, top y bottom a 0 para que ocupe todo el ancho y alto de la pantalla y dando márgenes autos en las cuatro direcciones. A dicho contenedor se le da width y height en porcentajes y para que no quede o muy pequeño o grande se le da mínimos y máximos a los width y height. Adicionalmente, para darle un poco más de juego al formulario web he insertado imágenes de background a cada uno de los campos input. El código **css**:
+Formulario web centrado en la página web no es complicado. El método aquí explicado puede usarse para cualquier elemento, es válido para un formulario web como para cualquier otro elemento o caja. Para conseguir el centrado he posicionado el contenedor de manera absolute y definido sus atributos left, right, top y bottom a 0 para que ocupe todo el ancho y alto de la pantalla y dando márgenes autos en las cuatro direcciones. A dicho contenedor se le da width y height en porcentajes y para que no quede o muy pequeño o grande se le da mínimos y máximos a los width y height. Adicionalmente, para darle un poco más de juego al formulario web he insertado imágenes de background a cada uno de los campos input.
 
-```
+El código **css**:
+
+```css
 *{
     margin:0;
     padding:0;
@@ -83,7 +85,7 @@ input[type="submit"] {
 
 El código **html**:
 
-```
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -109,5 +111,31 @@ El código **html**:
 </body>
 </html>
 ```
+<iframe>
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" http-equiv="Content-Type" content="text/html;" />
+	<title>Formulario de login</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8"/>
+</head>
+
+<body>
+    <div id="contenedor">
+        <form action="index_submit" method="get" accept-charset="utf-8">
+
+            <fieldset>
+                <legend>Login</legend>
+                <label for="usuario">Usuario</label><input type="text" name="usuario" id="usuario" required="required" />
+                <label for="">Contraseña</label><input type="password" name="contrasena" id="contrasena" required="required" />
+                <label for="repetir_contrasena">Repetir contraseña</label><input type="password" name="repetir_contrasena" id="repetir_contrasena" required="required" />
+            </fieldset>
+            <p><input type="submit" value="Logear"/></p>
+
+        </form>
+    </div>
+</body>
+</html>
+</iframe>
 
 Si te ha gustado el formulario, puedes descargarlo desde este enlace: [formulario web centrado](https://dl.dropboxusercontent.com/u/12043780/ivanalbizu.eu/formulario-login.zip "Formulario web centrado")

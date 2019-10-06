@@ -6,16 +6,19 @@ tags: Android,Java
 ctime: Tue, 28 Oct 2014 20:41:04 +0000
 ---
 
-Intents en Android para hacer llamada, buscar en mapa google y enviar mail. Los pasos para hacer este proyecto son:
+Aplicación Android usando Intents para lanzar aplicación de llamada, búsqueda en mapa google y enviar mail.
 
-1.  Declarar las **variables** en MainActivity.java y crear referencias de la vista XML
-2.  Se asigna **listener al botón llamar** con el texto que ha introducido el usuario.
-3.  Se asigna **listener al botón buscar** en mapa la dirección que ha introducido el usuario
-4.  Se asigna **listener al botón enviar mail.**
+Los pasos para hacer este proyecto son:
 
-La declaración de variables la he realizado dentro del método onCreate(...)
+<ol class="list-bullets">
+	<li>Declarar las **variables** en <code>MainActivity.java</code> y crear referencias de la vista XML.</li>
+	<li>Se asigna **listener al botón llamar** con el texto que ha introducido el usuario.</li>
+	<li>Se asigna **listener al botón buscar** en mapa la dirección que ha introducido el usuario.</li>
+	<li>Se asigna **listener al botón enviar mail.**</li>
 
-```
+La declaración de variables la he realizado dentro del método <code>onCreate(...)</code>
+
+```java
 //Se declaran y se referencian las variables de la vista XML
 final Button btnLlamar = (Button) findViewById(R.id.buttoncall);
 final Button btnBuscarMapa = (Button) findViewById(R.id.buttonsearch);
@@ -24,7 +27,7 @@ final Button btnEnviarMail = (Button) findViewById(R.id.buttonsendmail);
 
 Listener para el botón de realizar llamada
 
-```
+```java
 //Se asigna listener al botón llamar con el texto que ha introducido el usuario
 btnLlamar.setOnClickListener(new View.OnClickListener(){
 	public void onClick(View v){
@@ -49,7 +52,7 @@ btnLlamar.setOnClickListener(new View.OnClickListener(){
 
 Listener para buscar en mapa
 
-```
+```java
 //Se asigna listener al botón buscar en mapa la dirección
 // que ha introducido el usuario
 btnBuscarMapa.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +74,7 @@ btnBuscarMapa.setOnClickListener(new View.OnClickListener() {
 
 Listener para el envió de mail
 
-```
+```java
 //Se asigna listener al botón enviar mail
 btnEnviarMail.setOnClickListener(new View.OnClickListener() {
 	public void onClick(View v) {
@@ -98,4 +101,12 @@ btnEnviarMail.setOnClickListener(new View.OnClickListener() {
 });
 ```
 
-La explicación de esta entrada ha sido escueta, es sencillo de entender directamente leyendo del código con sus comentarios. He creado un vídeo del paso seguido para este proyecto Android. Puedes descargar el código para probarlo en el siguiente enlace: [Descargar el programa Android para llamar, buscar en mapa y enviar mail](https://db.tt/CWIfbv3J "Descargar el programa Android envío mail, buscar mapa y llamar")
+La explicación de esta entrada ha sido escueta, es sencillo de entender directamente leyendo del código con sus comentarios.
+
+He creado un vídeo del paso seguido para este proyecto Android:
+
+<div class="ratio-16-9">
+    <iframe title="Intents en Android para lanzar llamada, mapas y mail" type="text/html" src="http://www.youtube.com/embed/PuM4JO23VtM?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>
+</div>
+
+<a href="https://db.tt/CWIfbv3J" target="_blank">Descargar el programa Android para llamar, buscar en mapa y enviar mail</a>

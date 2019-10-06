@@ -6,33 +6,34 @@ tags: Android,Java
 ctime: Sun, 19 Oct 2014 15:36:18 +0000
 ---
 
-Construir custom dial en Android con pocas líneas de código. Crearé un proyecto Android en el que sólo añada esta funcionalidad. El proyecto contendrá sólo un archivo java llamado MainActivity.java y un archivo xml asociado llamado activity_main.xml encargado de contener el aspecto gráfico. Empezando por el aspecto visual, el archivo activity_main.xml contendrá:
+Construir custom dial en Android con pocas líneas de código. Crearé un proyecto Android en el que sólo añada esta funcionalidad. El proyecto contendrá sólo un archivo java llamado <code>MainActivity.java</code> y un archivo xml asociado llamado <code>activity_main.xml</code> encargado de contener el aspecto gráfico. Empezando por el aspecto visual.
 
-1.  Un "LinearLayout" con un "TextView" para el número de teléfono y un "ImageView" para una imagen que permitirá borrar el último dígito introducido.
-2.  Un "TableLayout" para incluir los botones del teclado numérico.
-3.  Y finalmente un "ImageView" que será el que lance la llamada de teléfono.
+El archivo <code>activity_main.xml</code> contendrá:
+
+<ol class="list-bullets">
+    <li>Un <code>LinearLayout</code> con un <code>TextView</code> para el número de teléfono y un <code>ImageView</code> para una imagen que permitirá borrar el último dígito introducido.</li>
+    <li>Un <code>TableLayout</code> para incluir los botones del teclado numérico.</li>
+    <li>Y finalmente un <code>ImageView</code> que será el que lance la llamada de teléfono.</li>
+</ol>
 
 Su código es el siguiente:
 
-```
+```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6F8C82"
-    tools:context="${relativePackage}.${activityClass}" >
-    
+    tools:context="${relativePackage}.${activityClass}">
     <LinearLayout
         android:id="@+id/tab1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
-
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20sp" >
-
+            android:padding="20sp">
             <TextView
                 android:id="@+id/numeroLlamada"
                 android:layout_width="wrap_content"
@@ -42,152 +43,128 @@ Su código es el siguiente:
                 android:textColor="#D91E1E"
                 android:textSize="30sp"
                 android:typeface="monospace"
-                android:text="@string/txt_num_marcado" />
-
+                android:text="@string/txt_num_marcado"/>
             <ImageButton
                 android:id="@+id/imageButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="#00000000"
                 android:layout_weight="0.2"
-                android:src="@drawable/ic_delete" />
-
+                android:src="@drawable/ic_delete"/>
         </LinearLayout>
-
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20sp"
-            android:stretchColumns="*" >
-
+            android:stretchColumns="*">
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
+                android:layout_height="wrap_content">
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_1" />
-
+                    android:text="@string/btn_1"/>
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_2" />
-
+                    android:text="@string/btn_2"/>
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_3" />
-
+                    android:text="@string/btn_3"/>
             </TableRow>
-
             <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
+                android:layout_height="wrap_content">
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_4" />
-
+                    android:text="@string/btn_4"/>
                 <Button
                     android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_5" />
-
+                    android:text="@string/btn_5"/>
                 <Button
                     android:id="@+id/button6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_6" />
-
+                    android:text="@string/btn_6"/>
             </TableRow>
-
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
+                android:layout_height="wrap_content">
                 <Button
                     android:id="@+id/button7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_7" />
-
+                    android:text="@string/btn_7"/>
                 <Button
                     android:id="@+id/button8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_8" />
-
+                    android:text="@string/btn_8"/>
                 <Button
                     android:id="@+id/button9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_9" />
-
+                    android:text="@string/btn_9"/>
             </TableRow>
-            
             <TableRow
              android:id="@+id/tableRow4"
              android:layout_width="match_parent"
-             android:layout_height="wrap_content" >
-
+             android:layout_height="wrap_content">
                 <Button
                     android:id="@+id/button10"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_almohadilla" />
-
+                    android:text="@string/btn_almohadilla"/>
                 <Button
                     android:id="@+id/button0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_0" />
-
+                    android:text="@string/btn_0"/>
                 <Button
                     android:id="@+id/button12"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/btn_asterisco" />
-
-         </TableRow>
-         
+                    android:text="@string/btn_asterisco"/>
+            </TableRow>
         </TableLayout>
-
         <ImageButton
             android:id="@+id/call"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_margin="20sp"
             android:background="#F25F1F"
-            android:src="@drawable/ic_call" />
-
+            android:src="@drawable/ic_call"/>
     </LinearLayout>
 </RelativeLayout>
 ```
 
-El archivo **MainActivity.java** será el que lleve la funcionalidad.
+El archivo <code>MainActivity.java</code> será el que lleve la funcionalidad.
 
-1.  Al inicio de la clase se declaran tres variables para poder trabajar con sus referencias dentro del main.
-2.  Dentro del método **onCreate(...)** se inician las variables anteriores con sus referencias por ID del archivo XML.
-3.  Se construye un "listener" para ser asignado a los botones de la vista. Para ello se obtiene el botón que produjo el evento, se concatena el teléfono que aparece en en TextView con el texto del número de dígito marcado (máximo 10 dígitos, se mostraría con Toast que no se permiten más dígitos).
-4.  Se asigna a cada uno de los botones el listener anterior creado.
-5.  Se habilita funcionalidad de editar el número de teléfono marcado. Se activa para ello un listener sobre el elemento de borrado.
-6.  Se habilita listener para lanzar la llamada. Se activa para ello un listener sobre el botón de realizar llamada. Capturando el teléfono marcado, caso de ser vacio, se asigna el número de emergencias, se parsea y se lanza el Intent.
+<ol class="list-bullets">
+    <li>Al inicio de la clase se declaran tres variables para poder trabajar con sus referencias dentro del main.</li>
+    <li>Dentro del método <code>onCreate(...)</code> se inician las variables anteriores con sus referencias por ID del archivo XML.</li>
+    <li>Se construye un <code>listener</code> para ser asignado a los botones de la vista. Para ello se obtiene el botón que produjo el evento, se concatena el teléfono que aparece en en <code>TextView</code> con el texto del número de dígito marcado (máximo 10 dígitos, se mostraría con Toast que no se permiten más dígitos).</li>
+    <li>Se asigna a cada uno de los botones el <code>listener</code> anterior creado.</li>
+    <li>Se habilita funcionalidad de editar el número de teléfono marcado. Se activa para ello un <code>listener</code> sobre el elemento de borrado.</li>
+    <li>Se habilita <code>listener</code> para lanzar la llamada. Se activa para ello un <code>listener</code> sobre el botón de realizar llamada. Capturando el teléfono marcado, caso de ser vacio, se asigna el número de emergencias, se parsea y se lanza el Intent.</li>
+</ol>
 
 El código es el siguiente:
 
-```
+```java
 package eu.ivanalbizu.customdial;
 
 import android.app.Activity;
@@ -216,8 +193,7 @@ public class MainActivity extends Activity {
         numero = (TextView) findViewById(R.id.numeroLlamada);
         editNumero = (ImageButton) findViewById(R.id.imageButton1);
         doCall = (ImageButton) findViewById(R.id.call);
-        
-        
+                
         //Se construye un "listener" para ser asignado a los botones de la vista
         OnClickListener listenerAddNumber = new OnClickListener() {
 			@Override
@@ -233,10 +209,10 @@ public class MainActivity extends Activity {
 					//Se muestra mensaje cuando se quiere introducir teléfono de más
 					//de 10 dígitos
 	                Toast.makeText(
-	                		MainActivity.this,
-	                		"No puede introducir más dígitos",
-	                		Toast.LENGTH_SHORT
-	                		).show();
+                        MainActivity.this,
+                        "No puede introducir más dígitos",
+                        Toast.LENGTH_SHORT
+                        ).show();
 				}
 			}
 		};
@@ -267,7 +243,6 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		
 		//Se habilita listener para lanzar la llamada
 		//Se activa para ello un listener sobre el botón de realizar llamada
 		doCall.setOnClickListener(new View.OnClickListener() {
@@ -293,4 +268,10 @@ public class MainActivity extends Activity {
 }
 ```
 
-Aquí dejo el [código](https://db.tt/0NKYZ5tE "Código de Crear Custom Dial en Android") de la entrada. Y aquí enlace a dos vídeos de youtube en el que explico paso a paso como [crear custom dial](http://www.youtube.com/playlist?list=PLQPVd8xnMbz6pqg50U0zZ5eMF6ItK6fMl "Crear paso a paso custom dial")
+Aquí dejo el <a hre="https://db.tt/0NKYZ5tE" target="_blank">Código de Crear Custom Dial en Android</a> de la entrada.
+
+Y aquí dos vídeos de youtube en el que explico paso a paso como.
+
+<div class="ratio-16-9">
+    <iframe title="Crear paso a paso custom dial" src="https://www.youtube.com/embed/bZpgJdwat-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
