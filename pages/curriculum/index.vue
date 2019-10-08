@@ -76,7 +76,7 @@
             </ul>
           </div>
           <div class="block-content">
-            <h4 class="color-cv">Web Developer, Pixaboo Studio <span class="date ftr">Dic 2015 - Abr 2015</span></h4>
+            <h4 class="color-cv">Web Developer, Pixaboo Studio <span class="date ftr">Dic 2015 - Abr 2016</span></h4>
             <ul class="description-list">
               <li>Sitios web basados en wordpress, php y javascript</li>
               <li>Maquetaci&oacute;n html con css y sass</li>
@@ -98,7 +98,7 @@
             </ul>
           </div>
           <div class="block-content">
-            <h4 class="color-cv">Oficina T&eacute;cnica, Empresa Constructora <span class="date ftr">Oct 2005 - Jun2009</span></h4>
+            <h4 class="color-cv">Oficina T&eacute;cnica, Empresa Constructora <span class="date ftr">Oct 2005 - Jun 2009</span></h4>
             <ul class="description-list">
               <li>Labores de aparejador en oficina t&eacute;cnica de empresas constructoras</li>
             </ul>
