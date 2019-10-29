@@ -4,6 +4,8 @@ description: Mixing Sass para crear Badges que puedan ser modificados y adaptado
 published: true
 tags: Pildoritas,Sass
 ctime: Tue, 11 Oct 2016 15:11:19 +0000
+cover_image: badges-sass-svg.png
+alt_image: Badges con SASS y SVG
 ---
 
 ## Código css Badge
@@ -83,6 +85,13 @@ Para usarlo en el html hay que seguir la siguiente estructura:
 	</div>
 </div>
 ```
+
+## Pen con ejemplo de Badge Sass Svg
+
+<div class="ratio-16-9">
+    <iframe title="Badges con SASS y SVG" src="https://codepen.io/ivan_albizu/pen/MWWEjrP"></iframe>  
+</div>
+
 
 En la etiqueta de imagen se le añade la imagen, puede ser en cualquier formato, pero usando "svg" se adaptará mejor a diferentes tamaños o escalados.
 El código completo para probarlo se encuentra en <a href="https://github.com/ivanalbizu/Badges-with-Sass-and-Svg" target="_blank">mi GitHub</a>.

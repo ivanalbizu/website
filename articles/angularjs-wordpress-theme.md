@@ -4,6 +4,8 @@ published: true
 description: Construcción de Theme Wordpress con AngularJS 1, usando plugins de Wordpress Wp Rest Api para generar JSON de las entradas y Advanced Custom Fields (ACF) para añadir nuevos campos
 tags: AngularJS,JavaScript,Php,Sass,Wordpress
 ctime: Wed, 26 Oct 2016 21:09:21 +0000
+cover_image: angularjs-wordpress-theme.jpg
+alt_image: AngularJS Wordpress Theme
 ---
 
 ## Instalación
