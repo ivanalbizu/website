@@ -4,6 +4,8 @@ published: true
 description: Habilitar nuevos campos a la Rest API creada con el plugin WP Rest API cuyos campos son creados en Wordpress con plugin Advanded Custom Fields (ACF)
 tags: AngularJS,Php,Pildoritas,Wordpress
 ctime: Sun, 02 Oct 2016 16:04:38 +0000
+cover_image: wp-rest-api-habilitar-filtro-de-custom-fields.png
+alt_image: Wp Rest Api - habilitar filtro de Custom Fields
 ---
 
 Usando Wp Rest Api, Advanced Custom Fields y Angular he necesitado habilitar el filtrado por la URL de la petición de los nuevos campos creados. En mi Custom Post Type tenía creado varios campos y necesitaba que se mostrasen las entradas que cumpliesen cierta condición.

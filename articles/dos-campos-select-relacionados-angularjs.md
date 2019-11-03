@@ -4,6 +4,8 @@ published: true
 description: Construir Selects en el que uno de los Selects carga su contenido en función del option seleccionado en el Select anterior
 tags: AngularJS,JavaScript,Pildoritas
 ctime: Mon, 10 Oct 2016 09:58:28 +0000
+cover_image: dos-campos-select-relacionados-en-angularjs.png
+alt_image: Dos campos Select relacionados en AngularJS
 ---
 
 He construido sistema de filtros con etiquetas <code>&lt;select&gt;</code>. Uno de ellos será el filtro inferior y el otro el filtro superior. Ambos estarán relacionados entre sí para que no se pisen los valores, y así el valor tomado por el filtro inferior sea uno de los límites del filtro superior, y viceversa.
