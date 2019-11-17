@@ -10,7 +10,7 @@ function getSlugs(post, _) {
 module.exports = {
   mode: "universal",
   head: {
-    title: "Iván Albizu | Maquetador Web",
+    title: "Iván Albizu",
     titleTemplate: "%s - Maquetador Web",
     meta: [
       { charset: "utf-8" },

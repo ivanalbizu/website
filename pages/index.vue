@@ -1,7 +1,7 @@
 <template>
   <div>
     <SiteHero/>
-    <ArticleList :isPaginated="false" :postsPerPage="2"/>
+    <ArticleList :isPaginated="false" :postsPerPage="3"/>
     <!--<PersonalBio/>-->
     <!--<Roles/>-->
   </div>

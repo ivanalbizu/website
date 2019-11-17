@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ## Código css de la superposición de imágenes
 
-Antes de comentar el código css, rescato una parte del html. Se trata de <code>&lt;div class="viewport__lightbox" data-img="480,550"&gt;</code> que tiene una imagen de fondo y otro div dentro <code>&lt;div class="comparator"&gt;</div></code> que tendrá otra imagen dentro.
+Antes de comentar el código css, rescato una parte del html. Se trata de <code>&lt;div class="viewport__lightbox" data-img="480,550"&gt;</code> que tiene una imagen de fondo y otro div dentro <code>&lt;div class="comparator"&gt;</code> que tendrá otra imagen dentro.
 
 El div interior será modificado con javascript para cambiar su ancho en función de la posición del cursor, y su imagen será posicionada en el eje X al comienzo del div
 

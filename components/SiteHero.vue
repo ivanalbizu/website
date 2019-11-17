@@ -22,8 +22,7 @@
   text-align: center;
   margin-bottom: 5rem;
   padding: 3rem 2rem;
-  background: $primary url('~assets/images/bg-hero.jpg') no-repeat center;
-  background-size: cover;
+  background-color: $primary;
   color: #FFF;
   &__header {
     margin-bottom: 1.5rem;
