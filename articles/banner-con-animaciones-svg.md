@@ -8,7 +8,7 @@ cover_image: banner-con-animaciones-svg.png
 alt_image: Banner con animaciones SVG
 ---
 
-En esta ocasión he realizado Banner en la que se muestra una imagen de fondo y texto transparente encima de la imagen. El cursor, con forma circular, también será transparente. Al hacer click sobre la imagen, se produce animación con forma de circulo transparente que termina cubriendo toda la imagen. Al volver a hacer click, se produce la animación inversa del círculo. Mientras el Banner está "activo" se muestra vínculo en la zona inferior
+En esta ocasión he realizado <code>Banner</code> en la que se muestra una imagen de fondo y texto transparente encima de la imagen. El cursor, con forma circular, también será transparente. Al hacer <code>click</code> sobre la imagen, se produce animación con forma de circulo transparente que termina cubriendo toda la imagen. Al volver a hacer click, se produce la animación inversa del círculo. Mientras el Banner está "activo" se muestra vínculo en la zona inferior
 
 Puede verse funcionando en este Pen. El soporte para Edge ha sido básico:
 
@@ -58,7 +58,7 @@ El código del primero de los <code>banners</code> es el siguiente:
 
 ## Código javascript del banner
 
-Se han creado 5 funciones para, y son las siguiente
+Se han creado 5 funciones
 
 <ul class="list-bullets">
     <li><code>const coord = el => {}</code></li>
@@ -70,7 +70,7 @@ Se han creado 5 funciones para, y son las siguiente
 
 ### Coordenadas del cursor dentro del Banner
 
-La primera de las funciones <code>const coord = el => {}</code> es una función de utilidad para ser usada en dos ocasiones. Sirve para devolver las coordenadas el cursor dentro de un elemento dado
+La primera de las funciones <code>const coord = el => {}</code> es una función de utilidad para ser usada en dos ocasiones. Sirve para devolver las coordenadas del cursor dentro de un elemento dado
 
 ```javascript
 const coord = el => {
@@ -103,7 +103,7 @@ const handleMove = event => {
 
 ### Detectar evento Click en los Banners
 
-Con <code>const handleClick = event => {}</code> se detecta el evento <code>click</code> sobre alguno de los <code>banners</code>, se añade o quita la clase <code>box--active</code> al <code>&lt;div class="box"&gt;> que contiene el <code>banner</code> y según el caso, se ejecuta la función <code>openBox(box);</code> o <code>closeBox(box);</code>
+Con <code>const handleClick = event => {}</code> se detecta el evento <code>click</code> sobre alguno de los <code>banners</code>, se añade o quita la clase <code>box--active</code> al <code>&lt;div class="box"&gt;</code> que contiene el <code>banner</code> y según el caso, se ejecuta la función <code>openBox(box);</code> o <code>closeBox(box);</code>
 
 ```javascript
 const handleClick = event => {
@@ -140,7 +140,7 @@ const closeBox = (box) => {
 
 ### Cerrar el Banner
 
-Con la función <code>const closeBox = (box) => {}</code> se elimina el <code>circle</code> anteriormente creado. Se añade clase CSS para la animación y se le da <code>timeout</code>. Se necesita hacer comprobación para evitar posible conflicto de <code>clicks<code> muy rápidos
+Con la función <code>const closeBox = (box) => {}</code> se elimina el <code>circle</code> anteriormente creado. Se añade clase CSS para la animación y se le da <code>timeout</code>. Se necesita hacer comprobación para evitar posible conflicto de <code>clicks</code> muy rápidos
 
 ```javascript
 const closeBox = (box) => {
