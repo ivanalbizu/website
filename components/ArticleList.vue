@@ -10,6 +10,8 @@
           :src="require(`~/assets/images/articles/${post.cover_image}`)"
           :alt="post.alt_image"
           loading="lazy"
+          width="1482"
+          height="404"
         >
       </figure>
       <p class="blog__excerpt">{{ post.description }}</p>
