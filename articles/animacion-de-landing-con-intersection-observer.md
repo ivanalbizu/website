@@ -3,7 +3,7 @@ title: Animación de Landing con Intersection Observer
 published: true
 description: Animación con CSS aplicando la API de JavaScript Intersection Observer para iniciar la animación cuando el elemento a Animar entra dentro del Viewport
 tags: javascript,html,css
-ctime: Mond, 27 Jan 2020 22:30:00 +0000
+ctime: Mon, 27 Jan 2020 22:30:00 +0000
 cover_image: animacion-de-landing-con-intersection-observer.png
 alt_image: Slides usando Blend Mode y Document Fragment
 ---
@@ -62,12 +62,12 @@ Para usarlo, sólo tenemos que añadir el atributo <code>[data-split-word]</code
 ```javascript
 
 document.addEventListener('DOMContentLoaded', () => {
-  
+
   let splits = document.querySelectorAll('[data-split-word]');
 
   splits.forEach(split => {
     let splitTextContent = split.textContent;
-  
+
     split.innerHTML = '';
     split.appendChild(createFrameSlides(splitTextContent))
   })
@@ -97,7 +97,7 @@ const createFrameSlides = chars => {
   chars.forEach((char, index) => {
     const el = elFactory(
       'span',
-      { 
+      {
         'data-char': `${char}`,
         class: `char`,
         style: `--char-index:${index}`
@@ -106,7 +106,7 @@ const createFrameSlides = chars => {
     )
     fragment.appendChild(el);
   })
-  
+
   return fragment;
 }
 ```
@@ -142,7 +142,7 @@ Consiste en añadir variables CSS expresados en milisegundos, que luego será us
   <li data-animation="kf-left-to-right" style="--kf-delay: 150"><a href="#!">Works</a></li>
   <li data-animation="kf-left-to-right" style="--kf-delay: 300"><a href="#!">Features</a></li>
   <li data-animation="kf-left-to-right" style="--kf-delay: 450"><a href="#!">Security</a></li>
-  <li data-animation="kf-left-to-right" style="--kf-delay: 600"><a href="#!">Contact</a></li> 
+  <li data-animation="kf-left-to-right" style="--kf-delay: 600"><a href="#!">Contact</a></li>
 </ul>
 ```
 

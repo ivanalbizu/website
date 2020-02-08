@@ -13,7 +13,7 @@ En esta ocasión he realizado <code>Banner</code> en la que se muestra una image
 Puede verse funcionando en este Pen. El soporte para Edge ha sido básico:
 
 <div class="ratio-16-9">
-    <iframe title="Banner con animación SVG" src="https://codepen.io/ivan_albizu/full/zYYyrRJ"></iframe>  
+    <iframe title="Banner con animación SVG" src="https://codepen.io/ivan_albizu/full/zYYyrRJ"></iframe>
 </div>
 
 

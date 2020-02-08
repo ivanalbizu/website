@@ -21,7 +21,7 @@ export default {
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   font-size: 2.4rem;
   font-size: 5vw;
   .button:not(:first-of-type) {

@@ -14,6 +14,7 @@ module.exports = {
     titleTemplate: "%s - Maquetador Web",
     meta: [
       { charset: "utf-8" },
+      { name: "theme-color", content: "#db0a5b" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
