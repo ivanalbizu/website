@@ -390,6 +390,6 @@ En la vista de todas las entradas aparece justo al lado de cada entrada un botó
 </a>
 ```
 
-Hasta aquí está el **crud completo con AngularJS usando Wordpress como Api Rest.** <a href="https://github.com/ivanalbizu/angular_wordpress_rest_api" target="_blank">Código en mi GitHub</a>
+Hasta aquí está el **crud completo con AngularJS usando Wordpress como Api Rest.** <a href="https://github.com/ivanalbizu/angular_wordpress_rest_api" target="_blank" rel="noopener">Código en mi GitHub</a>
 
 En siguientes entradas publicaré como obtener las revisiones de una entrada.

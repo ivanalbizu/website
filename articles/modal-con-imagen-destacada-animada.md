@@ -371,4 +371,4 @@ a {
 }
 ```
 
-<a href="https://github.com/ivanalbizu/modal-image-anime" target="_blank">Código en mi GitHub</a>
+<a href="https://github.com/ivanalbizu/modal-image-anime" target="_blank" rel="noopener">Código en mi GitHub</a>

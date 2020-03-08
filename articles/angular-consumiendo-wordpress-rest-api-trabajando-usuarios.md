@@ -162,6 +162,6 @@ La vista es mostrada al usuario en <code>views/user.html</code>. Las etiquetas h
 </div>
 ```
 
-<a href="https://github.com/ivanalbizu/angular_wordpress_rest_api" target="_blank">Código en mi Git Hub</a>
+<a href="https://github.com/ivanalbizu/angular_wordpress_rest_api" target="_blank" rel="noopener">Código en mi Git Hub</a>
 
 En siguientes entradas me gustaría poder practicar con Custom Post Types. Añadiendo mi propio tipo de entrada y habilitarla para la Rest Api.

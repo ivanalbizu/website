@@ -332,4 +332,4 @@ text {
 }
 ```
 
-<a href="https://github.com/ivanalbizu/banner-con-animaciones-svg" target="_blank">Código en mi GitHub</a>
+<a href="https://github.com/ivanalbizu/banner-con-animaciones-svg" target="_blank" rel="noopener">Código en mi GitHub</a>

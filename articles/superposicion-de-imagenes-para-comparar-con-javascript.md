@@ -309,4 +309,4 @@ ul {
 
 Si se mira para tamaños de pantalla pequeños, y sin simulador de Mobile, las imágenes aparecen desalineadas (17px aproximado) por el espacio que ocupa la barra de Scroll
 
-<a href="https://github.com/ivanalbizu/superposicion-de-imagenes-con-javascript" target="_blank">Código en mi GitHub</a>
+<a href="https://github.com/ivanalbizu/superposicion-de-imagenes-con-javascript" target="_blank" rel="noopener">Código en mi GitHub</a>

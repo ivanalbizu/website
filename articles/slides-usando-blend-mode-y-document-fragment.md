@@ -33,7 +33,7 @@ Existen tres capas:
   <li><code>&lt;div class="options"&gt;</code></li>
 </ul>
 
-La primera capa contiene HTML para pintar las flechas de navegación. Mediante JS se añadirán las imágenes de fondo. Se ha creado una capa <code>&lt;div class="js-container"&gt;</code> para añadir los rectángulos con <code>DocumentFragment</code> 
+La primera capa contiene HTML para pintar las flechas de navegación. Mediante JS se añadirán las imágenes de fondo. Se ha creado una capa <code>&lt;div class="js-container"&gt;</code> para añadir los rectángulos con <code>DocumentFragment</code>
 
 La segunda capa será para añadir <code>thumbs</code> de imágenes con sus identificadores mediante <code>data-atributos</code>. Estas imágenes serán usadas para pintar las imágenes del Slide mediane JS
 
@@ -99,7 +99,7 @@ const createFrameSlides = thumbs => {
   thumbs.forEach((thumb, index) => {
     const el = elFactory(
       'div',
-      { 
+      {
         id: `slide-${index}`,
         class: `slide${(index == 0 ? " slide--active" : "")}`,
         style: `background-image: url(${thumb.getAttribute('src')})`
@@ -107,7 +107,7 @@ const createFrameSlides = thumbs => {
     )
     fragment.appendChild(el);
   })
-  
+
   return fragment;
 }
 ```
@@ -136,7 +136,7 @@ const createFragment = (row, col) => {
 
   let step;
   let items = -1;
-  for (let r = 0; r < row; r++) {     
+  for (let r = 0; r < row; r++) {
     for (let c = 0; c < col; c++) {
       if ((row / 2) > r) {
         if ((col / 2) > c) step = r + c;
@@ -146,7 +146,7 @@ const createFragment = (row, col) => {
         if ((col / 2) > c) step = row - r - 1 + c;
         else step--;
       }
-      
+
       fragment.appendChild(elFactory('span', { class: `item item--${step}`}));
     }
   }
@@ -164,14 +164,14 @@ La función <code>const setDelay = timeout => {}</code> es usada para insertar e
 const setDelay = timeout => {
   let style = document.createElement('style');
   document.head.appendChild(style);
-  
+
   const items = getComputedStyle(document.documentElement).getPropertyValue('--items');
 
   for (let index = 0; index <= items; index++) {
     const item = `.item--${index} {
       animation-delay: ${index*100}ms;
       animation-duration: ${timeout-index*100}ms;
-    }`;    
+    }`;
     style.sheet.insertRule(item);
   }
 }
@@ -187,7 +187,7 @@ Cada cambio de Slide se comprueba si se ha llegado al Final o al Principio de lo
 const statusNavigation = el => {
   if (!el.nextElementSibling) document.querySelector('.js-next').style.display = 'none';
   else document.querySelector('.js-next').style.display = 'flex';
-  
+
   if (!el.previousElementSibling) document.querySelector('.js-prev').style.display = 'none';
   else document.querySelector('.js-prev').style.display = 'flex';
 }
@@ -208,7 +208,7 @@ Con la función <code>const handlerNavigation = (nav, timeout) => {}</code> se m
 ```javascript
 const handlerNavigation = (nav, timeout) => {
   let active = null;
-  if (nav.classList.contains('js-next')) {        
+  if (nav.classList.contains('js-next')) {
     active = document.querySelector('.thumb--active').nextElementSibling;
   } else {
     active = document.querySelector('.thumb--active').previousElementSibling;
@@ -235,16 +235,16 @@ const transitionTo = (to, timeout) => {
 
   const particles = document.querySelectorAll('.js-container .item');
   particles.forEach(item => item.classList.add('particles'))
-  
+
   to.classList.add('thumb--active');
   statusNavigation(to);
-  
+
   const current = document.querySelector('.slide--active');
   current.classList.add('fade-out');
-  
+
   const slide = document.querySelector('#'+to.getAttribute('data-slide'));
   slide.classList.add('fade-in');
-  
+
   setTimeout(() => {
     document.body.classList.remove('js-animating');
     current.classList.remove(...['fade-out', 'slide--active']);
@@ -288,15 +288,15 @@ Con todas las funciones necesarias, ahora necesitamos usarlas una vez el DOM est
 document.addEventListener('DOMContentLoaded', () => {
 
   const viewport = document.querySelector('.viewport');
-  
+
   const container = document.querySelector('.js-container');
   const thumbs = document.querySelectorAll('.thumbs .thumb');
   const navs = document.querySelectorAll('.js-navigation');
-  
+
   const row = getComputedStyle(document.documentElement).getPropertyValue('--row');
   const col = getComputedStyle(document.documentElement).getPropertyValue('--col');
   const timeout = getComputedStyle(document.documentElement).getPropertyValue('--timeout');
-  
+
   if (container && viewport && thumbs) {
     insertBefore(createFrameSlides(thumbs), container);
     container.appendChild(createFragment(row, col));
@@ -507,4 +507,4 @@ button {
 }
 ```
 
-<a href="https://github.com/ivanalbizu/slides-blend-mode" target="_blank">Código en mi GitHub</a>
+<a href="https://github.com/ivanalbizu/slides-blend-mode" target="_blank" rel="noopener">Código en mi GitHub</a>

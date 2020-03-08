@@ -75,4 +75,4 @@ Y la vista quedaría así:
 ```
 
 
-He añadido un tercer campo, email, que en este caso sólo lo he mostrado, pero no editado. <a href="https://github.com/ivanalbizu/angular_wordpress_rest_api">Código en mi GitHub</a>
+He añadido un tercer campo, email, que en este caso sólo lo he mostrado, pero no editado. <a href="https://github.com/ivanalbizu/angular_wordpress_rest_api" target="_blank" rel="noopener">Código en mi GitHub</a>

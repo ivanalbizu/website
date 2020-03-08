@@ -141,4 +141,4 @@ El controlador <code>**LoginCtrl**</code> sólo tiene un método llamado <code
 
 En siguientes entradas publicaré más ejemplos de interacción entre **Wordpress Rest Api y AngularJS**, más concretamente sobre como trabajar con las entradas de Wordpress: Listar una o más entradas, crearlas, editarlas y eliminarlas.
 
-<a href="https://github.com/ivanalbizu/angular/wordpress/rest_api" target="_blank">Código en mi GitHub</a>
+<a href="https://github.com/ivanalbizu/angular/wordpress/rest_api" target="_blank" rel="noopener">Código en mi GitHub</a>

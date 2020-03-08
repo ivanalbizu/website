@@ -156,4 +156,4 @@ Quería que sólo fuera válido para pantallas superiores a 576px. Pero se podr�
 }
 ```
 
-<a href="https://github.com/ivanalbizu/animacion-landing-con-intersercion-observer" target="_blank">Código en mi GitHub</a>
+<a href="https://github.com/ivanalbizu/animacion-landing-con-intersercion-observer" target="_blank" rel="noopener">Código en mi GitHub</a>
