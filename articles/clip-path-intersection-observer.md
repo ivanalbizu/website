@@ -12,7 +12,7 @@ Siguiendo con la idea de mi anterior publicación, <a href="/blog/animacion-de-l
 
 También se ha creado animación del color de fondo de <code>&lt;body&gt;</code>. El color dependará de la imagen que esté dentro del viewport. Para obtener el color se ha usado una librería externa, <a href="https://jariz.github.io/vibrant.js/">vibrantjs</a>, que obtiene de una imagen, su color principal y paleta de colores
 
-Puede verse una prueba funcionando <a href="/experimentos/clip-path-io/">aquí</a>
+Puede verse una prueba funcionando <a href="/experimentos/clip-path-io/" title="Enlace para ver Animación de clip-path con Intersection Observer">aquí</a>
 
 ## Obtener color principal de la imagen
 
