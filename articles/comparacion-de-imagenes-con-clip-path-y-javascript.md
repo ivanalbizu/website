@@ -10,7 +10,7 @@ alt_image: Comparación de imágenes con clip-path y javascript
 
 En una publicación anterior realicé <a href="/blog/superposicion-de-imagenes-para-comparar-con-javascript">superposición de imágenes para comparar diferentes imágenes</a> en la que se podía elegir dos imágenes dadas para compararlas
 
-En esta ocasión he realiado lo mismo pero con muchísimo menos código y para mi gusto más customizable. Para ello he usado la propiedad CSS <code>clip-path</code>. Aunque <strong>si se quisiera usar habría que ajustar con algún <code>polyfill</code> o alguna otra alternativa para navegador Edge</strong>
+En esta ocasión he realizado lo mismo pero con muchísimo menos código y para mi gusto más customizable. Para ello he usado la propiedad CSS <code>clip-path</code>. Aunque <strong>si se quisiera usar habría que ajustar con algún <code>polyfill</code> o alguna otra alternativa para navegador Edge</strong>
 
 <a href="/experimentos/clip-path-images-compare/" title="Enlace para ver Comparación de imágenes con clip-path y javascript">Puede verse en este enlace externo</a> o en este Pen
 
