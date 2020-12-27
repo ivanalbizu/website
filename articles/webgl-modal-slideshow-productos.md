@@ -336,7 +336,7 @@ const cloneProductTitle = productState.title.cloneNode(true)
 transtionFrom(cloneProductTitle, productState.title, product)
 ```
 
-Clonamos el título y lo insertamos dentro del DOM con los estilos de partida que necesitamos dentro del <code>&lt;div</code> del producto
+Clonamos el título y lo insertamos dentro del DOM con los estilos de partida que necesitamos dentro del <code>&lt;div&gt;</code> del producto
 
 ```javascript
 animate(cloneProductTitle, transitionTo(modalState.title, 'top .8s ease-in .1s, left .8s ease-in .1s, width .8s ease-in .1s, height .8s ease-in .1s, font-size .8s ease-in .1s'), 'width')
